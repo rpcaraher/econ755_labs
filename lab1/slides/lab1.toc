@@ -1,0 +1,5 @@
+\beamer@sectionintoc {1}{Introduction to a Workflow}{2}{0}{1}
+\beamer@sectionintoc {2}{Version Control and Git}{19}{0}{2}
+\beamer@sectionintoc {3}{R vs. Stata}{24}{0}{3}
+\beamer@sectionintoc {4}{Introduction to \LaTeX }{32}{0}{4}
+\beamer@sectionintoc {5}{Lab Activity: Writing a ``test" econometrics paper using good habits}{37}{0}{5}

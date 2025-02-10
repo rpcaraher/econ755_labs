@@ -1,0 +1,452 @@
+\documentclass{beamer}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{verbatim}
+%Information to be included in the title page:
+\title[Lab 1]{Lab 1: Workflow Workshop}
+\author[R. Caraher]{TA: Ray Caraher}
+\institute[Econ 755]{UMass Amherst -- Econ 755}
+\date{Spring 2025}
+
+%%%%% Set Graphics and Tables Path
+\graphicspath{{./slides}}
+
+
+%%%%% Commands
+\renewcommand{\familydefault}{\sfdefault} % Change font to sans-serif
+
+\hypersetup{colorlinks=true,linkcolor=blue, linktocpage} % Color links
+
+\AtBeginSection[]{ % Section slide
+\begin{frame}
+\frametitle{Outline}
+\tableofcontents[currentsection]
+\end{frame}
+}
+
+%%%%% Set Beamer Theme
+\usetheme{Madrid}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\frame{\titlepage}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Outline
+
+% \begin{frame}{Outline}
+%     \tableofcontents[pausesections]
+
+% \end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Workflow
+
+\section{Introduction to a Workflow}
+\label{sec:intro}
+
+\begin{frame}
+\frametitle{Introduction to Workflow}
+
+A good \textbf{workflow} is a \textbf{systemic, organized, and efficient} process for writing, managing, and editing code-based projects.
+It helps ensure \textbf{clarity, reproducibility, and efficiency} when working with projects with lots of data, code, and results.
+
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Econometric Workflow}
+
+An \textbf{econometric workflow} is slightly different from a more general coding workflow, 
+since our \textbf{products are research papers and presentations},
+but the overall \textbf{characteristics of a good workflow} are the same:
+
+\begin{itemize}[<+->]
+    \item \textbf{Structured \& Organized}: Uses a well-defined directory structure (e.g., data/, scripts/, results/).
+    \item \textbf{Reproducible}: Code should be easily re-runnable by anyone (most importantly, future you)
+    \item \textbf{Modular \& Scalable}: Uses functions and scripts instead of long, repetitive, copy-pasted code.
+    \item \textbf{Version Controlled}: Tracks changes systematically using Git/GitHub.
+    \item \textbf{Documented}: Includes comments, README files, and clear instructions.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Econometric Workflow}
+
+    \Huge These characteristics should hold for \textbf{ALL} aspects of your project, including LaTex!
+
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{A General Workflow}
+
+    \begin{figure}
+        \centering
+        \includegraphics[width=1\textwidth,page=1]{workflow_figs.pdf}
+    \end{figure}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{A General Workflow}
+
+    \begin{figure}
+        \centering
+        \includegraphics[width=1\textwidth,page=2]{workflow_figs.pdf}
+    \end{figure}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{A General Workflow}
+
+    \begin{figure}
+        \centering
+        \includegraphics[width=1\textwidth,page=3]{workflow_figs.pdf}
+    \end{figure}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{A General Workflow}
+
+    \begin{figure}
+        \centering
+        \includegraphics[width=1\textwidth,page=4]{workflow_figs.pdf}
+    \end{figure}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{A General Workflow}
+
+    \begin{figure}
+        \centering
+        \includegraphics[width=1\textwidth,page=5]{workflow_figs.pdf}
+    \end{figure}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{A General Workflow}
+
+    \begin{figure}
+        \centering
+        \includegraphics[width=1\textwidth,page=6]{workflow_figs.pdf}
+    \end{figure}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{A General Workflow}
+
+    \begin{figure}
+        \centering
+        \includegraphics[width=1\textwidth,page=7]{workflow_figs.pdf}
+    \end{figure}
+
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{A General Workflow}
+
+    \begin{figure}
+        \centering
+        \includegraphics[width=1\textwidth,page=8]{workflow_figs.pdf}
+    \end{figure}
+
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{How Should I Store My Files?}
+
+    \begin{figure}
+        \centering
+        \includegraphics[width=1\textwidth,page=9]{workflow_figs.pdf}
+    \end{figure}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Version Control and Git
+
+\section{Version Control and Git}
+\label{sec:git}
+
+
+\begin{frame}
+    \frametitle{What is Version Control?}
+
+\begin{itemize}
+    \item \textbf{Version Control:} A system for tracking changes to files over time.
+    \item \textbf{Benefits:}
+    \begin{itemize}
+        \item Keeps a history of all changes.
+        \item Allows easy rollback to previous versions.
+        \item Enables collaboration without overwriting work.
+        \item Helps ensure reproducability of code.
+    \end{itemize}
+    \item \textbf{Popular Tools:} Git, GitHub, GitLab, Bitbucket.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{What is Git?}
+
+\begin{itemize}
+    \item \textbf{Git} is a distributed version control system managed via web on GitHub.
+    \item Allows users to \textbf{track changes, revert versions, and collaborate}.
+    \item Works well with \textbf{R, Python, Stata, and LaTeX}.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Basic Git Workflow}
+
+Git commands are executed in the \textbf{system terminal},
+but most IDEs have built-in Git commands so you usually don't need to worry about these!
+
+\begin{enumerate}
+    \item \textbf{Initialize a Git repository:}
+    \begin{verbatim}
+    git init
+    \end{verbatim}
+    \item \textbf{Check file status:}
+    \begin{verbatim}
+    git status
+    \end{verbatim}
+    \item \textbf{Stage changes (prepare for commit):}
+    \begin{verbatim}
+    git add my_script.R
+    \end{verbatim}
+    \item \textbf{Commit changes (save a snapshot):}
+    \begin{verbatim}
+    git commit -m "Updated regression model"
+    \end{verbatim}
+    \item \textbf{Push to GitHub (backup and collaboration):}
+    \begin{verbatim}
+    git push origin main
+    \end{verbatim}
+\end{enumerate}
+
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Storing Data}
+
+    \begin{itemize}
+        \item Most data is too large to store using version control.
+        \item The best option is to store it on the \textbf{Cloud} (e.g., UMass OneDrive) as well as on your local hard drive.
+        \item Certain datasets may have \textbf{storage restrictions}, so ensure compliance with data policies.
+        \item Consider using \textbf{data repositories} (e.g., Dataverse, Zenodo) for long-term storage and sharing.
+    \end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% R vs Stata
+
+\section{R vs. Stata}
+\label{sec:rvstata}
+
+\begin{frame}
+    \frametitle{Introduction to R}
+\begin{itemize}
+    \item R is a widely used open-source language for statistical computing.
+    \item Highly customizable with thousands of packages available via CRAN.
+    \item Download R from \href{https://cloud.r-project.org}{CRAN}.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{RStudio: The IDE for R}
+\begin{itemize}
+    \item RStudio is an Integrated Development Environment (IDE) for R.
+    \item Features include:
+    \begin{itemize}
+        \item Code editor with syntax highlighting.
+        \item Interactive console.
+        \item Built-in package manager.
+    \end{itemize}
+    \item Download RStudio from \href{https://posit.co/download/rstudio-desktop/}{here}.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Resources for Learning R}
+\begin{itemize}
+    \item \href{https://datasciencebox.org/}{Data Science in a Box}: Free introductory course.
+    \item \href{https://swirlstats.com/}{Swirl}: Interactive R tutorials inside R.
+    \item \href{https://r4ds.hadley.nz/}{R for Data Science}: Essential for learning tidyverse and data wrangling.
+    \item \href{https://www.youtube.com/watch?v=_V8eKsto3Ug}{freeCodeCamp's R Course}: Comprehensive YouTube tutorial.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Introduction to Stata}
+\begin{itemize}
+    \item Stata is a statistical programming language widely used in social sciences.
+    \item Unlike R, it is not free, but UMass provides access.
+    \item No separate IDE is required—Stata has a built-in interface.
+    \item Different versions available with student discounts at \href{https://www.stata.com/order/}{Stata's official site}.
+    \item Can access fpr free via \href{https://www.umass.edu/it/azure-virtual-desktop}{UMass's Virtual Desktop} (need to register).
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Resources for Learning Stata}
+\begin{itemize}
+    \item \href{https://www.stata.com/features/documentation/}{Stata User Guide and Documentation}.
+    \item \href{https://www.youtube.com/user/statacorp}{Stata's YouTube Channel}: Video tutorials and guides.
+    \item \href{https://stats.oarc.ucla.edu/stata/}{UCLA Stata Learning Modules}: Comprehensive introduction.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Which One Should I Use? Pros and Cons of R}
+
+    Both are widely used in statistical computing and have their own pros and cons. Here are some of my thoughts:
+
+    \begin{itemize}
+        \item \textbf{R} Pros:
+        \begin{itemize}
+            \item Open-sourced (free and thousands of packages are available)
+            \item Widely used across disciplines and across industry/academia
+            \item Object-orientated language (better for more complicated projects/easier to translate to Python)
+            \item At the cutting-edge of data science \emph{more broadly}
+            \item Marx would have used R
+        \end{itemize}
+        \item \textbf{R} Cons:
+        \begin{itemize}
+            \item Steeper (relative) learning curve due to more obtuse syntax
+            \item Not as "custom-made" for econometrics
+            \item More coding required for complex methods (not always a con)
+            \item Sometimes difficult to find packages to do the ``latest" technique
+        \end{itemize}
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Which One Should I Use? Pros and Cons of Stata}
+
+\begin{itemize}
+    \item \textbf{Stata} Pros:
+    \begin{itemize}
+        \item More intuitive language with point-and-click implementations through GUIs
+        \item Purpose-built for econometrics and (probably) the most commonly used software within our field
+        \item At the cutting-edge of econometrics \emph{more specifically}
+    \end{itemize}
+    \item \textbf{Stata} Cons:
+    \begin{itemize}
+        \item Expensive
+        \item Not object orientated (very ``hacky" solutions when working on complex projects)
+        \item Sometimes make things too easy
+    \end{itemize}
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LaTex
+
+\section{Introduction to \LaTeX}
+\label{sec:latex}
+
+\begin{frame}
+    \frametitle{What is \LaTeX{}}
+
+    \begin{itemize}
+        \item \LaTeX{} is a typesetting coding language used to create professional-looking documents.
+        \item It is widely used in the social sciences, especially in economics.
+        \item Unlike WYSIWYG software (e.g., Microsoft Word), \LaTeX{} uses codes and commands to generate a clean document.
+        \item Benefits:
+        \begin{itemize}
+            \item Automatic updating of figures and tables.
+            \item Simple reference management.
+            \item Version control with Git.
+        \end{itemize}
+    \end{itemize}
+    \end{frame}
+    
+    \begin{frame}
+        \frametitle{Getting Started with \LaTeX{}}
+
+    \begin{itemize}
+        \item \LaTeX{} takes a plain-text document and compiles it into a professional PDF using a \textbf{TeX Engine}.
+        \item The easiest way to get started is \href{https://www.overleaf.com/}{Overleaf}, a web-based \LaTeX{} editor.
+        \item For larger projects, consider installing a local TeX Engine:
+        \begin{itemize}
+            \item Windows: \href{https://miktex.org/}{MiKTeX} or \href{https://www.tug.org/texlive/}{TeX Live}
+            \item Mac: \href{https://www.tug.org/mactex/}{MacTeX}
+            \item Linux: \href{https://www.tug.org/texlive/}{TeX Live}
+        \end{itemize}
+    \end{itemize}
+    \end{frame}
+    
+    \begin{frame}
+        \frametitle{\LaTeX{} Editors}
+
+    \begin{itemize}
+        \item Once you have a TeX Engine, you need a text editor to write your \LaTeX{} code.
+        \item Popular \LaTeX{} editors:
+        \begin{itemize}
+            \item \href{https://www.overleaf.com/}{Overleaf}: Web-based, great for collaboration.
+            \item \href{https://www.texstudio.org/}{TeXstudio}: Free and open-source, feature-rich.
+            \item \href{https://www.tug.org/texworks/}{TeXworks}: Simple editor included with many TeX distributions.
+            \item \href{https://www.xm1math.net/texmaker/}{TeXmaker}: Clean interface with many useful features.
+            \item \href{https://code.visualstudio.com/}{Visual Studio Code} with \href{https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop}{LaTeX Workshop}: Highly customizable.
+        \end{itemize}
+    \end{itemize}
+    \end{frame}
+    
+    \begin{frame}
+        \frametitle{Learning Resources for \LaTeX{}}
+
+    \begin{itemize}
+        \item \href{https://www.overleaf.com/learn/latex}{Overleaf's \LaTeX{} Guides}: Beginner-friendly tutorials.
+        \item \href{https://en.wikibooks.org/wiki/LaTeX}{\LaTeX{} Wikibook}: Comprehensive, open-source guide.
+        \item \href{https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes}{Learn \LaTeX{} in 30 Minutes (Overleaf)}: Quick-start guide.
+        \item \href{https://www.latex-tutorial.com/}{LaTeX-Tutorial.com}: Step-by-step guides.
+        \item \href{https://www.youtube.com/user/ShareLaTeX/videos}{ShareLaTeX's YouTube Channel}: Video tutorials.
+    \end{itemize}
+    \end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Lab Activity
+
+\section{Lab Activity: Writing a ``test" econometrics paper using good habits}
+\label{sec:activity}
+
+\begin{frame}
+    \frametitle{Activity}
+
+We will write a ``test" econometrics paper using R, LaTex, and good workflow habits.
+In this lab, we will use a sample of ACS data to estimate gender and racial wage gaps in R or Stata and report our results using LaTex.
+
+\vspace{10pt}
+
+First, navigate to the GitHub repo that I will use for this class: \url{https://github.com/rpcaraher/econ755_labs}.
+
+\vspace{10pt}
+
+Here, I will post the code and slides from labs, as well as the sourcecode used to compile them (including these slides!)
+
+\vspace{10pt}
+
+If you have Git on your computer, I recommend you ``clone" this repo. Otherwise, you can just download it!
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

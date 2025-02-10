@@ -1,0 +1,28 @@
+\frametitle{Basic Git Workflow}
+
+Git commands are executed in the \textbf{system terminal},
+but most IDEs have built-in Git commands so you usually don't need to worry about these!
+
+\begin{enumerate}
+    \item \textbf{Initialize a Git repository:}
+    \begin{verbatim}
+    git init
+    \end{verbatim}
+    \item \textbf{Check file status:}
+    \begin{verbatim}
+    git status
+    \end{verbatim}
+    \item \textbf{Stage changes (prepare for commit):}
+    \begin{verbatim}
+    git add my_script.R
+    \end{verbatim}
+    \item \textbf{Commit changes (save a snapshot):}
+    \begin{verbatim}
+    git commit -m "Updated regression model"
+    \end{verbatim}
+    \item \textbf{Push to GitHub (backup and collaboration):}
+    \begin{verbatim}
+    git push origin main
+    \end{verbatim}
+\end{enumerate}
+
