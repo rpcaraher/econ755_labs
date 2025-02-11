@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.3.8)  10 FEB 2025 17:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.3.8)  11 FEB 2025 06:42
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -717,7 +717,7 @@ File: ot1mathkerncmss.fd 2020/01/31 Fontinst v1.933 font definitions for OT1/mat
 ] [9
 
 ]
-<workflow_figs.pdf, id=308, page=1, 794.97pt x 614.295pt>
+<workflow_figs.pdf, id=309, page=1, 794.97pt x 614.295pt>
 File: workflow_figs.pdf Graphic file (type pdf)
 <use workflow_figs.pdf, page 1>
 Package pdftex.def Info: workflow_figs.pdf , page1 used on input line 91.
@@ -729,7 +729,7 @@ Overfull \vbox (43.43666pt too high) detected at line 91
 [10
 
  <./workflow_figs.pdf>]
-<workflow_figs.pdf, id=342, page=2, 794.97pt x 614.295pt>
+<workflow_figs.pdf, id=343, page=2, 794.97pt x 614.295pt>
 File: workflow_figs.pdf Graphic file (type pdf)
 <use workflow_figs.pdf, page 2>
 Package pdftex.def Info: workflow_figs.pdf , page2 used on input line 101.
@@ -741,7 +741,7 @@ Overfull \vbox (43.43666pt too high) detected at line 101
 [11
 
  <./workflow_figs.pdf>]
-<workflow_figs.pdf, id=377, page=3, 794.97pt x 614.295pt>
+<workflow_figs.pdf, id=378, page=3, 794.97pt x 614.295pt>
 File: workflow_figs.pdf Graphic file (type pdf)
 <use workflow_figs.pdf, page 3>
 Package pdftex.def Info: workflow_figs.pdf , page3 used on input line 111.
@@ -753,7 +753,7 @@ Overfull \vbox (43.43666pt too high) detected at line 111
 [12
 
  <./workflow_figs.pdf>]
-<workflow_figs.pdf, id=411, page=4, 794.97pt x 614.295pt>
+<workflow_figs.pdf, id=412, page=4, 794.97pt x 614.295pt>
 File: workflow_figs.pdf Graphic file (type pdf)
 <use workflow_figs.pdf, page 4>
 Package pdftex.def Info: workflow_figs.pdf , page4 used on input line 121.
@@ -765,7 +765,7 @@ Overfull \vbox (43.43666pt too high) detected at line 121
 [13
 
  <./workflow_figs.pdf>]
-<workflow_figs.pdf, id=446, page=5, 794.97pt x 614.295pt>
+<workflow_figs.pdf, id=447, page=5, 794.97pt x 614.295pt>
 File: workflow_figs.pdf Graphic file (type pdf)
 <use workflow_figs.pdf, page 5>
 Package pdftex.def Info: workflow_figs.pdf , page5 used on input line 131.
@@ -777,7 +777,7 @@ Overfull \vbox (43.43666pt too high) detected at line 131
 [14
 
  <./workflow_figs.pdf>]
-<workflow_figs.pdf, id=480, page=6, 794.97pt x 614.295pt>
+<workflow_figs.pdf, id=481, page=6, 794.97pt x 614.295pt>
 File: workflow_figs.pdf Graphic file (type pdf)
 <use workflow_figs.pdf, page 6>
 Package pdftex.def Info: workflow_figs.pdf , page6 used on input line 141.
@@ -789,7 +789,7 @@ Overfull \vbox (43.43666pt too high) detected at line 141
 [15
 
  <./workflow_figs.pdf>]
-<workflow_figs.pdf, id=515, page=7, 794.97pt x 614.295pt>
+<workflow_figs.pdf, id=516, page=7, 794.97pt x 614.295pt>
 File: workflow_figs.pdf Graphic file (type pdf)
 <use workflow_figs.pdf, page 7>
 Package pdftex.def Info: workflow_figs.pdf , page7 used on input line 151.
@@ -801,7 +801,7 @@ Overfull \vbox (43.43666pt too high) detected at line 151
 [16
 
  <./workflow_figs.pdf>]
-<workflow_figs.pdf, id=549, page=8, 794.97pt x 614.295pt>
+<workflow_figs.pdf, id=550, page=8, 794.97pt x 614.295pt>
 File: workflow_figs.pdf Graphic file (type pdf)
 <use workflow_figs.pdf, page 8>
 Package pdftex.def Info: workflow_figs.pdf , page8 used on input line 162.
@@ -813,7 +813,7 @@ Overfull \vbox (43.43666pt too high) detected at line 162
 [17
 
  <./workflow_figs.pdf>]
-<workflow_figs.pdf, id=582, page=9, 794.97pt x 614.295pt>
+<workflow_figs.pdf, id=583, page=9, 794.97pt x 614.295pt>
 File: workflow_figs.pdf Graphic file (type pdf)
 <use workflow_figs.pdf, page 9>
 Package pdftex.def Info: workflow_figs.pdf , page9 used on input line 173.
@@ -886,21 +886,21 @@ Overfull \vbox (6.62952pt too high) detected at line 239
 
  (./lab1.aux)
 Package rerunfilecheck Info: File `lab1.out' has not changed.
-(rerunfilecheck)             Checksum: A10ED25C86CAAF3845B8587D1E8D52EA;1017.
+(rerunfilecheck)             Checksum: 3F57E5937A2D62A7717CD4B4BFBADF82;1037.
  ) 
 Here is how much of TeX's memory you used:
  22114 strings out of 478268
  435510 string characters out of 5846348
- 683194 words of memory out of 5000000
+ 683197 words of memory out of 5000000
  39757 multiletter control sequences out of 15000+600000
  481531 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,15n,122p,508b,652s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 128i,15n,122p,528b,652s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on lab1.pdf (38 pages, 285606 bytes).
+Output written on lab1.pdf (38 pages, 285856 bytes).
 PDF statistics:
- 1252 PDF objects out of 1440 (max. 8388607)
- 1133 compressed objects within 12 object streams
+ 1257 PDF objects out of 1440 (max. 8388607)
+ 1138 compressed objects within 12 object streams
  87 named destinations out of 1000 (max. 500000)
  188 words of extra memory for PDF output out of 10000 (max. 10000000)
 

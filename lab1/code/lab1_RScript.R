@@ -208,7 +208,8 @@ desc_tab <- desc_tab %>%
 ## Let's export it to the "results/" folder as a .tex file.
 
 stargazer(desc_tab, summary = FALSE, 
-  type = "latex", 
+  type = "latex",
+  float = FALSE,
   out = file.path("lab1", "results", "desc_tab.tex"))
 
 ## Let's also export our figure which shows the distribution of wages.
@@ -259,12 +260,9 @@ etable(list(
     lm_wage_race_sfe
     ),
     fitstat = c("n", "r2"),
-    extralines = list(
-        "^_State fixed effects" = c("No", "No", "Yes")
-        ),
     digits = "r4",
     digits.stats = "r4",
-    tex = TRUE,
+    tex = T,
     replace = T,
     meta.time = T,
     meta.author = T,

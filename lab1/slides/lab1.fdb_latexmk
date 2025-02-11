@@ -1,6 +1,6 @@
 # Fdb version 3
-["pdflatex"] 1739225981 "/Users/rcaraher/Documents/GitHub/econ755_labs/lab1/slides/lab1.tex" "lab1.pdf" "lab1" 1739225983
-  "/Users/rcaraher/Documents/GitHub/econ755_labs/lab1/slides/lab1.tex" 1739225981 15124 9520e6e131ec060ab51affdcf7b7f08a ""
+["pdflatex"] 1739274140 "/Users/rcaraher/Documents/GitHub/econ755_labs/lab1/slides/lab1.tex" "lab1.pdf" "lab1" 1739274141
+  "/Users/rcaraher/Documents/GitHub/econ755_labs/lab1/slides/lab1.tex" 1739274138 15128 5b03d72ba3a25a72f691f0182841f554 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -203,12 +203,12 @@
   "/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1647878959 4410336 7d30a02e9fa9a16d7d1f8d037ba69641 ""
   "/usr/local/texlive/2022/texmf-var/web2c/pdftex/pdflatex.fmt" 1678307456 2826428 95fc3220eed12b461912a1dfc2deb3c7 ""
   "/usr/local/texlive/2022/texmf.cnf" 1647878952 577 209b46be99c9075fd74d4c0369380e8c ""
-  "lab1.aux" 1739225983 7637 57cdf8668816a8c5f2c6971c88ec19fd "pdflatex"
-  "lab1.nav" 1739225983 4318 b54a4f265bcb4048292b7a1b7a278529 "pdflatex"
-  "lab1.out" 1739225983 1017 a10ed25c86caaf3845b8587d1e8d52ea "pdflatex"
-  "lab1.tex" 1739225981 15124 9520e6e131ec060ab51affdcf7b7f08a ""
-  "lab1.toc" 1739225983 335 4a4bb0c4e7a197ce635689641eaaf7ff "pdflatex"
-  "lab1.vrb" 1739225982 795 e23fd154964bbfed81479f0e4ed30ae5 "pdflatex"
+  "lab1.aux" 1739274141 7653 49cd28ae7aa26ab0e6515fa096fec940 "pdflatex"
+  "lab1.nav" 1739274141 4326 b766a92f523566a8bf4fd6b8c13b71cd "pdflatex"
+  "lab1.out" 1739274141 1037 3f57e5937a2d62a7717cd4b4bfbadf82 "pdflatex"
+  "lab1.tex" 1739274138 15128 5b03d72ba3a25a72f691f0182841f554 ""
+  "lab1.toc" 1739274141 339 5411af2bb9861bad71f6249122bf9ecb "pdflatex"
+  "lab1.vrb" 1739274141 795 e23fd154964bbfed81479f0e4ed30ae5 "pdflatex"
   "workflow_figs.pdf" 1739219206 28823 3f172e41993661594ebe7fc1cdf02a5e ""
   (generated)
   "lab1.aux"
