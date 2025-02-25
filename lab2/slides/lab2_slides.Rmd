@@ -628,9 +628,9 @@ tab <- data.frame("Model" = labels, "Estimate" = coefficients)
 \tiny
 ```{r, echo=T}
 stargazer(tab, summary = F,
-          title = "Model estimates for problem 5",
-          label = "tab:p5_2",
-          type = "text", out = file.path(results_directory, "ps1_tabp5_2.tex")
+  type = "latex",
+  float = FALSE,
+  out = file.path(results_directory, "ps1_tabp5_2.tex")
 )
 
 ```

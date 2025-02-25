@@ -1,0 +1,128 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% Preamble
+% This is where you load the packages, write custom commands, and design your title page
+\documentclass{article} % Specifies the type of document
+\usepackage{graphicx} % Required for inserting images
+\usepackage{hyperref} % Useful for linking
+\usepackage{booktabs} % Helps compile nice-looking table
+% \usepackage[authordate,natbib,isbn=false,backend=biber]{biblatex-chicago} % Chicago references
+
+%%%%% Set figure and table WDs
+
+\graphicspath{{/Users/rcaraher/Library/CloudStorage/OneDrive-UniversityofMassachusetts/Academic/Teaching/ECON 755/Problem Sets/Results}}
+\newcommand*\InputTable[1]{\input{/Users/rcaraher/Library/CloudStorage/OneDrive-UniversityofMassachusetts/Academic/Teaching/ECON 755/Problem Sets/Results/#1.tex}}
+
+%%%%% Bibliography file
+% \addbibresource{references.bib}
+ 
+\title{Econ 755 Lab 2 Writeup}
+\author{Ray Caraher}
+\date{February 2025}
+
+\begin{document}
+\maketitle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% I use double-comment lines to demark where the body of my document begins
+% I use single-comment lines to space sections
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% Intrduction
+
+\section{Introduction}
+\label{sec:intro} % We need a label for sections and figures to cross-reference them
+
+This is a test example for the Econ 755 problem sets at UMass Amherst,
+based on what we covered in lab 2!
+
+
+% When writing in LaTex,
+% it is good to use good coding conventions.
+% If you look at the source code for this file,
+% you will note that I try to write no more than one clause per line.
+% This helps keep my LaTex code legible.
+% I also will follow other conventions about lists, figures, links, etc.,
+% which would be good for you to take a look at.
+% Usually as long as you are consistent then you are fine.
+
+% I also recommend that you use comments frequently in LaTex (lines which start with \%),
+% which will not be typeset.
+% They are useful for visually organizing your source code,
+% making notes to yourself,
+% documenting what your code does.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% Literature Review
+
+
+\section{Problem 5}
+\label{sec:prob5}
+
+My results for problem 5 are shown in table~\ref{tab:ps1_tabp5_2}.
+As can be seen, 
+the coefficient estimates are strongly attenuated relative to the bivariate OLS estimate when using matching-based estimators or a rich set of controls.
+Estimates of the wage penalty vary between 4\% to 19\%.
+
+Figures~\ref{fig:ps1_dens_1} and~\ref{fig:ps1_dens_2} show the propensity score density plots for the unweighted and weighted control and treatment groups, respectively.
+As can be seen, using IPW weights makes the control group look a lot more like the treated group!
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \clearpage
+% \newpage
+% \printbibliography % Print references section
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% Figures and Tables
+
+\clearpage
+\newpage
+
+\section{Figures and Tables}
+\label{sec:figs_tabs}
+
+\begin{figure}[htb]
+    \caption{Unweighted Density Plots}
+    \label{fig:ps1_dens_1}
+    \centering
+    \includegraphics[scale=0.50]{ps1_dens_1.pdf}
+    \medskip
+    \begin{minipage}{0.80 \textwidth}
+    {\footnotesize \emph{Notes:} This figure shows the density plots of unweighted propensity scores for the control and
+    treated groups, respectively.
+    }
+    \end{minipage}
+\end{figure}
+
+\begin{figure}[htb]
+    \caption{Weighted Density Plots}
+    \label{fig:ps1_dens_2}
+    \centering
+    \includegraphics[scale=0.50]{ps1_dens_2.pdf}
+    \medskip
+    \begin{minipage}{0.80 \textwidth}
+    {\footnotesize \emph{Notes:} This figure shows the density plots of IPW weighted propensity scores for the control and
+    treated groups, respectively.
+    }
+    \end{minipage}
+\end{figure}
+
+\begin{table}[htb]
+    \caption{Regression Results} 
+    \label{tab:ps1_tabp5_2}
+    \centering
+    \InputTable{ps1_tabp5_2}
+    \medskip
+    \begin{minipage}{0.95 \textwidth}
+    {\footnotesize
+    \emph{Notes}: This table shows the wage penalty of foreign-born workers using a variety of estimation methods.}
+    \end{minipage}
+\end{table}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
