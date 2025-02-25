@@ -190,10 +190,10 @@ When doing regression in R, it can be helpful to have categorical variables (suc
 When factor variables are included in a regression, R will automatically create dummy variables for each possible value (minus an omitted one).
 Let's make our (non-binary) categorical variables into factors.
 
-\scriptsize
+\tiny
 ```{r, echo = TRUE}
 
-count(census, racesingd)
+print(count(census, racesingd), n = 5)
 
 census <- census |>
   mutate(race = as_factor(racesingd),

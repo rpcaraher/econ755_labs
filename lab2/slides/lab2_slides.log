@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.3.8)  25 FEB 2025 10:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.3.8)  25 FEB 2025 12:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1753,11 +1753,7 @@ Package pdftex.def Info: lab2_slides_files/figure-beamer/unnamed-chunk-2-1.pdf
 ]
 \openout4 = `lab2_slides.vrb'.
 
-(./lab2_slides.vrb)
-Overfull \vbox (86.12865pt too high) detected at line 524
- []
-
-[14
+(./lab2_slides.vrb) [14
 
 ] [15
 
@@ -1785,7 +1781,7 @@ Overfull \vbox (86.12865pt too high) detected at line 524
 \openout4 = `lab2_slides.vrb'.
 
 (./lab2_slides.vrb)
-Overfull \vbox (420.67015pt too high) detected at line 716
+Overfull \vbox (420.67015pt too high) detected at line 706
  []
 
 [20
@@ -1816,7 +1812,7 @@ Overfull \vbox (420.67015pt too high) detected at line 716
 \openout4 = `lab2_slides.vrb'.
 
 (./lab2_slides.vrb)
-Overfull \vbox (8.6838pt too high) detected at line 868
+Overfull \vbox (8.6838pt too high) detected at line 858
  []
 
 [26
@@ -2300,7 +2296,7 @@ Overfull \hbox (6.2027pt too wide) in paragraph at lines 264--264
  []
 
 )
-Overfull \vbox (2182.08476pt too high) detected at line 1176
+Overfull \vbox (2182.08476pt too high) detected at line 1166
  []
 
 [31
@@ -2318,7 +2314,7 @@ Package pdftex.def Info: lab2_slides_files/figure-beamer/unnamed-chunk-20-1.pdf
   used on input line 21.
 (pdftex.def)             Requested size: 239.60435pt x 156.28516pt.
 )
-Overfull \vbox (5.3181pt too high) detected at line 1199
+Overfull \vbox (5.3181pt too high) detected at line 1189
  []
 
 [32
@@ -2348,7 +2344,7 @@ Package pdftex.def Info: lab2_slides_files/figure-beamer/unnamed-chunk-21-1.pdf
 \openout4 = `lab2_slides.vrb'.
 
 (./lab2_slides.vrb)
-Overfull \vbox (420.7042pt too high) detected at line 1356
+Overfull \vbox (420.7042pt too high) detected at line 1346
  []
 
 [36
@@ -2815,7 +2811,7 @@ Overfull \hbox (6.2027pt too wide) in paragraph at lines 266--266
  []
 
 )
-Overfull \vbox (2205.18477pt too high) detected at line 1624
+Overfull \vbox (2205.18477pt too high) detected at line 1614
  []
 
 [37
@@ -2824,7 +2820,7 @@ Overfull \vbox (2205.18477pt too high) detected at line 1624
 \openout4 = `lab2_slides.vrb'.
 
 (./lab2_slides.vrb)
-Overfull \vbox (420.7042pt too high) detected at line 1729
+Overfull \vbox (420.7042pt too high) detected at line 1719
  []
 
 [38
@@ -2878,7 +2874,7 @@ Package pdftex.def Info: lab2_slides_files/figure-beamer/unnamed-chunk-30-1.pdf
 \openout4 = `lab2_slides.vrb'.
 
 (./lab2_slides.vrb)
-Overfull \vbox (464.23334pt too high) detected at line 1955
+Overfull \vbox (464.23334pt too high) detected at line 1945
  []
 
 [45
@@ -2891,7 +2887,13 @@ Overfull \vbox (464.23334pt too high) detected at line 1955
 ]
 \openout4 = `lab2_slides.vrb'.
 
-(./lab2_slides.vrb) [47
+(./lab2_slides.vrb
+Overfull \hbox (24.2672pt too wide) in paragraph at lines 32--32
+[]\T1/lmtt/m/n/6 ## % Table created by stargazer v.5.2.3 by Marek Hlavac, Socia
+l Policy Institute. E-mail: marek.hlavac at gmail.com[] 
+ []
+
+) [47
 
 ]
 \openout4 = `lab2_slides.vrb'.
@@ -2906,7 +2908,7 @@ Package pdftex.def Info: lab2_slides_files/figure-beamer/unnamed-chunk-34-1.pdf
   used on input line 15.
 (pdftex.def)             Requested size: 239.60521pt x 156.29068pt.
 )
-Overfull \vbox (2.33653pt too high) detected at line 2055
+Overfull \vbox (2.33653pt too high) detected at line 2049
  []
 
 [48
@@ -2959,7 +2961,7 @@ f-dist/fonts/type1/public/lm/lmtko10.pfb></usr/local/texlive/2022/texmf-dist/fo
 nts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/
 public/lm/lmtt12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/
 lmtt8.pfb>
-Output written on lab2_slides.pdf (49 pages, 431107 bytes).
+Output written on lab2_slides.pdf (49 pages, 432302 bytes).
 PDF statistics:
  609 PDF objects out of 1000 (max. 8388607)
  470 compressed objects within 5 object streams
