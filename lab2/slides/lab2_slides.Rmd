@@ -1,0 +1,667 @@
+---
+title: "Lab 2: OLS and Matching"
+author: "Ray Caraher"
+date: "2025-02-24"
+output:
+    beamer_presentation:
+      theme: Madrid
+    fontsize: 10pt
+    subtitle: Econ 337
+editor_options: 
+  markdown: 
+    wrap: 80
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+## Load packages
+
+library(haven)
+library(lmtest)
+library(sandwich)
+library(tidyverse)
+## Set options
+
+options(scipen = 999)
+
+## Clear environment
+
+rm(list = ls())
+
+## Set directories
+
+base_directory <- '/Users/rcaraher/Library/CloudStorage/OneDrive-UniversityofMassachusetts/Academic/Teaching/ECON 755/Problem Sets'
+data_directory <- file.path(base_directory, 'Data')
+results_directory <- file.path(base_directory, 'Results')
+
+
+```
+
+# Setup
+
+## Setting up our script
+
+Before we get into any real coding, let's make sure that the preamble for our code looks good.
+Here is how I set it up:
+
+A bunch of text detailing how the loading of the packages should print when this is run.
+
+\tiny
+```{r setup2, echo=T, eval=F}
+
+## Load packages
+
+library(haven)
+library(lmtest)
+library(stargazer)
+library(tidyverse)
+## Set options
+
+options(scipen = 999)
+
+## Clear environment
+
+rm(list = ls())
+
+## Set directories
+
+base_directory <- '/Users/rcaraher/Library/CloudStorage/OneDrive-UniversityofMassachusetts/Academic/Teaching/ECON 755/Problem Sets'
+data_directory <- file.path(base_directory, 'Data')
+results_directory <- file.path(base_directory, 'Results')
+
+
+```
+
+## A note about Working Directories
+
+In R, I generally recommend you set your *working directory to the source file location*.
+
+- You can do this in RStudio by going to: Session -> Set Working Directory -> To Source File Location. This folder is usually associate with a Git repo.
+
+I save the data and results files on cloud storage. I use the `base_directory` object to tell R where that location is as a file path.
+The `data_directory` and `results_directory` add one more layer to the file path (to a Data and Results folder, respectively) to save a typing when loading data/saving results.
+
+- If you have a similar workflow, the only line you should need to change is the file path for the `base_directory` object.
+- The `file.path()` function provides an OS-agnostic way to specify file paths.
+
+# OLS in R
+
+## Loading Data
+
+Let's read in the Census data and work with that for our lab.
+
+\scriptsize
+```{r laod, echo = TRUE}
+census <- read_dta(file.path(data_directory, "census_sample_30_50.dta"))
+```
+
+## Glimpse variables
+
+The `glimpse()` function allows us to view the variables, the class, and the first few rows of data.
+
+\scriptsize
+```{r preview, echo = TRUE}
+
+glimpse(census)
+
+```
+
+## Cleaning Data
+
+Let's say we want to estimate the wage penalty of being a foreign-born worker.
+In other words, we want to run the following regression:
+
+$$ y_{i} = \beta_{0} + \beta_{1}FB_{i} + X_{i}\Omega + \epsilon_{i} $$
+where $y$ is log wage, 
+$FB$ is a indicator variable (i.e., 0 or 1) if the worker is a non-citizen,
+$X_{i}$ is a vector of covariates,
+and $\epsilon_{i}$ is the error term.
+
+We first need to make sure our data is cleaned and in the correct format to run these regressions.
+
+## Looking at the outcome variable
+
+Let's do a quick histogram of the outcome variable to make sure it looks reasonable.
+We can use the `ggplot` commands here to generate the figure.
+
+\scriptsize
+```{r, echo=T, eval = F, out.width="90%", out.height="50%"}
+ggplot(data = census) +
+  geom_histogram(aes(x = lnwage))
+
+```
+
+## Looking at the outcome variable
+
+\tiny
+```{r, echo=F, out.width="70%", out.height="60%"}
+ggplot(data = census) +
+  geom_histogram(aes(x = lnwage))
+
+```
+
+## Cleaning the treatment variable
+
+We can use the `count()` function to take a look at the treatment variable and see how it is organized.
+
+\scriptsize
+```{r, echo = TRUE}
+
+count(census, citizen)
+
+```
+## Cleaning the treatment variable
+
+Let's set all those who are not a citizen (value of 3) as our foreign-born binary indicator
+We can use the `mutate()` and `case_when` functions to re-code variables (look at the documentation for these!).
+
+\scriptsize
+```{r, echo = TRUE}
+
+census <- census |>
+  mutate(fb = case_when(citizen == 3 ~ 1, 
+                        TRUE ~ 0))
+
+count(census, citizen, fb)
+
+```
+
+
+## Cleaning the control variables
+
+We also want to control for marital status, experience, race, ethnicity, education, English-speaking, and gender.
+We can use a similar method to get these variables in the format appropriate for a linear regression.
+
+\scriptsize
+```{r, echo = TRUE}
+
+census <- census |>
+  mutate(english = case_when(speakeng == 1 ~ 0,
+                             speakeng == 6 ~ 0,
+                        TRUE ~ 1))
+
+count(census, speakeng, english)
+
+```
+## Regression and factor variables
+
+When doing regression in R, it can be helpful to have categorical variables (such as race) as the factor class.
+When factor variables are included in a regression, R will automatically create dummy variables for each possible value (minus an omitted one).
+Let's make our (non-binary) categorical variables into factors.
+
+\scriptsize
+```{r, echo = TRUE}
+
+count(census, racesingd)
+
+census <- census |>
+  mutate(race = as_factor(racesingd),
+         edu = as_factor(educ99)
+         )
+
+```
+
+# Running a Regression
+
+## The `lm()` function
+
+The default way to run a linear regression in R is with the `lm()` function.
+We can then examine the results using the `summary()` function on the object.
+Let's do a bivariate estimation.
+
+\scriptsize
+```{r, echo = TRUE, eval = FALSE}
+
+bi_ols <- lm(lnwage ~ fb, data = census)
+summary(bi_ols)
+
+```
+
+## Results
+
+\scriptsize
+```{r, echo = FALSE}
+
+bi_ols <- lm(lnwage ~ fb, data = census)
+summary(bi_ols)
+
+```
+
+## Robust OLS
+
+The default OLS standard error reported will not correctly adjust for heteroskedasticity.
+Using the `coeftest()` function from the `sandwhich` package, we can get adjust the var-cov matrix.
+
+\scriptsize
+```{r, echo = TRUE}
+
+bi_ols_r <- coeftest(bi_ols, vcov. = vcovHC(bi_ols, type = "HC1"))
+bi_ols_r
+```
+
+
+## Multivariate OLS
+
+Let's add the additional control variables:
+
+\scriptsize
+```{r, echo = TRUE}
+
+mul_ols <- lm(lnwage ~ fb + married + exp + exp2 + race + 
+             hisp + edu + english + gender, data = census)
+
+```
+
+## Multivariate OLS Results
+
+\tiny
+```{r, echo = TRUE}
+
+summary(mul_ols)
+
+```
+
+## Big OLS Models
+
+The built-in, default R method for linear regression is fine, but when we want to run high-dimensional models,
+it is much easier to work with other functions.
+Let's use the `fixest` package for this. Install it if you don't have it yet with `install.packages("fixest")`.
+
+\scriptsize
+```{r, echo = TRUE}
+
+library(fixest)
+
+```
+
+## The FEOLS function
+
+The `feols` function is the high-dimensional version of `lm()`. 
+Let's use it to run the same bivariate OLS to make sure the results are the same.
+The syntax for this function is different. Make sure to look at the documentation with `?feols`.
+We can also directly tell it to report a hetero. robust SE.
+
+
+\scriptsize
+```{r, echo = TRUE}
+
+library(fixest)
+
+bi_feols <- feols(lnwage ~ fb,
+                  vcov = "HC1",
+                  data = census)
+
+```
+## FEOLS Results
+
+\scriptsize
+```{r, echo = TRUE}
+
+summary(bi_feols)
+
+```
+
+## Fully-Saturated Controls
+
+To run a fully-saturated OLS model, it means we include all controls and interactions.
+
+
+We could do this by explicitly multiplying the columns (i.e., race-black * married * edu_College * ...) but there is a short cut!
+
+
+We can create a new variable which assigns the same group number for each unique combination of our control variables!
+
+
+## Grouping
+
+\scriptsize
+```{r, echo = TRUE}
+
+census <- census |>
+  group_by(married, hisp, english, gender, race, edu) |>
+  mutate(group = cur_group_id()) |>
+  ungroup()
+
+count(census, group)
+
+```
+
+## Grouping
+
+We can now run the OLS model! We could run this regression a few ways (including making the group variable a factor),
+but another way is to include it as a fixed-effect (it is computationally faster!)
+
+\scriptsize
+```{r, echo = TRUE}
+
+fs_ols <- feols(lnwage ~ fb + exp + exp2 |
+                  group,
+                  vcov = "HC1",
+                  data = census)
+
+summary(fs_ols)
+
+```
+
+# Matching
+
+## Intro to Matching
+
+Including controls often isn't enough to ensure we are making apples-to-apples comparisons,
+especially if there is some systemic differences between the groups.
+
+Matching methods are one way to make sure comparisons between the treated and control groups are more similar.
+
+## Propensity Score Matching
+
+A common set of matching techniques use the propensity score, which estimates the **likelihood of treatment based on observable**.
+
+The `MatchIt` package is able to do most types of modern matching methods.
+
+```{r, echo = TRUE}
+
+library(MatchIt)
+
+```
+
+## Propensity Score Matching in R
+
+Let's make sure we drop all NA values for the variables we are using.
+
+\scriptsize
+```{r, echo = TRUE}
+
+census_comp <- census |>
+  dplyr::select(lnwage, fb, married, exp, exp2, race, hisp, edu, english, gender) |>
+  na.omit()
+
+
+```
+
+## Propensity Score Matching in R
+
+Now let's use the `matchit()` function in R.
+
+\scriptsize
+```{r, echo = TRUE}
+
+ps_matchout <- matchit(fb ~ married + exp + exp2 + race +
+                      hisp + edu + english + gender,
+                    data = census_comp,
+                    method = "nearest",
+                    link = "probit"
+                    )
+summary(ps_matchout)
+```
+
+## Propensity Score Matching in R
+
+Let's look at the estimate probabilities:
+
+\tiny
+```{r, echo=T, out.width="70%", out.height="60%"}
+
+census_comp <- census_comp |>
+  bind_cols(ps = ps_matchout$distance)
+
+ggplot(data = census_comp) +
+  geom_histogram(aes(x = ps))
+
+```
+
+## We can also compare covariate balance before and after the matching.
+
+Let's look at the estimate probabilities:
+
+\tiny
+```{r, echo=T, out.width="70%", out.height="60%"}
+
+plot(summary(ps_matchout))
+
+```
+
+## Propensity Score Matching in R
+
+Note: These are the same estimate propensity score that you would get from just running the probit regression:
+
+\scriptsize
+```{r, echo=T}
+
+probit_mod <- glm(fb ~ married + exp + exp2 + race +
+                      hisp + edu + english + gender,
+                    data = census_comp,
+             family = binomial(link = "probit"))
+
+census_comp <- census_comp |>
+  mutate(ps2 = predict(probit_mod, type = "response"))
+
+fivenum(census_comp$ps - census_comp$ps2)
+
+```
+
+
+## Running the regression
+
+We can now run the regression using matched propensity scores!
+
+First we need to create the matched data object.
+
+Then, we can do the regression.
+
+## Regression Results
+
+\tiny
+```{r, echo=T}
+
+match1_data <- match.data(ps_matchout)
+
+ps_lm1 <- lm(lnwage ~ fb + married + exp + exp2 + race +
+                      hisp + edu + english + gender,
+             data = match1_data)
+summary(ps_lm1)
+
+```
+
+## 10-Nearest Neighbors
+
+Now let's try matching with the 10-nearest neighbors. It is also easy to do with `matchit()`.
+
+\scriptsize
+```{r, echo = TRUE}
+
+ps10_matchout <- matchit(fb ~ married + exp + exp2 + race +
+                      hisp + edu + english + gender,
+                    data = census_comp,
+                    method = "nearest",
+                    link = "probit",
+                    ratio = 10
+                    )
+summary(ps10_matchout)
+```
+
+## Regression Results
+
+\tiny
+```{r, echo=T}
+
+match10_data <- match.data(ps10_matchout)
+
+ps_lm10 <- lm(lnwage ~ fb + married + exp + exp2 + race +
+                      hisp + edu + english + gender,
+             data = match10_data)
+summary(ps_lm10)
+
+```
+
+
+## IPW re-weighting
+
+There are some econometric issues with doing simple propensity score matching.
+
+However, inverse propensity score weighting mitigates these issues.
+
+**Intuition:** Those who were likely to be treated but did not are likely more similar to those who are treated.
+
+## Computing IPW weights for the ATT
+
+\scriptsize
+```{r, echo=T}
+
+
+census_comp <- census_comp |>
+  mutate(ipw_wght = case_when(fb == 1 ~ 1,
+                         TRUE ~ ps/(1 - ps)))
+
+```
+
+
+## Density Plots
+
+Let's make plots which show the propensity score density before and after re-weighting.
+The `cowplot` package has some useful functions for plotting figures side-by-side.
+
+\tiny
+```{r, echo=T}
+
+library(cowplot)
+
+p1 <- ggplot(data = filter(census_comp, fb == 0)) + 
+  geom_density(aes(x = ps), color="darkblue", fill="lightblue") +
+  labs(x = "Propensity score (control)")
+
+
+p2 <- ggplot(data = filter(census_comp, fb == 1)) + 
+  geom_density(aes(x = ps), color="red", fill="pink") +
+  labs(x = "Propensity score (treated)")
+
+pg <- plot_grid(p1, p2, labels = c('A', 'B'), 
+                align = "h", nrow = 1, ncol = 2, scale = 1)
+
+```
+
+## Density Plots Unweighted
+
+\scriptsize
+```{r, echo=T, out.width="70%", out.height="60%"}
+
+print(pg)
+
+```
+
+## Density Plots Weighted
+
+Now, let's re-weight using the IPW weights and compare the density plots.
+
+\tiny
+```{r, echo=T}
+
+p3 <- ggplot(data = filter(census_comp, fb == 0)) + 
+  geom_density(aes(x = ps, weight = ipw_wght), 
+               color="darkblue", fill="lightblue", adjust = 30) +
+  labs(x = "Propensity score, weighted (control)")
+
+p4 <- ggplot(data = filter(census_comp, fb == 1)) + 
+  geom_density(aes(x = ps, weight = ipw_wght), color="red", fill="pink") +
+  labs(x = "Propensity score, weighted (treated)")
+
+pg2 <- plot_grid(p3, p4, labels = c('A', 'B'), 
+                align = "h", nrow = 1, ncol = 2, scale = 1)
+
+```
+
+## Density Plots Weighted
+
+\scriptsize
+```{r, echo=T, out.width="70%", out.height="60%"}
+
+print(pg2)
+
+```
+
+
+
+## IPW Regression
+
+Now let's run the regression using IPW weights.
+
+\tiny
+```{r, echo=T}
+
+ipw_lm <- lm(lnwage ~ fb + married + exp + exp2 + race +
+                      hisp + edu + english + gender,
+              weights = ipw_wght,
+             data = census_comp)
+summary(ipw_lm)
+
+```
+
+
+## Collecting Regression Results
+
+Let's now collect all of our regressions and export a nice table!
+
+The `stargazer` package is great for exporting simple tables from data frames.
+
+\tiny
+```{r, echo=T}
+
+library(stargazer)
+
+coefficients <- c(bi_ols$coefficients[2], mul_ols$coefficients[2],
+  fs_ols$coefficients[1], ps_lm1$coefficients[2], ps_lm10$coefficients[2],
+  ipw_lm$coefficients[2]
+  )
+
+
+labels <- c("Bivariate OLS", "Multivariate OLS", "Fully saturated OLS",
+            "Propensity score matching (regression)",
+            "Propensity score with 10 nearest-neighbors",
+            "Propensity score with inverse probability weights")      
+
+tab <- data.frame("Model" = labels, "Estimate" = coefficients)                  
+                  
+```
+
+
+## Collecting Regression Results
+\tiny
+```{r, echo=T}
+stargazer(tab, summary = F,
+          title = "Model estimates for problem 5",
+          label = "tab:p5_2",
+          type = "text", out = file.path(results_directory, "ps1_tabp5_2.tex")
+)
+
+```
+
+
+## Saving Figures
+
+Let's also make sure to save our density plots!
+
+We will use the `ggsave()` function after we print the plots.
+
+\tiny
+```{r, echo=T, out.width="70%", out.height="60%"}
+
+print(pg)
+
+ggsave(file.path(results_directory, "ps1_dens_1.pdf"),
+      width = 12, height = 8, units = "in")
+
+```
+
+
+## Saving Figures
+
+
+\tiny
+```{r, echo=T, out.width="70%", out.height="60%"}
+
+print(pg2)
+
+ggsave(file.path(results_directory, "ps1_dens_2.pdf"),
+      width = 12, height = 8, units = "in")
+
+```
