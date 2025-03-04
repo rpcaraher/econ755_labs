@@ -543,6 +543,10 @@ sim_df <- sim_df |>
                            state >= 31 ~ 0))
 
 sim_df <- sim_df |>
+  mutate(treated = case_when(group == 0 ~ 0,
+                             TRUE ~ 1))
+
+sim_df <- sim_df |>
   mutate(cohort = case_when(group == 0 ~ 0,
                             group == 1 ~ 9,
                             group == 2 ~ 9))
@@ -617,6 +621,83 @@ stwfe <- feols(y ~ treat |
                  state + year,
                data = sim_df)
 summary(stwfe)
+
+```
+
+## Estimating DTWFE 
+
+Estimating DTWFE is the most complicated syntax-wise.
+We need to create a dummy variable which equals 1 at each time of treatment,
+and 0 otherwise (or if a control unit).
+
+Let's first load another helper function.
+
+\scriptsize
+```{r, echo = T, eval=F}
+
+install.packages("fastDummies")
+
+```
+
+```{r, echo=T}
+
+library(fastDummies)
+
+```
+
+
+## Estimating DTWFE 
+
+\scriptsize
+```{r, echo=T}
+
+sim_df <- sim_df |>
+  mutate(cohort_t = year - cohort,
+         cohort_t = case_when(group == 0 ~ 0,
+                              TRUE ~ cohort_t))
+sim_df <- dummy_cols(sim_df, select_columns = "cohort_t")
+
+sim_df <- sim_df |>
+  rename_with(~gsub("cohort_t_-", "cohort_t_m", .x))
+
+sim_df <- sim_df |>
+  mutate(cohort_t_0 = case_when(group == 0 ~ 0,
+                                TRUE ~ cohort_t_0))
+
+dtwfe_est <- feols(y ~ cohort_t_m3 + cohort_t_m2 + cohort_t_m1 +
+                     cohort_t_0 + cohort_t_1 + cohort_t_2 + cohort_t_3 + cohort_t_4 |
+                     state + year,
+                   data = sim_df)
+
+
+```
+
+## Estimating DTWFE
+
+Let's look at the results!
+
+\scriptsize
+```{r, echo=T}
+
+summary(dtwfe_est)
+
+```
+
+## Estimating DTWFE
+
+We then need to re-base the event-study estimates to be relative to t minus 1.
+
+\scriptsize
+```{r, echo=T}
+
+m1_eff <- dtwfe_est$coeftable$Estimate[3]
+
+dtwfe_sim <- tidy(dtwfe_est) |>
+  select(term, estimate) |>
+  mutate(t_eff = str_remove(term, "cohort_t_"),
+         t_eff = as.numeric(str_replace(t_eff, "m", "-"))) |>
+  mutate(estimate = estimate - m1_eff)
+
 
 ```
 

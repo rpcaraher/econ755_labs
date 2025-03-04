@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.3.8)  3 MAR 2025 20:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.3.8)  4 MAR 2025 10:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1321,12 +1321,40 @@ Overfull \hbox (19.94614pt too wide) in paragraph at lines 41--41
 ]
 \openout4 = `lab3_slides.vrb'.
 
-(./lab3_slides.vrb) [42
+(./lab3_slides.vrb
+Overfull \hbox (661.71013pt too wide) in paragraph at lines 33--33
+[]\T1/lmtt/m/n/8 ## Kaplan, J. & Schlegel, B. (2023). fastDummies: Fast Creatio
+n of Dummy (Binary) Columns and Rows from Categorical Variables. Version 1.7.1.
+ URL: https://github.com/jacobkap/fastDummies, https://jacobkap.github.io/fastD
+ummies/.[] 
+ []
+
+) [42
 
 ]
 \openout4 = `lab3_slides.vrb'.
 
 (./lab3_slides.vrb) [43
+
+]
+\openout4 = `lab3_slides.vrb'.
+
+(./lab3_slides.vrb) [44
+
+]
+\openout4 = `lab3_slides.vrb'.
+
+(./lab3_slides.vrb) [45
+
+]
+\openout4 = `lab3_slides.vrb'.
+
+(./lab3_slides.vrb) [46
+
+]
+\openout4 = `lab3_slides.vrb'.
+
+(./lab3_slides.vrb) [47
 
 ]
 \openout4 = `lab3_slides.vrb'.
@@ -1339,7 +1367,7 @@ ds." Journal of Econometrics, Vol. 225, No. 2, pp. 200-230, 2021. <https://doi.
 org/10.1016/j.jeconom.2020.12.001>, <https://arxiv.org/abs/1803.09015>[] 
  []
 
-) [44
+) [48
 
 ]
 \tf@nav=\write6
@@ -1353,11 +1381,11 @@ org/10.1016/j.jeconom.2020.12.001>, <https://arxiv.org/abs/1803.09015>[]
 
 (./lab3_slides.aux) ) 
 Here is how much of TeX's memory you used:
- 26644 strings out of 478268
- 513035 string characters out of 5846348
- 805916 words of memory out of 5000000
- 44046 multiletter control sequences out of 15000+600000
- 510651 words of font info for 94 fonts, out of 8000000 for 9000
+ 26678 strings out of 478268
+ 513481 string characters out of 5846348
+ 806072 words of memory out of 5000000
+ 44058 multiletter control sequences out of 15000+600000
+ 510752 words of font info for 95 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,11n,122p,1008b,457s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-
@@ -1380,10 +1408,10 @@ live/2022/texmf-dist/fonts/type1/public/lm/lmtko10.pfb></usr/local/texlive/2022
 /texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2022/texmf-dis
 t/fonts/type1/public/lm/lmtt8.pfb></usr/local/texlive/2022/texmf-dist/fonts/typ
 e1/public/amsfonts/symbols/msam10.pfb>
-Output written on lab3_slides.pdf (44 pages, 309856 bytes).
+Output written on lab3_slides.pdf (48 pages, 314766 bytes).
 PDF statistics:
- 436 PDF objects out of 1000 (max. 8388607)
- 342 compressed objects within 4 object streams
- 132 named destinations out of 1000 (max. 500000)
+ 462 PDF objects out of 1000 (max. 8388607)
+ 364 compressed objects within 4 object streams
+ 144 named destinations out of 1000 (max. 500000)
  22600 words of extra memory for PDF output out of 24883 (max. 10000000)
 
