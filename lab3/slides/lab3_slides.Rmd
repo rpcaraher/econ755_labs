@@ -1,0 +1,672 @@
+---
+title: "Lab 3"
+author: "Ray Caraher"
+date: "2025-03-03"
+output: beamer_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+## Load packages
+
+library(haven)
+library(stargazer)
+library(fixest)
+library(tidyverse)
+## Set options
+
+options(scipen = 999)
+
+## Clear environment
+
+rm(list = ls())
+
+## Set directories
+
+base_directory <- '/Users/rcaraher/Library/CloudStorage/OneDrive-UniversityofMassachusetts/Academic/Teaching/ECON 755/Problem Sets'
+data_directory <- file.path(base_directory, 'Data')
+results_directory <- file.path(base_directory, 'Results')
+
+
+```
+
+# Setup
+
+## Setting up our script
+
+Before we get into any real coding, let's make sure that the preamble for our code looks good.
+Here is how I set it up:
+
+A bunch of text detailing how the loading of the packages should print when this is run.
+
+\tiny
+```{r setup2, echo=T, eval=F}
+
+## Load packages
+
+library(haven)
+library(stargazer)
+library(fixest)
+library(tidyverse)
+## Set options
+
+options(scipen = 999)
+
+## Clear environment
+
+rm(list = ls())
+
+## Set directories
+
+base_directory <- '/Users/rcaraher/Library/CloudStorage/OneDrive-UniversityofMassachusetts/Academic/Teaching/ECON 755/Problem Sets'
+data_directory <- file.path(base_directory, 'Data')
+results_directory <- file.path(base_directory, 'Results')
+
+
+```
+
+# Optimization and Poisson
+
+## Count Data and Poisson Regression
+
+If our data primarily a small number of integers rather than a continuous variable,
+OLS is consistent but not very precise.
+
+Often makes more sense to estimate a Poisson regression.
+
+Let's first grab our data:
+
+## Getting data
+
+We can directly read data into R from a URL:
+
+\scriptsize
+```{r, echo=T}
+
+award_data <- read.csv("https://stats.idre.ucla.edu/stat/data/poisson_sim.csv")
+
+```
+
+## Data
+
+Let's look at the data:
+
+\scriptsize
+```{r, echo=T}
+
+glimpse(award_data)
+
+```
+## Data
+
+Let's look at the data:
+
+\scriptsize
+```{r, echo=T}
+
+p1 <- ggplot(award_data) +
+    geom_histogram(aes(x = num_awards),
+                   binwidth = 0.8, 
+                 color = "black", fill = "salmon") +
+  labs(x = "Number of awards", y = "Count")
+
+```
+
+
+## Data
+
+Let's look at the data:
+
+\tiny
+```{r, echo=T}
+
+print(p1)
+
+```
+
+
+## Data
+
+This data looks like a good candidate for a Poisson regression.
+
+Why? Small number of heavily skewed-right integers.
+
+
+## OLS
+
+Let's first look at what the OLS regression looks like:
+
+
+\scriptsize
+```{r, echo=T}
+
+award_data <- award_data %>%
+  mutate(prog1 = ifelse(prog == 1, 1, 0),
+         prog2 = ifelse(prog == 2, 1, 0),
+         prog3 = ifelse(prog == 3, 1, 0)
+  )
+
+summary(lm(num_awards ~ prog2 + prog3 + math, data = award_data))
+
+```
+## Poisson Regression
+
+Let's compare that to the Poisson regression!
+
+\scriptsize
+```{r, echo=T}
+
+poisson_reg1 <- glm(num_awards ~ prog2 + prog3 + math, 
+                      family = "poisson", data = award_data)
+summary(poisson_reg1)
+
+```
+## Poisson Regression
+
+How do we interpret these estimates?
+The estimate on `prog2` suggests that being enrolled in program 2 increases a student's (log) expected number of awards by  about 1.1.
+
+## How Does Poisson Work?
+
+Poisson regression works by maximizing a likelihood function.
+
+The likelihood function asks the question: given various different parameter values, how *likely* is it that we observe the data that we do?
+
+The likelihood function for a sample of $N$ observations of $y_i$ distributed Poisson with mean and variance $exp(X'_{i} \beta)$ is
+$$L = \prod_{i=1}^{N} \frac{(e^{X'_{i} \beta})^{y_{i}}exp(-e^{X'_{i} \beta})}{y_{i}!}. $$
+
+## Poisson Regression Steps
+
+In reality, it turns out to be much easier to maximize the log of this function.
+
+So, the steps to implement this estimation are:
+
+1. Choose a starting set of parameters
+2. Use the parameters to calculate the poisson term (to the left of the product sign) for each observation
+3. Sum the log of all these terms (i.e., i through N)
+4. Sum all those terms to calculate the log-likelihood value
+5. Find the parameter values which minimize the *negative* of the log-likelihood value
+
+## Optimization
+
+There is no closed-form solution for the expression above,
+so it is necessary to find the minimized parameter values using computational optimization.
+
+We will use the `optim()` function in R,
+using a custom function that we write as the objective function,
+and some arbitrary starting values (usually zeros are fine).
+
+
+## Coding the Objective Function
+
+Our objective function is simply the Poisson log-likelihood function discussed earlier,
+where we input the parameter values and our data, and return the negative of the log-likelihood value.
+
+\scriptsize
+```{r, echo = T}
+
+log_likelihood <- function(parameters, data){
+  
+  b0 <- parameters[1] ## Take regression coefficients as inputs
+  b1 <- parameters[2]
+  b2 <- parameters[3]
+  b3 <- parameters[4]
+  
+  data <- data %>%  ## Compute poisson value for each row
+    mutate(exp_val = exp(b0 + b1*prog2 + b2*prog3 + b3*math)
+    )
+  
+  data <- data %>%
+    mutate(poi = (exp(-exp_val) * (exp_val^num_awards)) / 
+             (factorial(num_awards))
+    )
+  
+  ll <- sum(log(data$poi))  ## Calculate log-likelihood value
+  
+  return(-ll) ## Return negative of log-likelihood value
+  
+}
+```
+
+
+## Optimizing the Value
+
+We use the `optim()` function to find the minimum and compute the standard errors using the Hessian matrix
+
+
+\scriptsize
+```{r, echo=T}
+
+poisson_mle <- optim(rep(0, 4), log_likelihood, data = award_data,
+                     hessian = T, method = "BFGS")
+mle_se <- poisson_mle$hessian %>%
+  solve() %>%
+  diag() %>%
+  sqrt()
+
+mle_results <- data.frame("Coefficient" = c("(Intercept)", 
+                                            "prog2", "prog3", "math"),
+                          "Estimate" = poisson_mle$par,
+                          "Std.Error" = mle_se)
+
+```
+
+
+## Poisson Results
+
+We can take a look at the final log-likelihood value and its associated parameter values:
+
+
+\scriptsize
+```{r, echo=T}
+
+poisson_mle$value
+mle_results
+
+
+```
+## Optimization Notes
+
+If your optimiztion is not running or returning errors, you can try the following:
+
+1. Different starting parameter values 
+  - Even if the function does run, it is sometimes good to try a few different ones and make sure the parameter estimates are the same in case there is a local minimum
+2. A different optimization method
+  - The default (BFGS) works well, but look at the documentation to see if the others may be more appropriate
+
+
+# DiD Estimators
+
+## Overview of DiD
+
+DiD (Difference-in-Differences) is the workhorse of contemporary causal inference in applied microeconomics.
+
+The basic idea is to compare changes in a control unit to changes in a treated unit.
+
+The difference between those two changes (hence, Difference-in-Differences) can (sometimes) be interpreted as a *causal* effect.
+
+
+## Basic DiD
+
+Let's look at the classic Card and Krueger minimum wage study.
+
+First let's load the data:
+
+\tiny
+```{r, echo=T}
+
+ck <- read_csv("../ck_1994.csv")
+
+glimpse(ck)
+
+
+```
+
+## Basic DiD
+
+Our outcome of interest is `fte` (full-time employment).
+
+Our policy change occurs in NJ in period two (`state == NJ` and  `period == post`).
+
+Let's compare the mean difference in NJ (treated) to the mean difference in PA (control):
+
+
+\scriptsize
+```{r, echo = T}
+
+treated_pre <- ck |>
+  filter(state == "NJ" & period == "pre") |>
+  summarise(mean_fte = mean(fte, na.rm = T)) |>
+  pull(mean_fte)
+
+treated_post <- ck |>
+  filter(state == "NJ" & period == "post") |>
+  summarise(mean_fte = mean(fte, na.rm = T)) |>
+  pull(mean_fte)
+
+```
+
+## Basic DiD
+
+
+\scriptsize
+```{r, echo = T}
+
+control_pre <- ck |>
+  filter(state == "PA" & period == "pre") |>
+  summarise(mean_fte = mean(fte, na.rm = T)) |>
+  pull(mean_fte)
+
+control_post <- ck |>
+  filter(state == "PA" & period == "post") |>
+  summarise(mean_fte = mean(fte, na.rm = T)) |>
+  pull(mean_fte)
+
+diff_treated <- treated_post - treated_pre
+diff_control <- control_post - control_pre
+
+did <- diff_treated - diff_control
+
+print(did)
+
+```
+
+## DiD in regression form
+
+We will never estimate a DiD like this. We will instead use a regression.
+
+One common method to estimate a DiD:
+
+$$ y = \beta_{1}Treated_{i} + \beta_{2}Post_{t} + \beta_{3}(Treated_{i} * Post_{t}) + \epsilon_{it} $$
+where $Treated$ is 1 if the unit is in the treatment group, $Post$ is 1 if the time period is after the intevention,
+and the $\beta_{3}$ term gives the DiD estimate.
+
+## DiD in regression form
+
+Let's estimate it this way:
+
+\scriptsize
+```{r, echo = T}
+
+did1 <- feols(fte ~ treated + post + treated * post,
+              data = ck)
+summary(did1)
+
+```
+## DiD with Fixed Effects
+
+Much more common (especially in social sciences) is to estimate the DiD with the following regression:
+
+$$ y = \beta_{1}D_{it} + \gamma_{i} + \tau_(t) + \epsilon_{it} $$
+where $D_{it}$ equals 1 if unit i is treated at time t, $\gamma_{i}$ is the unit fixed effect, and $\tau_{t}$ is the time fixed effect.
+
+This is called the Two-Way Fixed Effects (TWFE) estimator and is the most important regression model in applied microeconomics.
+
+## DiD with Fixed Effects
+
+Let's first create our $D_{it}$ variable and call it `treat`, the estimate the regression.
+
+\scriptsize
+```{r, echo = T}
+
+ck <- ck |>
+  mutate(treat = case_when(state == "NJ" & period == "post" ~ 1,
+                           TRUE ~ 0))
+
+twfe <- feols(fte ~ treat |
+                state + time,
+              data = ck)
+summary(twfe)
+
+```
+## Advanced DiD Models
+
+In economics, we will often have multiple treated units and control units,
+often studying some state-level policy changes such as the minimum wage.
+
+Econometric problems can arise when using the TWFE model,
+especially when the roll out of these treatments is not simultaneous.
+
+In these cases, we need to rely on alternative ways of estimating DiD models,
+which also allow us to estimate the DiD for different time periods (e.g.,  3 years after treatment, 2 years before, etc.).
+
+While there are important differences between the estimators,
+they all share the same similarity in that they are more careful about choosing which units treated units are being compared to and rule out 
+*forbidden comparisons:* comparing newly treated units to already treated units.
+
+## Advanced DiD Model 1: LP-DiD
+
+Similar (often identical) to the stacked DiD approach in Cengiz et al. (2019).
+
+To do LP-DiD estimates in R,
+we first need to download the package.
+
+Since this package is hosted on GitHub, it is a slightly different code:
+
+\scriptsize
+```{r, echo = T, eval=F}
+
+install.packages("devtools")
+devtools::install_github("alexCardazzi/lpdid")
+
+```
+\scriptsize
+```{r, echo=T}
+library(lpdid)
+
+```
+
+## Advanced DiD Model 1: CS-DiD
+
+We will also need to grab the `did` package to do CS-DiD.
+
+\scriptsize
+```{r, echo = T, eval=F}
+
+install.packages("did")
+
+```
+\scriptsize
+```{r, echo=T}
+library(did)
+
+```
+
+
+## A Note on Data Shape
+
+Depending on which package you are using, these functions may require you to have the data, and especially the treatment variables, organized in certain ways.
+
+In general, the data will all need to be in panel format, like that below:
+
+\scriptsize
+```{r, echo = T}
+
+panel_ex = tibble(
+  state = c("NC", "NC", "MA", "MA", "CA", "CA"),
+  year = c(2012, 2013, 2012, 2013, 2012, 2013),
+  y = c(123, 561, 95, 21, 123, 313),
+  treated = c(0, 0, 0, 0, 1, 1),
+  post = c(0, 1, 0, 1, 0, 1),
+  treat = c(0, 0, 0, 0, 0, 1)
+)
+
+```
+
+## A Note on Data Shape
+\scriptsize
+```{r, echo=T}
+
+knitr::kable(panel_ex, format = "markdown")
+
+```
+
+## A Note on Data Shape
+
+It is also useful (and necessary) to have variables which denote the treatment cohort (i.e., the year in which a unit is treated) (for CS-DID),
+as well as a lagged treatment variable which equals 1 only in the initial year of treatment.
+
+\scriptsize
+```{r, echo = T}
+
+panel_ex = tibble(
+  state = c("NC", "NC", "MA", "MA", "CA", "CA"),
+  year = c(2012, 2013, 2012, 2013, 2012, 2013),
+  y = c(123, 561, 95, 21, 123, 313),
+  treated = c(0, 0, 0, 0, 1, 1),
+  post = c(0, 1, 0, 1, 0, 1),
+  treat = c(0, 0, 0, 0, 0, 1),
+  cohort = c(0, 0, 0, 0, 2013, 2013)
+)
+
+```
+
+
+## A Note on Data Shape
+\scriptsize
+```{r, echo=T}
+
+knitr::kable(panel_ex, format = "markdown")
+
+```
+
+## Generating a data set
+
+Let's first generate a test data set so we can know for sure if these estimators are working.
+Let's say there are 50 states and 15 years of data.
+Let's say states number 1 to 15 are group 1, and states number 16 - 30 are group 2. 
+Assume states 31 - 50 are group 0 (never treated).
+Assume groups 1 and 2 are treated at year 9.
+
+\scriptsize
+```{r, echo=T}
+
+state <- 1:50
+year <- 1:15
+
+sim_df <- expand_grid(state, year)
+
+
+```
+
+## Generating a data set
+
+Let's create some identifying variables to help us with this estimation.
+
+\tiny
+```{r, echo=T}
+
+sim_df <- sim_df |>
+  mutate(group = case_when(state <= 15 ~ 1,
+                           state >= 16 & state <= 30 ~ 2,
+                           state >= 31 ~ 0))
+
+sim_df <- sim_df |>
+  mutate(cohort = case_when(group == 0 ~ 0,
+                            group == 1 ~ 9,
+                            group == 2 ~ 9))
+
+sim_df <- sim_df |>
+  mutate(treat = case_when(cohort == 0 ~ 0,
+                           year >= cohort ~ 1,
+                           TRUE ~ 0))
+
+sim_df <- sim_df |>
+  mutate(treatshock = case_when(cohort == 0 ~ 0,
+                           year == cohort ~ 1,
+                           TRUE ~ 0))
+
+```
+
+## Generating a data set
+
+Now let's generate the outcome variable.
+
+Let's say the true treatment effect for group 1 is 0.2 and is 0.1 for group 2 (heterogeneous treatment effects). 
+Both groups are treated in year 9.
+
+Then, the outcome is equal to:
+
+$$ y_{st} = \beta_{s}Treat_{st} + \mu{s} + \tau_{t} + \epsilon_{st} $$
+
+where we draw the $\mu_{s}$, $\tau_{t}$, and $\epsilon_{st}$ from a normal distribution.
+
+Remember to set the seed before generating random numbers!
+
+## Generating a data set
+
+\tiny
+```{r, echo=T}
+set.seed(94578161)
+
+mu <- tibble(state = 1:50) |>
+  mutate(mu_s = rnorm(50, mean = 0, sd = 0.1))
+  
+
+tau <- tibble(year = 1:15) |>
+  mutate(tau_t = rnorm(15, mean = 0, sd = 0.05))
+
+sim_df <- sim_df |>
+  left_join(mu, by = "state") |>
+  left_join(tau, by = "year")
+
+sim_df <- sim_df |>
+  mutate(eps_st = rnorm(nrow(sim_df), mean = 0, sd = 0.05))
+
+sim_df <- sim_df |>
+  mutate(beta = case_when(group == 1 ~ 0.2,
+                          group == 2 ~ 0.1,
+                          group == 0 ~ 0
+                          ))
+
+sim_df <- sim_df |>
+  mutate(y = beta * treat + mu_s + tau_t + eps_st)
+
+```
+
+## Estimating the Treatment Effect
+
+Let's now test our models and see if we can get the right treatment effect.
+
+First, a standard TWFE model:
+\scriptsize
+```{r, echo=T}
+
+stwfe <- feols(y ~ treat | 
+                 state + year,
+               data = sim_df)
+summary(stwfe)
+
+```
+
+## Estimating LP-DiD
+
+Implementing these new DiD estimators is easy to do once installed, but be sure to look at the documentation to understand what exactly each argument does/needs.
+
+Let's use LP-DiD and estimate an event study:
+
+\scriptsize
+```{r, echo=T}
+
+lpdid1 <- lpdid(sim_df, 
+                window = c(-3, 4),
+                y = "y",
+                unit_index = "state",
+                time_index = "year",
+                treat_status = "treatshock"
+                )
+
+```
+## CS-DiD
+
+Now let's estimate the model using the CS-DiD estimator.
+
+We need to first estimate the group-time effects,
+then call a different function to aggregate those effects into an event study framework.
+\scriptsize
+```{r, echo=T}
+
+csdid1 <- att_gt(yname = "y",
+                   tname = "year",
+                   idname = "state",
+                   gname = "cohort",
+                   control_group = "nevertreated",
+                   allow_unbalanced_panel = T,
+                   clustervars = "state",
+                   base_period = "universal",
+                   data = sim_df)
+
+```
+## CS-DiD
+
+\tiny
+```{r, echo=T}
+  csdid_est <- aggte(csdid1, type = "dynamic",
+                      min_e = -3,
+                      max_e = 4, 
+                      na.rm = T)
+  
+  csdid_est
+
+```
