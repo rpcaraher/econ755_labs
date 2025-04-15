@@ -1,0 +1,2824 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.3.8)  15 APR 2025 09:20
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**lab4_slides.tex
+(./lab4_slides.tex
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2022-02-24> (/usr/local/texlive/2022/texmf-dist/tex/latex
+/beamer/beamer.cls
+Document Class: beamer 2022/02/08 v3.66 A class for typesetting presentations
+(/usr/local/texlive/2022/texmf-dist/tex/latex/beamer/beamerbasemodes.sty (/usr/
+local/texlive/2022/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count185
+)
+\beamer@tempbox=\box50
+\beamer@tempcount=\count186
+\c@beamerpauses=\count187
+(/usr/local/texlive/2022/texmf-dist/tex/latex/beamer/beamerbasedecode.sty
+\beamer@slideinframe=\count188
+\beamer@minimum=\count189
+\beamer@decode@box=\box51
+)
+\beamer@commentbox=\box52
+\beamer@modecount=\count190
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+)
+\headdp=\dimen138
+\footheight=\dimen139
+\sidebarheight=\dimen140
+\beamer@tempdim=\dimen141
+\beamer@finalheight=\dimen142
+\beamer@animht=\dimen143
+\beamer@animdp=\dimen144
+\beamer@animwd=\dimen145
+\beamer@leftmargin=\dimen146
+\beamer@rightmargin=\dimen147
+\beamer@leftsidebar=\dimen148
+\beamer@rightsidebar=\dimen149
+\beamer@boxsize=\dimen150
+\beamer@vboxoffset=\dimen151
+\beamer@descdefault=\dimen152
+\beamer@descriptionwidth=\dimen153
+\beamer@lastskip=\skip47
+\beamer@areabox=\box53
+\beamer@animcurrent=\box54
+\beamer@animshowbox=\box55
+\beamer@sectionbox=\box56
+\beamer@logobox=\box57
+\beamer@linebox=\box58
+\beamer@sectioncount=\count191
+\beamer@subsubsectionmax=\count192
+\beamer@subsectionmax=\count193
+\beamer@sectionmax=\count194
+\beamer@totalheads=\count195
+\beamer@headcounter=\count196
+\beamer@partstartpage=\count197
+\beamer@sectionstartpage=\count198
+\beamer@subsectionstartpage=\count199
+\beamer@animationtempa=\count266
+\beamer@animationtempb=\count267
+\beamer@xpos=\count268
+\beamer@ypos=\count269
+\beamer@ypos@offset=\count270
+\beamer@showpartnumber=\count271
+\beamer@currentsubsection=\count272
+\beamer@coveringdepth=\count273
+\beamer@sectionadjust=\count274
+\beamer@toclastsection=\count275
+\beamer@tocsectionnumber=\count276
+(/usr/local/texlive/2022/texmf-dist/tex/latex/beamer/beamerbaseoptions.sty (/us
+r/local/texlive/2022/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks16
+))
+\beamer@paperwidth=\skip48
+\beamer@paperheight=\skip49
+(/usr/local/texlive/2022/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+(/usr/local/texlive/2022/texmf-dist/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+)
+\Gm@cnth=\count277
+\Gm@cntv=\count278
+\c@Gm@tempcnt=\count279
+\Gm@bindingoffset=\dimen154
+\Gm@wd@mp=\dimen155
+\Gm@odd@mp=\dimen156
+\Gm@even@mp=\dimen157
+\Gm@layoutwidth=\dimen158
+\Gm@layoutheight=\dimen159
+\Gm@layouthoffset=\dimen160
+\Gm@layoutvoffset=\dimen161
+\Gm@dimlist=\toks17
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/math/pgfmath.sty (/usr/loca
+l/texlive/2022/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.te
+x
+\pgfutil@everybye=\toks18
+\pgfutil@tempdima=\dimen162
+\pgfutil@tempdimb=\dimen163
+
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-li
+sts.tex))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box59
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/pgf.revision.tex)
+Package: pgfrcs 2021/05/15 v3.1.9a (3.1.9a)
+)) (/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty (/us
+r/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks19
+\pgfkeys@temptoks=\toks20
+
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.c
+ode.tex
+\pgfkeys@tmptoks=\toks21
+))) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex (
+/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex (/
+usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex
+\pgf@x=\dimen164
+\pgf@xa=\dimen165
+\pgf@xb=\dimen166
+\pgf@xc=\dimen167
+\pgf@y=\dimen168
+\pgf@ya=\dimen169
+\pgf@yb=\dimen170
+\pgf@yc=\dimen171
+\c@pgf@counta=\count280
+\c@pgf@countb=\count281
+\c@pgf@countc=\count282
+\c@pgf@countd=\count283
+)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+\pgfmath@dimen=\dimen172
+\pgfmath@count=\count284
+\pgfmath@box=\box60
+\pgfmath@toks=\toks22
+\pgfmath@stack@operand=\toks23
+\pgfmath@stack@operation=\toks24
+)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.
+tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic
+.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigo
+nometric.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.rando
+m.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.compa
+rison.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.
+code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round
+.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.
+code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integ
+erarithmetics.code.tex))) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/m
+ath/pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count285
+))) (/usr/local/texlive/2022/texmf-dist/tex/latex/base/size11.clo
+File: size11.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty (/us
+r/local/texlive/2022/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2021/03/04 v1.4d Standard LaTeX Graphics (DPC,SPQR)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 107.
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen173
+\Gin@req@width=\dimen174
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+Package: pgfsys 2021/05/15 v3.1.9a (3.1.9a)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)
+\pgf@x=\dimen175
+\pgf@y=\dimen176
+\pgf@xa=\dimen177
+\pgf@ya=\dimen178
+\pgf@xb=\dimen179
+\pgf@yb=\dimen180
+\pgf@xc=\dimen181
+\pgf@yc=\dimen182
+\pgf@xd=\dimen183
+\pgf@yd=\dimen184
+\w@pgf@writea=\write3
+\r@pgf@reada=\read2
+\c@pgf@counta=\count286
+\c@pgf@countb=\count287
+\c@pgf@countc=\count288
+\c@pgf@countd=\count289
+\t@pgf@toka=\toks25
+\t@pgf@tokb=\toks26
+\t@pgf@tokc=\toks27
+\pgf@sys@id@count=\count290
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+File: pgf.cfg 2021/05/15 v3.1.9a (3.1.9a)
+)
+Driver file for pgf: pgfsys-pdftex.def
+
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.d
+ef
+File: pgfsys-pdftex.def 2021/05/15 v3.1.9a (3.1.9a)
+
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-p
+df.def
+File: pgfsys-common-pdf.def 2021/05/15 v3.1.9a (3.1.9a)
+)))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.
+code.tex
+File: pgfsyssoftpath.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfsyssoftpath@smallbuffer@items=\count291
+\pgfsyssoftpath@bigbuffer@items=\count292
+)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.
+code.tex
+File: pgfsysprotocol.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)) (/usr/local/texlive/2022/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2021/10/31 v2.13 LaTeX color extensions (UK)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 227.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1352.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1356.
+Package xcolor Info: Model `RGB' extended on input line 1368.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1370.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1371.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1372.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1373.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1374.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1375.
+)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+Package: pgfcore 2021/05/15 v3.1.9a (3.1.9a)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex) (/us
+r/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.co
+de.tex
+File: pgfcorepoints.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@picminx=\dimen185
+\pgf@picmaxx=\dimen186
+\pgf@picminy=\dimen187
+\pgf@picmaxy=\dimen188
+\pgf@pathminx=\dimen189
+\pgf@pathmaxx=\dimen190
+\pgf@pathminy=\dimen191
+\pgf@pathmaxy=\dimen192
+\pgf@xx=\dimen193
+\pgf@xy=\dimen194
+\pgf@yx=\dimen195
+\pgf@yy=\dimen196
+\pgf@zx=\dimen197
+\pgf@zy=\dimen198
+)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconst
+ruct.code.tex
+File: pgfcorepathconstruct.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@path@lastx=\dimen199
+\pgf@path@lasty=\dimen256
+)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage
+.code.tex
+File: pgfcorepathusage.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@shorten@end@additional=\dimen257
+\pgf@shorten@start@additional=\dimen258
+)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.co
+de.tex
+File: pgfcorescopes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfpic=\box61
+\pgf@hbox=\box62
+\pgf@layerbox@main=\box63
+\pgf@picture@serial@count=\count293
+)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicst
+ate.code.tex
+File: pgfcoregraphicstate.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgflinewidth=\dimen259
+)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransform
+ations.code.tex
+File: pgfcoretransformations.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@pt@x=\dimen260
+\pgf@pt@y=\dimen261
+\pgf@pt@temp=\dimen262
+)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.cod
+e.tex
+File: pgfcorequick.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.c
+ode.tex
+File: pgfcoreobjects.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathproce
+ssing.code.tex
+File: pgfcorepathprocessing.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.co
+de.tex
+File: pgfcorearrows.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfarrowsep=\dimen263
+)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.cod
+e.tex
+File: pgfcoreshade.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@max=\dimen264
+\pgf@sys@shading@range@num=\count294
+\pgf@shadingcount=\count295
+)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.cod
+e.tex
+File: pgfcoreimage.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.
+code.tex
+File: pgfcoreexternal.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfexternal@startupbox=\box64
+))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.co
+de.tex
+File: pgfcorelayers.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretranspare
+ncy.code.tex
+File: pgfcoretransparency.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.
+code.tex
+File: pgfcorepatterns.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.
+tex
+File: pgfcorerdf.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+))) (/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/utilities/xxcolor.sty
+Package: xxcolor 2003/10/24 ver 0.1
+\XC@nummixins=\count296
+\XC@countmixins=\count297
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/base/atbegshi-ltx.sty
+Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
+package with kernel methods
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2022-02-21 v7.00n Hypertext links for LaTeX
+(/usr/local/texlive/2022/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/hycolor/hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty
+Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/auxhook/auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
+)
+\@linkdim=\dimen265
+\Hy@linkcounter=\count298
+\Hy@pagecounter=\count299
+(/usr/local/texlive/2022/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2022-02-21 v7.00n Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/intcalc/intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/etexcmds/etexcmds.sty
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
+)
+\Hy@SavedSpaceFactor=\count300
+(/usr/local/texlive/2022/texmf-dist/tex/latex/hyperref/puenc.def
+File: puenc.def 2022-02-21 v7.00n Hyperref: PDF Unicode definition (HO)
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
+)
+Package hyperref Info: Option `unicode' set `true' on input line 4018.
+Package hyperref Info: Option `bookmarks' set `true' on input line 4018.
+Package hyperref Info: Option `bookmarksopen' set `true' on input line 4018.
+Package hyperref Info: Option `implicit' set `false' on input line 4018.
+Package hyperref Info: Hyper figures OFF on input line 4137.
+Package hyperref Info: Link nesting OFF on input line 4142.
+Package hyperref Info: Hyper index ON on input line 4145.
+Package hyperref Info: Plain pages OFF on input line 4152.
+Package hyperref Info: Backreferencing OFF on input line 4157.
+Package hyperref Info: Implicit mode OFF; no redefinition of LaTeX internals.
+Package hyperref Info: Bookmarks ON on input line 4390.
+\c@Hy@tempcnt=\count301
+(/usr/local/texlive/2022/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip16
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 4749.
+\XeTeXLinkMargin=\dimen266
+(/usr/local/texlive/2022/texmf-dist/tex/generic/bitset/bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
+))
+\Fld@menulength=\count302
+\Field@Width=\dimen267
+\Fld@charsize=\dimen268
+Package hyperref Info: Hyper figures OFF on input line 6027.
+Package hyperref Info: Link nesting OFF on input line 6032.
+Package hyperref Info: Hyper index ON on input line 6035.
+Package hyperref Info: backreferencing OFF on input line 6042.
+Package hyperref Info: Link coloring OFF on input line 6047.
+Package hyperref Info: Link coloring with OCG OFF on input line 6052.
+Package hyperref Info: PDF/A mode OFF on input line 6057.
+LaTeX Info: Redefining \ref on input line 6097.
+LaTeX Info: Redefining \pageref on input line 6101.
+\Hy@abspage=\count303
+
+Package hyperref Message: Stopped early.
+
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+(/usr/local/texlive/2022/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2022-02-21 v7.00n Hyperref driver for pdfTeX
+(/usr/local/texlive/2022/texmf-dist/tex/latex/base/atveryend-ltx.sty
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
+kage
+with kernel methods
+)
+\Fld@listcount=\count304
+\c@bookmark@seq@number=\count305
+
+(/usr/local/texlive/2022/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
+
+(/usr/local/texlive/2022/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+86.
+)) (/usr/local/texlive/2022/texmf-dist/tex/latex/beamer/beamerbaserequires.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/beamer/beamerbasecompatibility.st
+y) (/usr/local/texlive/2022/texmf-dist/tex/latex/beamer/beamerbasefont.sty (/us
+r/local/texlive/2022/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+(/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks28
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/sansmathaccent/sansmathaccent.sty
+Package: sansmathaccent 2020/01/31
+(/usr/local/texlive/2022/texmf-dist/tex/latex/koma-script/scrlfile.sty
+Package: scrlfile 2021/11/13 v3.35 KOMA-Script package (file load hooks)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/koma-script/scrlfile-hook.sty
+Package: scrlfile-hook 2021/11/13 v3.35 KOMA-Script package (using LaTeX hooks)
+
+(/usr/local/texlive/2022/texmf-dist/tex/latex/koma-script/scrlogo.sty
+Package: scrlogo 2021/11/13 v3.35 KOMA-Script package (logo)
+))))) (/usr/local/texlive/2022/texmf-dist/tex/latex/beamer/beamerbasetranslator
+.sty (/usr/local/texlive/2022/texmf-dist/tex/latex/translator/translator.sty
+Package: translator 2021-05-31 v1.12d Easy translation of strings in LaTeX
+)) (/usr/local/texlive/2022/texmf-dist/tex/latex/beamer/beamerbasemisc.sty) (/u
+sr/local/texlive/2022/texmf-dist/tex/latex/beamer/beamerbasetwoscreens.sty) (/u
+sr/local/texlive/2022/texmf-dist/tex/latex/beamer/beamerbaseoverlay.sty
+\beamer@argscount=\count306
+\beamer@lastskipcover=\skip50
+\beamer@trivlistdepth=\count307
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/beamer/beamerbasetitle.sty) (/u
+sr/local/texlive/2022/texmf-dist/tex/latex/beamer/beamerbasesection.sty
+\c@lecture=\count308
+\c@part=\count309
+\c@section=\count310
+\c@subsection=\count311
+\c@subsubsection=\count312
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/beamer/beamerbaseframe.sty
+\beamer@framebox=\box65
+\beamer@frametitlebox=\box66
+\beamer@zoombox=\box67
+\beamer@zoomcount=\count313
+\beamer@zoomframecount=\count314
+\beamer@frametextheight=\dimen269
+\c@subsectionslide=\count315
+\beamer@frametopskip=\skip51
+\beamer@framebottomskip=\skip52
+\beamer@frametopskipautobreak=\skip53
+\beamer@framebottomskipautobreak=\skip54
+\beamer@envbody=\toks29
+\framewidth=\dimen270
+\c@framenumber=\count316
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/beamer/beamerbaseverbatim.sty
+\beamer@verbatimfileout=\write4
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/beamer/beamerbaseframesize.sty
+\beamer@splitbox=\box68
+\beamer@autobreakcount=\count317
+\beamer@autobreaklastheight=\dimen271
+\beamer@frametitletoks=\toks30
+\beamer@framesubtitletoks=\toks31
+)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/beamer/beamerbaseframecomponents.
+sty
+\beamer@footins=\box69
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/beamer/beamerbasecolor.sty) (/u
+sr/local/texlive/2022/texmf-dist/tex/latex/beamer/beamerbasenotes.sty
+\beamer@frameboxcopy=\box70
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/beamer/beamerbasetoc.sty) (/usr
+/local/texlive/2022/texmf-dist/tex/latex/beamer/beamerbasetemplates.sty
+\beamer@sbttoks=\toks32
+
+(/usr/local/texlive/2022/texmf-dist/tex/latex/beamer/beamerbaseauxtemplates.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/beamer/beamerbaseboxes.sty
+\bmb@box=\box71
+\bmb@colorbox=\box72
+\bmb@boxwidth=\dimen272
+\bmb@boxheight=\dimen273
+\bmb@prevheight=\dimen274
+\bmb@temp=\dimen275
+\bmb@dima=\dimen276
+\bmb@dimb=\dimen277
+\bmb@prevheight=\dimen278
+)
+\beamer@blockheadheight=\dimen279
+))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/beamer/beamerbaselocalstructure.s
+ty (/usr/local/texlive/2022/texmf-dist/tex/latex/tools/enumerate.sty
+Package: enumerate 2015/07/23 v3.00 enumerate extensions (DPC)
+\@enLab=\toks33
+)
+\beamer@bibiconwidth=\skip55
+\c@figure=\count318
+\c@table=\count319
+\abovecaptionskip=\skip56
+\belowcaptionskip=\skip57
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/beamer/beamerbasenavigation.sty
+\beamer@section@min@dim=\dimen280
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/beamer/beamerbasetheorems.sty (
+/usr/local/texlive/2022/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2021/10/15 v2.17l AMS math features
+\@mathmargin=\skip58
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2022/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+(/usr/local/texlive/2022/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks34
+\ex@=\dimen281
+)) (/usr/local/texlive/2022/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen282
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2021/08/26 v2.02 operator names
+)
+\inf@bad=\count320
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count321
+\leftroot@=\count322
+LaTeX Info: Redefining \overline on input line 399.
+\classnum@=\count323
+\DOTSCASE@=\count324
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box73
+\strutbox@=\box74
+\big@size=\dimen283
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count325
+\c@MaxMatrixCols=\count326
+\dotsspace@=\muskip17
+\c@parentequation=\count327
+\dspbrk@lvl=\count328
+\tag@help=\toks35
+\row@=\count329
+\column@=\count330
+\maxfields@=\count331
+\andhelp@=\toks36
+\eqnshift@=\dimen284
+\alignsep@=\dimen285
+\tagshift@=\dimen286
+\tagwidth@=\dimen287
+\totwidth@=\dimen288
+\lineht@=\dimen289
+\@envbody=\toks37
+\multlinegap=\skip59
+\multlinetaggap=\skip60
+\mathdisplay@stack=\toks38
+LaTeX Info: Redefining \[ on input line 2938.
+LaTeX Info: Redefining \] on input line 2939.
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/amscls/amsthm.sty
+Package: amsthm 2020/05/29 v2.20.6
+\thm@style=\toks39
+\thm@bodyfont=\toks40
+\thm@headfont=\toks41
+\thm@notefont=\toks42
+\thm@headpunct=\toks43
+\thm@preskip=\skip61
+\thm@postskip=\skip62
+\thm@headsep=\skip63
+\dth@everypar=\toks44
+)
+\c@theorem=\count332
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/beamer/beamerbasethemes.sty)) (
+/usr/local/texlive/2022/texmf-dist/tex/latex/beamer/beamerthemedefault.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/beamer/beamerfontthemedefault.sty
+)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/beamer/beamercolorthemedefault.st
+y)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/beamer/beamerinnerthemedefault.st
+y
+\beamer@dima=\dimen290
+\beamer@dimb=\dimen291
+)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/beamer/beamerouterthemedefault.st
+y))) (/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/utilities/pgfpages.sty
+Package: pgfpages 2011/01/05 ver 0.02
+(/usr/local/texlive/2022/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count333
+\calc@Bcount=\count334
+\calc@Adimen=\dimen292
+\calc@Bdimen=\dimen293
+\calc@Askip=\skip64
+\calc@Bskip=\skip65
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count335
+\calc@Cskip=\skip66
+)
+\pgf@logicalpages=\count336
+\pgf@firstshipout=\count337
+\pgf@lastshipout=\count338
+\pgf@currentshipout=\count339
+\pgf@cpn=\count340
+\pgf@shipoutnextto=\count341
+\pgfphysicalheight=\dimen294
+\pgfphysicalwidth=\dimen295
+\pgfpages@shipoutbox=\box75
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2021/02/14 v1.3d Input encoding file
+\inpenc@prehook=\toks45
+\inpenc@posthook=\toks46
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/base/textcomp.sty
+Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/lmodern.sty
+Package: lmodern 2015/05/01 v1.6.1 Latin Modern Fonts
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/lmm/m/it on input line 23.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/lmsy/m/n on input line 24.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 25.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 26.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/lmm/b/it on input line 27.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/lmsy/b/n on input line 28.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 29.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 31.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 32.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/lmr/m/it on input line 33.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> OT1/lmss/bx/n on input line 36.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/lmr/bx/it on input line 37.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/upquote/upquote.sty
+Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
+tim
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/microtype/microtype.sty
+Package: microtype 2022/03/14 v3.0d Micro-typographical refinements (RS)
+\MT@toks=\toks47
+\MT@tempbox=\box76
+\MT@count=\count342
+LaTeX Info: Redefining \noprotrusionifhmode on input line 1027.
+LaTeX Info: Redefining \leftprotrusion on input line 1028.
+LaTeX Info: Redefining \rightprotrusion on input line 1036.
+LaTeX Info: Redefining \textls on input line 1195.
+\MT@outer@kern=\dimen296
+LaTeX Info: Redefining \textmicrotypecontext on input line 1781.
+\MT@listname@count=\count343
+(/usr/local/texlive/2022/texmf-dist/tex/latex/microtype/microtype-pdftex.def
+File: microtype-pdftex.def 2022/03/14 v3.0d Definitions specific to pdftex (RS)
+
+LaTeX Info: Redefining \lsstyle on input line 900.
+LaTeX Info: Redefining \lslig on input line 900.
+\MT@outer@space=\skip67
+)
+Package microtype Info: Loading configuration file microtype.cfg.
+(/usr/local/texlive/2022/texmf-dist/tex/latex/microtype/microtype.cfg
+File: microtype.cfg 2022/03/14 v3.0d microtype main configuration file (RS)
+)) (/usr/local/texlive/2022/texmf-dist/tex/latex/parskip/parskip.sty
+Package: parskip 2021-03-14 v2.0h non-zero parskip adjustments
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+Package: fancyvrb 2021/12/21 4.1b verbatim text (tvz,hv)
+\FV@CodeLineNo=\count344
+\FV@InFile=\read3
+\FV@TabBox=\box77
+\c@FancyVerbLine=\count345
+\FV@StepNumber=\count346
+\FV@OutFile=\write5
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/framed/framed.sty
+Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
+\OuterFrameSep=\skip68
+\fb@frw=\dimen297
+\fb@frh=\dimen298
+\FrameRule=\dimen299
+\FrameSep=\dimen300
+)
+\pandoc@box=\box78
+(/usr/local/texlive/2022/texmf-dist/tex/latex/bookmark/bookmark.sty
+Package: bookmark 2020-11-06 v1.29 PDF bookmarks (HO)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
+File: bkm-pdftex.def 2020-11-06 v1.29 bookmark driver for pdfTeX (HO)
+\BKM@id=\count347
+)) (/usr/local/texlive/2022/texmf-dist/tex/latex/xurl/xurl.sty
+Package: xurl 2022/01/09 v 0.10 modify URL breaks
+)
+LaTeX Font Info:    Trying to load font information for T1+lmss on input line 1
+48.
+(/usr/local/texlive/2022/texmf-dist/tex/latex/lm/t1lmss.fd
+File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2022-02-07 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count348
+\l__pdf_internal_box=\box79
+) (./lab4_slides.aux)
+\openout1 = `lab4_slides.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 148.
+LaTeX Font Info:    ... okay on input line 148.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 148.
+LaTeX Font Info:    ... okay on input line 148.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 148.
+LaTeX Font Info:    ... okay on input line 148.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 148.
+LaTeX Font Info:    ... okay on input line 148.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 148.
+LaTeX Font Info:    ... okay on input line 148.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 148.
+LaTeX Font Info:    ... okay on input line 148.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 148.
+LaTeX Font Info:    ... okay on input line 148.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 148.
+LaTeX Font Info:    ... okay on input line 148.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 148.
+LaTeX Font Info:    ... okay on input line 148.
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: custom
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: includehead includefoot 
+* h-part:(L,W,R)=(28.45274pt, 307.28987pt, 28.45274pt)
+* v-part:(T,H,B)=(0.0pt, 273.14662pt, 0.0pt)
+* \paperwidth=364.19536pt
+* \paperheight=273.14662pt
+* \textwidth=307.28987pt
+* \textheight=244.6939pt
+* \oddsidemargin=-43.81725pt
+* \evensidemargin=-43.81725pt
+* \topmargin=-72.26999pt
+* \headheight=14.22636pt
+* \headsep=0.0pt
+* \topskip=11.0pt
+* \footskip=14.22636pt
+* \marginparwidth=4.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+(/usr/local/texlive/2022/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count349
+\scratchdimen=\dimen301
+\scratchbox=\box80
+\nofMPsegments=\count350
+\nofMParguments=\count351
+\everyMPshowfont=\toks48
+\MPscratchCnt=\count352
+\MPscratchDim=\dimen302
+\MPnumerator=\count353
+\makeMPintoPDFobject=\count354
+\everyMPtoPDFconversion=\toks49
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+(/usr/local/texlive/2022/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+Package hyperref Info: Link coloring OFF on input line 148.
+(/usr/local/texlive/2022/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
+(/usr/local/texlive/2022/texmf-dist/tex/latex/refcount/refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/gettitlestring/gettitlestring.s
+ty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+)
+\c@section@level=\count355
+)
+LaTeX Info: Redefining \ref on input line 148.
+LaTeX Info: Redefining \pageref on input line 148.
+LaTeX Info: Redefining \nameref on input line 148.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/lmr/m/n --> OT1/cmss/m/n on input line 148.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/lmr/bx/n --> OT1/cmss/b/n on input line 148.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 148.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmss/b/n --> OT1/lmss/b/n on input line 148.
+\symnumbers=\mathgroup6
+\sympureletters=\mathgroup7
+LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
+(Font)                  OT1/lmss/m/n --> T1/lmr/m/n on input line 148.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 148.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/lmr/bx/n --> T1/lmss/b/n on input line 148.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/lmr/bx/n --> T1/lmss/b/n on input line 148.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 148.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/lmss/m/n --> T1/lmss/m/n on input line 148.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/lmss/bx/n --> T1/lmss/m/n on input line 148.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 148.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/lmr/m/it --> T1/lmss/m/it on input line 148.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/lmr/bx/it --> T1/lmss/m/it on input line 148.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 148.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/lmtt/m/n --> T1/lmtt/m/n on input line 148.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/lmtt/m/n --> T1/lmtt/m/n on input line 148.
+LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
+(Font)                  T1/lmss/m/n --> T1/lmss/b/n on input line 148.
+LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
+(Font)                  T1/lmss/m/it --> T1/lmss/b/it on input line 148.
+LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
+(Font)                  OT1/lmss/b/n --> T1/lmr/b/n on input line 148.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  T1/lmss/b/n --> T1/lmss/b/n on input line 148.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  T1/lmss/m/n --> T1/lmss/b/n on input line 148.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  T1/lmss/m/it --> T1/lmss/b/it on input line 148.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  T1/lmtt/m/n --> T1/lmtt/b/n on input line 148.
+
+(/usr/local/texlive/2022/texmf-dist/tex/latex/translator/translator-basic-dicti
+onary-English.dict
+Dictionary: translator-basic-dictionary, Language: English 
+)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/translator/translator-bibliograph
+y-dictionary-English.dict
+Dictionary: translator-bibliography-dictionary, Language: English 
+)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/translator/translator-environment
+-dictionary-English.dict
+Dictionary: translator-environment-dictionary, Language: English 
+)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/translator/translator-months-dict
+ionary-English.dict
+Dictionary: translator-months-dictionary, Language: English 
+)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/translator/translator-numbers-dic
+tionary-English.dict
+Dictionary: translator-numbers-dictionary, Language: English 
+)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/translator/translator-theorem-dic
+tionary-English.dict
+Dictionary: translator-theorem-dictionary, Language: English 
+)
+LaTeX Info: Redefining \microtypecontext on input line 148.
+Package microtype Info: Applying patch `item' on input line 148.
+Package microtype Info: Applying patch `toc' on input line 148.
+Package microtype Info: Applying patch `eqnum' on input line 148.
+
+Package microtype Warning: Unable to apply patch `footnote' on input line 148.
+
+Package microtype Info: Generating PDF output.
+Package microtype Info: Character protrusion enabled (level 2).
+Package microtype Info: Using protrusion set `basicmath'.
+Package microtype Info: Automatic font expansion enabled (level 2),
+(microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
+Package microtype Info: Using default expansion set `alltext-nott'.
+LaTeX Info: Redefining \showhyphens on input line 148.
+Package microtype Info: No adjustment of tracking.
+Package microtype Info: No adjustment of interword spacing.
+Package microtype Info: No adjustment of character kerning.
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `lmss' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+(./lab4_slides.nav) [1
+
+{/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2
+
+]
+\openout4 = `lab4_slides.vrb'.
+
+(./lab4_slides.vrb
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
+2.
+(/usr/local/texlive/2022/texmf-dist/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <6> not available
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 13.
+
+LaTeX Font Warning: Font shape `T1/lmtt/bx/it' in size <6> not available
+(Font)              Font shape `T1/lmtt/b/sl' tried instead on input line 13.
+
+LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 
+29.
+(/usr/local/texlive/2022/texmf-dist/tex/latex/lm/ts1lmtt.fd
+File: ts1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)) [3
+
+] [4
+
+] [5
+
+]
+\openout4 = `lab4_slides.vrb'.
+
+(./lab4_slides.vrb
+LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <8> not available
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 9.
+
+Overfull \hbox (41.21013pt too wide) in paragraph at lines 59--59
+[]\T1/lmtt/m/n/8 ## $ statenum            <dbl> 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+, 1, 1, 1, 1, 1, 1,~[] 
+ []
+
+
+Overfull \hbox (41.20013pt too wide) in paragraph at lines 59--59
+[]\T1/lmtt/m/n/8 ## $ quarterdate         <dbl> 80, 81, 82, 83, 84, 85, 86, 87,
+ 88, 89, 90, 91, 92~[] 
+ []
+
+
+Overfull \hbox (41.19214pt too wide) in paragraph at lines 59--59
+[]\T1/lmtt/m/n/8 ## $ year                <dbl> 1980, 1980, 1980, 1980, 1981, 1
+981, 1981, 1981, 19~[] 
+ []
+
+
+Overfull \hbox (41.21013pt too wide) in paragraph at lines 59--59
+[]\T1/lmtt/m/n/8 ## $ qtr                 <dbl> 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3
+, 4, 1, 2, 3, 4, 1,~[] 
+ []
+
+
+Overfull \hbox (41.19214pt too wide) in paragraph at lines 59--59
+[]\T1/lmtt/m/n/8 ## $ overall_emp         <dbl> 0.6237059, 0.6227944, 0.6029442
+, 0.6123795, 0.6088~[] 
+ []
+
+
+Overfull \hbox (41.20413pt too wide) in paragraph at lines 59--59
+[]\T1/lmtt/m/n/8 ## $ age_group_sh1       <dbl> 0.13001385, 0.12324983, 0.12576
+827, 0.12388597, 0.~[] 
+ []
+
+
+Overfull \hbox (41.19014pt too wide) in paragraph at lines 59--59
+[]\T1/lmtt/m/n/8 ## $ age_group_sh2       <dbl> 0.2463664, 0.2466077, 0.2594528
+, 0.2656242, 0.2646~[] 
+ []
+
+
+Overfull \hbox (41.20213pt too wide) in paragraph at lines 59--59
+[]\T1/lmtt/m/n/8 ## $ age_group_sh3       <dbl> 0.2180452, 0.2252479, 0.2170429
+, 0.2099088, 0.2232~[] 
+ []
+
+
+Overfull \hbox (41.19814pt too wide) in paragraph at lines 59--59
+[]\T1/lmtt/m/n/8 ## $ age_group_sh4       <dbl> 0.1650004, 0.1778168, 0.1805827
+, 0.1773866, 0.1660~[] 
+ []
+
+
+Overfull \hbox (41.19814pt too wide) in paragraph at lines 59--59
+[]\T1/lmtt/m/n/8 ## $ age_group_sh5       <dbl> 0.1737192, 0.1657912, 0.1568459
+, 0.1503734, 0.1546~[] 
+ []
+
+
+Overfull \hbox (41.19414pt too wide) in paragraph at lines 59--59
+[]\T1/lmtt/m/n/8 ## $ age_group_sh6       <dbl> 0.06685495, 0.06128659, 0.06030
+744, 0.07282100, 0.~[] 
+ []
+
+
+Overfull \hbox (41.17615pt too wide) in paragraph at lines 59--59
+[]\T1/lmtt/m/n/8 ## $ division            <dbl> 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6
+, 6, 6, 6, 6, 6, 6,~[] 
+ []
+
+
+Overfull \hbox (41.21013pt too wide) in paragraph at lines 59--59
+[]\T1/lmtt/m/n/8 ## $ region              <dbl> 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3
+, 3, 3, 3, 3, 3, 3,~[] 
+ []
+
+
+Overfull \hbox (41.21013pt too wide) in paragraph at lines 59--59
+[]\T1/lmtt/m/n/8 ## $ quarter             <dbl> 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3
+, 4, 1, 2, 3, 4, 1,~[] 
+ []
+
+
+Overfull \hbox (41.20613pt too wide) in paragraph at lines 59--59
+[]\T1/lmtt/m/n/8 ## $ race_share1         <dbl> 0.7237110, 0.7279011, 0.7314317
+, 0.7217314, 0.7409~[] 
+ []
+
+
+Overfull \hbox (41.20013pt too wide) in paragraph at lines 59--59
+[]\T1/lmtt/m/n/8 ## $ race_share2         <dbl> 0.2733353, 0.2655723, 0.2643476
+, 0.2731366, 0.2585~[] 
+ []
+
+
+Overfull \hbox (41.20213pt too wide) in paragraph at lines 59--59
+[]\T1/lmtt/m/n/8 ## $ race_share3         <dbl> 0.0029536844, 0.0065265722, 0.0
+042207381, 0.005131~[] 
+ []
+
+
+Overfull \hbox (41.19614pt too wide) in paragraph at lines 59--59
+[]\T1/lmtt/m/n/8 ## $ hispanic_share      <dbl> 0.0061911955, 0.0053420719, 0.0
+013335996, 0.005288~[] 
+ []
+
+
+Overfull \hbox (41.19614pt too wide) in paragraph at lines 59--59
+[]\T1/lmtt/m/n/8 ## $ married_share       <dbl> 0.6359439, 0.6434138, 0.6375374
+, 0.6302283, 0.6214~[] 
+ []
+
+
+Overfull \hbox (41.20413pt too wide) in paragraph at lines 59--59
+[]\T1/lmtt/m/n/8 ## $ gender_share        <dbl> 0.4848440, 0.4884157, 0.4805697
+, 0.4902432, 0.4744~[] 
+ []
+
+
+Overfull \hbox (41.19814pt too wide) in paragraph at lines 59--59
+[]\T1/lmtt/m/n/8 ## $ teen_emp            <dbl> 0.3166310, 0.3206354, 0.3547628
+, 0.3347265, 0.3363~[] 
+ []
+
+
+Overfull \hbox (41.18814pt too wide) in paragraph at lines 59--59
+[]\T1/lmtt/m/n/8 ## $ teen_weight         <dbl> 91710628, 86657354, 92201579, 9
+0027436, 88169563, ~[] 
+ []
+
+
+Overfull \hbox (41.19814pt too wide) in paragraph at lines 59--59
+[]\T1/lmtt/m/n/8 ## $ population_weight   <dbl> 705391208, 703103230, 733106852
+, 726695975, 722423~[] 
+ []
+
+
+Overfull \hbox (41.20613pt too wide) in paragraph at lines 59--59
+[]\T1/lmtt/m/n/8 ## $ logmw               <dbl> 1.131402, 1.131402, 1.131402, 1
+.131402, 1.208960, ~[] 
+ []
+
+
+Overfull \hbox (41.20213pt too wide) in paragraph at lines 59--59
+[]\T1/lmtt/m/n/8 ## $ teen_logwage        <dbl> 1.170941, 1.206416, 1.219417, 1
+.081800, 1.252074, ~[] 
+ []
+
+
+Overfull \hbox (41.19814pt too wide) in paragraph at lines 59--59
+[]\T1/lmtt/m/n/8 ## $ hsl_under30_logwage <dbl> 1.388476, 1.419952, 1.397179, 1
+.410794, 1.413541, ~[] 
+ []
+
+
+Overfull \hbox (41.19214pt too wide) in paragraph at lines 59--59
+[]\T1/lmtt/m/n/8 ## $ hsl_under30_emp     <dbl> 0.4871166, 0.4944479, 0.5069978
+, 0.5119819, 0.4840~[] 
+ []
+
+
+Overfull \hbox (41.20013pt too wide) in paragraph at lines 59--59
+[]\T1/lmtt/m/n/8 ## $ overall_logwage     <dbl> 1.572873, 1.597126, 1.608130, 1
+.584971, 1.621818, ~[] 
+ []
+
+
+Overfull \hbox (41.20013pt too wide) in paragraph at lines 59--59
+[]\T1/lmtt/m/n/8 ## $ hsl_share           <dbl> 0.7911024, 0.7783970, 0.7510846
+, 0.7714990, 0.8007~[] 
+ []
+
+
+Overfull \hbox (41.20613pt too wide) in paragraph at lines 59--59
+[]\T1/lmtt/m/n/8 ## $ hsl_under30_weight  <dbl> 2161241, 2122440, 2107775, 2107
+687, 2208557, 22138~[] 
+ []
+
+
+Overfull \hbox (41.20013pt too wide) in paragraph at lines 59--59
+[]\T1/lmtt/m/n/8 ## $ emp_sh_ind1         <dbl> 0.009734803, 0.010502776, 0.010
+714994, 0.010557259~[] 
+ []
+
+
+Overfull \hbox (41.19814pt too wide) in paragraph at lines 59--59
+[]\T1/lmtt/m/n/8 ## $ emp_sh_ind2         <dbl> 0.01604415, 0.01621284, 0.01616
+817, 0.01643912, 0.~[] 
+ []
+
+
+Overfull \hbox (41.19214pt too wide) in paragraph at lines 59--59
+[]\T1/lmtt/m/n/8 ## $ emp_sh_ind3         <dbl> 0.06820058, 0.06950648, 0.07059
+383, 0.06661279, 0.~[] 
+ []
+
+
+Overfull \hbox (41.20213pt too wide) in paragraph at lines 59--59
+[]\T1/lmtt/m/n/8 ## $ emp_sh_ind4         <dbl> 0.3598479, 0.3547054, 0.3458091
+, 0.3498070, 0.3532~[] 
+ []
+
+
+Overfull \hbox (41.19214pt too wide) in paragraph at lines 59--59
+[]\T1/lmtt/m/n/8 ## $ emp_sh_ind5         <dbl> 0.06156848, 0.06199024, 0.06243
+580, 0.06230976, 0.~[] 
+ []
+
+
+Overfull \hbox (41.18814pt too wide) in paragraph at lines 59--59
+[]\T1/lmtt/m/n/8 ## $ emp_sh_ind6         <dbl> 0.06989674, 0.06992025, 0.07045
+956, 0.07009008, 0.~[] 
+ []
+
+
+Overfull \hbox (41.19414pt too wide) in paragraph at lines 59--59
+[]\T1/lmtt/m/n/8 ## $ emp_sh_ind7         <dbl> 0.1925722, 0.1921635, 0.1946832
+, 0.1962714, 0.1915~[] 
+ []
+
+
+Overfull \hbox (41.20013pt too wide) in paragraph at lines 59--59
+[]\T1/lmtt/m/n/8 ## $ emp_sh_ind8         <dbl> 0.05446045, 0.05464048, 0.05567
+204, 0.05502496, 0.~[] 
+ []
+
+
+Overfull \hbox (41.20213pt too wide) in paragraph at lines 59--59
+[]\T1/lmtt/m/n/8 ## $ emp_sh_ind9         <dbl> 0.1676747, 0.1703580, 0.1734633
+, 0.1728877, 0.1771~[] 
+ []
+
+
+Overfull \hbox (41.21013pt too wide) in paragraph at lines 59--59
+[]\T1/lmtt/m/n/8 ## $ MW                  <dbl> 3.10, 3.10, 3.10, 3.10, 3.35, 3
+.35, 3.35, 3.35, 3.~[] 
+ []
+
+
+Overfull \hbox (41.19214pt too wide) in paragraph at lines 59--59
+[]\T1/lmtt/m/n/8 ## $ unemp_rate          <dbl> 7.533333, 8.766667, 9.633333, 9
+.633333, 9.700000, ~[] 
+ []
+
+
+Overfull \hbox (41.21013pt too wide) in paragraph at lines 59--59
+[]\T1/lmtt/m/n/8 ## $ stateabb            <chr> "AL", "AL", "AL", "AL", "AL", "
+AL", "AL", "AL", "A~[] 
+ []
+
+)
+Overfull \vbox (219.49438pt too high) detected at line 258
+ []
+
+[6
+
+]
+LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 
+274.
+(/usr/local/texlive/2022/texmf-dist/tex/latex/lm/ot1lmss.fd
+File: ot1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `lmss' (encoding: OT1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 2
+74.
+(/usr/local/texlive/2022/texmf-dist/tex/latex/lm/omllmm.fd
+File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
+274.
+(/usr/local/texlive/2022/texmf-dist/tex/latex/lm/omslmsy.fd
+File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
+274.
+(/usr/local/texlive/2022/texmf-dist/tex/latex/lm/omxlmex.fd
+File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.95> on input line 274.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 274.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 274.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 274
+.
+(/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/microtype/mt-msa.cfg
+File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 274
+.
+(/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/microtype/mt-msb.cfg
+File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
+)
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10.95> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 274.
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <8> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 274.
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <6> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 274.
+[7
+
+]
+\openout4 = `lab4_slides.vrb'.
+
+(./lab4_slides.vrb) [8
+
+]
+\openout4 = `lab4_slides.vrb'.
+
+(./lab4_slides.vrb) [9
+
+] [10
+
+]
+\openout4 = `lab4_slides.vrb'.
+
+(./lab4_slides.vrb) [11
+
+]
+\openout4 = `lab4_slides.vrb'.
+
+(./lab4_slides.vrb) [12
+
+]
+\openout4 = `lab4_slides.vrb'.
+
+(./lab4_slides.vrb) [13
+
+]
+\openout4 = `lab4_slides.vrb'.
+
+(./lab4_slides.vrb) [14
+
+]
+\openout4 = `lab4_slides.vrb'.
+
+(./lab4_slides.vrb) [15
+
+]
+\openout4 = `lab4_slides.vrb'.
+
+(./lab4_slides.vrb) [16
+
+]
+\openout4 = `lab4_slides.vrb'.
+
+(./lab4_slides.vrb) [17
+
+]
+\openout4 = `lab4_slides.vrb'.
+
+(./lab4_slides.vrb) [18
+
+]
+\openout4 = `lab4_slides.vrb'.
+
+(./lab4_slides.vrb) [19
+
+]
+\openout4 = `lab4_slides.vrb'.
+
+(./lab4_slides.vrb
+Overfull \hbox (36.96013pt too wide) in paragraph at lines 33--33
+[]\T1/lmtt/m/n/8 ##    time_unit    AK    AL    AR    AZ    CO    DE    FL    G
+A    ID    IL    IN[] 
+ []
+
+
+Overfull \hbox (36.96013pt too wide) in paragraph at lines 33--33
+[]\T1/lmtt/m/n/8 ##        <int> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl
+> <dbl> <dbl> <dbl>[] 
+ []
+
+
+Overfull \hbox (36.96013pt too wide) in paragraph at lines 33--33
+[]\T1/lmtt/m/n/8 ##  1         1  1.55  1.22  1.28  1.25  1.25  1.24  1.30  1.2
+4  1.23  1.30  1.28[] 
+ []
+
+
+Overfull \hbox (36.95213pt too wide) in paragraph at lines 33--33
+[]\T1/lmtt/m/n/8 ##  2         2  1.63  1.19  1.23  1.27  1.36  1.16  1.27  1.2
+4  1.28  1.24  1.18[] 
+ []
+
+
+Overfull \hbox (36.95613pt too wide) in paragraph at lines 33--33
+[]\T1/lmtt/m/n/8 ##  3         3  1.63  1.27  1.23  1.19  1.30  1.22  1.27  1.2
+5  1.22  1.30  1.20[] 
+ []
+
+
+Overfull \hbox (36.95413pt too wide) in paragraph at lines 33--33
+[]\T1/lmtt/m/n/8 ##  4         4  1.54  1.32  1.29  1.06  1.25  1.26  1.28  1.3
+1  1.24  1.24  1.03[] 
+ []
+
+
+Overfull \hbox (36.95213pt too wide) in paragraph at lines 33--33
+[]\T1/lmtt/m/n/8 ##  5         5  1.67  1.15  1.25  1.29  1.20  1.30  1.28  1.2
+1  1.20  1.19  1.19[] 
+ []
+
+
+Overfull \hbox (36.95013pt too wide) in paragraph at lines 33--33
+[]\T1/lmtt/m/n/8 ##  6         6  1.72  1.52  1.18  1.34  1.31  1.22  1.29  1.2
+7  1.13  1.29  1.19[] 
+ []
+
+
+Overfull \hbox (36.95813pt too wide) in paragraph at lines 33--33
+[]\T1/lmtt/m/n/8 ##  7         7  1.72  1.31  1.31  1.34  1.32  1.15  1.25  1.2
+7  1.18  1.36  1.21[] 
+ []
+
+
+Overfull \hbox (36.95613pt too wide) in paragraph at lines 33--33
+[]\T1/lmtt/m/n/8 ##  8         8  1.81  1.31  1.22  1.36  1.30  1.23  1.30  1.3
+3  1.25  1.29  1.18[] 
+ []
+
+
+Overfull \hbox (36.95213pt too wide) in paragraph at lines 33--33
+[]\T1/lmtt/m/n/8 ##  9         9  1.68  1.27  1.13  1.28  1.27  1.29  1.30  1.3
+3  1.18  1.25  1.23[] 
+ []
+
+
+Overfull \hbox (36.95213pt too wide) in paragraph at lines 33--33
+[]\T1/lmtt/m/n/8 ## 10        10  1.70  1.26  1.36  1.24  1.31  1.25  1.30  1.3
+6  1.28  1.29  1.18[] 
+ []
+
+
+Overfull \hbox (11.46013pt too wide) in paragraph at lines 33--33
+[]\T1/lmtt/m/n/8 ## # i 24 more variables: KS <dbl>, KY <dbl>, LA <dbl>, MD <db
+l>, MI <dbl>,[] 
+ []
+
+
+Overfull \hbox (15.71013pt too wide) in paragraph at lines 33--33
+[]\T1/lmtt/m/n/8 ## #   MO <dbl>, MS <dbl>, MT <dbl>, NC <dbl>, NE <dbl>, NJ <d
+bl>, NM <dbl>,[] 
+ []
+
+
+Overfull \hbox (15.71013pt too wide) in paragraph at lines 33--33
+[]\T1/lmtt/m/n/8 ## #   NV <dbl>, NY <dbl>, OH <dbl>, OK <dbl>, SC <dbl>, SD <d
+bl>, TN <dbl>,[] 
+ []
+
+) [20
+
+]
+\openout4 = `lab4_slides.vrb'.
+
+(./lab4_slides.vrb) [21
+
+]
+\openout4 = `lab4_slides.vrb'.
+
+(./lab4_slides.vrb) [22
+
+]
+\openout4 = `lab4_slides.vrb'.
+
+(./lab4_slides.vrb) [23
+
+]
+\openout4 = `lab4_slides.vrb'.
+
+(./lab4_slides.vrb) [24
+
+]
+\openout4 = `lab4_slides.vrb'.
+
+(./lab4_slides.vrb) [25
+
+]
+\openout4 = `lab4_slides.vrb'.
+
+(./lab4_slides.vrb
+Overfull \hbox (45.46013pt too wide) in paragraph at lines 33--33
+[]\T1/lmtt/m/n/8 ##    variable         AK      AL      AR     AZ     CO     DE
+     FL     GA     ID[] 
+ []
+
+
+Overfull \hbox (45.46013pt too wide) in paragraph at lines 33--33
+[]\T1/lmtt/m/n/8 ##    <chr>         <dbl>   <dbl>   <dbl>  <dbl>  <dbl>  <dbl>
+  <dbl>  <dbl>  <dbl>[] 
+ []
+
+
+Overfull \hbox (36.95813pt too wide) in paragraph at lines 33--33
+[]\T1/lmtt/m/n/8 ##  1 mean_teen_l~ 1.67   1.30    1.27    1.33   1.33   1.31  
+ 1.34   1.35   1.22[] 
+ []
+
+
+Overfull \hbox (41.20013pt too wide) in paragraph at lines 33--33
+[]\T1/lmtt/m/n/8 ##  2 mean_age_gr~ 0.0879 0.107   0.108   0.0939 0.0875 0.0951
+ 0.0928 0.102  0.104[] 
+ []
+
+
+Overfull \hbox (41.19614pt too wide) in paragraph at lines 33--33
+[]\T1/lmtt/m/n/8 ##  3 mean_age_gr~ 0.307  0.260   0.261   0.299  0.274  0.279 
+ 0.261  0.270  0.264[] 
+ []
+
+
+Overfull \hbox (41.20813pt too wide) in paragraph at lines 33--33
+[]\T1/lmtt/m/n/8 ##  4 mean_age_gr~ 0.294  0.232   0.221   0.242  0.280  0.237 
+ 0.231  0.247  0.257[] 
+ []
+
+
+Overfull \hbox (41.20613pt too wide) in paragraph at lines 33--33
+[]\T1/lmtt/m/n/8 ##  5 mean_age_gr~ 0.174  0.174   0.178   0.162  0.170  0.167 
+ 0.170  0.172  0.172[] 
+ []
+
+
+Overfull \hbox (41.20613pt too wide) in paragraph at lines 33--33
+[]\T1/lmtt/m/n/8 ##  6 mean_age_gr~ 0.103  0.154   0.158   0.132  0.132  0.149 
+ 0.158  0.144  0.135[] 
+ []
+
+
+Overfull \hbox (45.45213pt too wide) in paragraph at lines 33--33
+[]\T1/lmtt/m/n/8 ##  7 mean_age_gr~ 0.0338 0.0725  0.0735  0.0711 0.0564 0.0723
+ 0.0863 0.0657 0.0680[] 
+ []
+
+
+Overfull \hbox (41.20013pt too wide) in paragraph at lines 33--33
+[]\T1/lmtt/m/n/8 ##  8 mean_gender~ 0.497  0.475   0.477   0.489  0.492  0.478 
+ 0.478  0.476  0.493[] 
+ []
+
+
+Overfull \hbox (45.44814pt too wide) in paragraph at lines 33--33
+[]\T1/lmtt/m/n/8 ##  9 mean_hispan~ 0.0200 0.00324 0.00639 0.164  0.0988 0.0146
+ 0.110  0.0112 0.0424[] 
+ []
+
+
+Overfull \hbox (41.19414pt too wide) in paragraph at lines 33--33
+[]\T1/lmtt/m/n/8 ## 10 mean_hsl_sh~ 0.586  0.723   0.740   0.586  0.529  0.640 
+ 0.648  0.681  0.626[] 
+ []
+
+
+Overfull \hbox (11.45813pt too wide) in paragraph at lines 33--33
+[]\T1/lmtt/m/n/8 ## # i 26 more variables: IL <dbl>, IN <dbl>, KS <dbl>, KY <db
+l>, LA <dbl>,[] 
+ []
+
+
+Overfull \hbox (15.71013pt too wide) in paragraph at lines 33--33
+[]\T1/lmtt/m/n/8 ## #   MD <dbl>, MI <dbl>, MO <dbl>, MS <dbl>, MT <dbl>, NC <d
+bl>, NE <dbl>,[] 
+ []
+
+
+Overfull \hbox (15.71013pt too wide) in paragraph at lines 33--33
+[]\T1/lmtt/m/n/8 ## #   NJ <dbl>, NM <dbl>, NV <dbl>, NY <dbl>, OH <dbl>, OK <d
+bl>, SC <dbl>,[] 
+ []
+
+
+Overfull \hbox (11.46013pt too wide) in paragraph at lines 33--33
+[]\T1/lmtt/m/n/8 ## #   SD <dbl>, TN <dbl>, TX <dbl>, UT <dbl>, VA <dbl>, WV <d
+bl>, WY <dbl>[] 
+ []
+
+) [26
+
+]
+\openout4 = `lab4_slides.vrb'.
+
+(./lab4_slides.vrb) [27
+
+]
+\openout4 = `lab4_slides.vrb'.
+
+(./lab4_slides.vrb) [28
+
+]
+\openout4 = `lab4_slides.vrb'.
+
+(./lab4_slides.vrb)
+Overfull \vbox (59.78242pt too high) detected at line 897
+ []
+
+[29
+
+]
+\openout4 = `lab4_slides.vrb'.
+
+(./lab4_slides.vrb) [30
+
+]
+\openout4 = `lab4_slides.vrb'.
+
+(./lab4_slides.vrb
+<lab4_slides_files/figure-beamer/unnamed-chunk-24-1.pdf, id=210, 706.64pt x 495
+.8525pt>
+File: lab4_slides_files/figure-beamer/unnamed-chunk-24-1.pdf Graphic file (type
+ pdf)
+<use lab4_slides_files/figure-beamer/unnamed-chunk-24-1.pdf>
+Package pdftex.def Info: lab4_slides_files/figure-beamer/unnamed-chunk-24-1.pdf
+  used on input line 11.
+(pdftex.def)             Requested size: 706.63828pt x 495.85129pt.
+) [31
+
+ <./lab4_slides_files/figure-beamer/unnamed-chunk-24-1.pdf>]
+\openout4 = `lab4_slides.vrb'.
+
+(./lab4_slides.vrb) [32
+
+]
+\openout4 = `lab4_slides.vrb'.
+
+(./lab4_slides.vrb
+<lab4_slides_files/figure-beamer/unnamed-chunk-26-1.pdf, id=231, 706.64pt x 497
+.86pt>
+File: lab4_slides_files/figure-beamer/unnamed-chunk-26-1.pdf Graphic file (type
+ pdf)
+<use lab4_slides_files/figure-beamer/unnamed-chunk-26-1.pdf>
+Package pdftex.def Info: lab4_slides_files/figure-beamer/unnamed-chunk-26-1.pdf
+  used on input line 11.
+(pdftex.def)             Requested size: 706.63828pt x 497.85878pt.
+) [33
+
+ <./lab4_slides_files/figure-beamer/unnamed-chunk-26-1.pdf>]
+\openout4 = `lab4_slides.vrb'.
+
+(./lab4_slides.vrb) [34
+
+]
+\openout4 = `lab4_slides.vrb'.
+
+(./lab4_slides.vrb) [35
+
+]
+\openout4 = `lab4_slides.vrb'.
+
+(./lab4_slides.vrb) [36
+
+]
+\openout4 = `lab4_slides.vrb'.
+
+(./lab4_slides.vrb) [37
+
+]
+\openout4 = `lab4_slides.vrb'.
+
+(./lab4_slides.vrb
+<lab4_slides_files/figure-beamer/unnamed-chunk-30-1.pdf, id=270, 675.52374pt x 
+439.6425pt>
+File: lab4_slides_files/figure-beamer/unnamed-chunk-30-1.pdf Graphic file (type
+ pdf)
+<use lab4_slides_files/figure-beamer/unnamed-chunk-30-1.pdf>
+Package pdftex.def Info: lab4_slides_files/figure-beamer/unnamed-chunk-30-1.pdf
+  used on input line 11.
+(pdftex.def)             Requested size: 675.5221pt x 439.64142pt.
+) [38
+
+ <./lab4_slides_files/figure-beamer/unnamed-chunk-30-1.pdf>] [39
+
+] [40
+
+]
+\openout4 = `lab4_slides.vrb'.
+
+(./lab4_slides.vrb) [41
+
+]
+\openout4 = `lab4_slides.vrb'.
+
+(./lab4_slides.vrb)
+Overfull \vbox (66.53516pt too high) detected at line 1177
+ []
+
+[42
+
+]
+\openout4 = `lab4_slides.vrb'.
+
+(./lab4_slides.vrb) [43
+
+]
+\openout4 = `lab4_slides.vrb'.
+
+(./lab4_slides.vrb
+<lab4_slides_files/figure-beamer/unnamed-chunk-34-1.pdf, id=318, 706.64pt x 494
+.84875pt>
+File: lab4_slides_files/figure-beamer/unnamed-chunk-34-1.pdf Graphic file (type
+ pdf)
+<use lab4_slides_files/figure-beamer/unnamed-chunk-34-1.pdf>
+Package pdftex.def Info: lab4_slides_files/figure-beamer/unnamed-chunk-34-1.pdf
+  used on input line 15.
+(pdftex.def)             Requested size: 706.63828pt x 494.84755pt.
+)
+Overfull \vbox (122.19353pt too high) detected at line 1232
+ []
+
+[44
+
+ <./lab4_slides_files/figure-beamer/unnamed-chunk-34-1.pdf>]
+\openout4 = `lab4_slides.vrb'.
+
+(./lab4_slides.vrb) [45
+
+]
+\openout4 = `lab4_slides.vrb'.
+
+(./lab4_slides.vrb
+<lab4_slides_files/figure-beamer/unnamed-chunk-37-1.pdf, id=342, 712.6625pt x 4
+95.8525pt>
+File: lab4_slides_files/figure-beamer/unnamed-chunk-37-1.pdf Graphic file (type
+ pdf)
+<use lab4_slides_files/figure-beamer/unnamed-chunk-37-1.pdf>
+Package pdftex.def Info: lab4_slides_files/figure-beamer/unnamed-chunk-37-1.pdf
+  used on input line 15.
+(pdftex.def)             Requested size: 712.66077pt x 495.85129pt.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 22.
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <5> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 22.
+)
+Overfull \vbox (132.534pt too high) detected at line 1303
+ []
+
+[46
+
+ <./lab4_slides_files/figure-beamer/unnamed-chunk-37-1.pdf>] [47
+
+]
+\openout4 = `lab4_slides.vrb'.
+
+(./lab4_slides.vrb
+<lab4_slides_files/figure-beamer/unnamed-chunk-38-1.pdf, id=367, 699.61375pt x 
+489.83pt>
+File: lab4_slides_files/figure-beamer/unnamed-chunk-38-1.pdf Graphic file (type
+ pdf)
+<use lab4_slides_files/figure-beamer/unnamed-chunk-38-1.pdf>
+Package pdftex.def Info: lab4_slides_files/figure-beamer/unnamed-chunk-38-1.pdf
+  used on input line 14.
+(pdftex.def)             Requested size: 699.61205pt x 489.8288pt.
+)
+Overfull \vbox (18.754pt too high) detected at line 1330
+ []
+
+[48
+
+ <./lab4_slides_files/figure-beamer/unnamed-chunk-38-1.pdf>]
+\openout4 = `lab4_slides.vrb'.
+
+(./lab4_slides.vrb
+Overfull \hbox (32.71013pt too wide) in paragraph at lines 34--34
+[]\T1/lmtt/m/n/8 ##    unit_name type    pre_mspe post_mspe mspe_ratio  rank fi
+shers_exact_pvalue[] 
+ []
+
+
+Overfull \hbox (32.71013pt too wide) in paragraph at lines 34--34
+[]\T1/lmtt/m/n/8 ##    <chr>     <chr>      <dbl>     <dbl>      <dbl> <int>   
+             <dbl>[] 
+ []
+
+
+Overfull \hbox (32.70613pt too wide) in paragraph at lines 34--34
+[]\T1/lmtt/m/n/8 ##  1 NJ        Donor    0.00819   0.0431        5.26     1   
+            0.0278[] 
+ []
+
+
+Overfull \hbox (32.70813pt too wide) in paragraph at lines 34--34
+[]\T1/lmtt/m/n/8 ##  2 IN        Donor    0.00302   0.0102        3.38     2   
+            0.0556[] 
+ []
+
+
+Overfull \hbox (32.71013pt too wide) in paragraph at lines 34--34
+[]\T1/lmtt/m/n/8 ##  3 DE        Donor    0.00435   0.0124        2.84     3   
+            0.0833[] 
+ []
+
+
+Overfull \hbox (28.45413pt too wide) in paragraph at lines 34--34
+[]\T1/lmtt/m/n/8 ##  4 MO        Donor    0.00399   0.00987       2.47     4   
+            0.111[] 
+ []
+
+
+Overfull \hbox (28.45613pt too wide) in paragraph at lines 34--34
+[]\T1/lmtt/m/n/8 ##  5 UT        Donor    0.00356   0.00850       2.38     5   
+            0.139[] 
+ []
+
+
+Overfull \hbox (28.45013pt too wide) in paragraph at lines 34--34
+[]\T1/lmtt/m/n/8 ##  6 WY        Donor    0.0115    0.0260        2.26     6   
+            0.167[] 
+ []
+
+
+Overfull \hbox (28.45813pt too wide) in paragraph at lines 34--34
+[]\T1/lmtt/m/n/8 ##  7 NE        Donor    0.00255   0.00538       2.11     7   
+            0.194[] 
+ []
+
+
+Overfull \hbox (28.45613pt too wide) in paragraph at lines 34--34
+[]\T1/lmtt/m/n/8 ##  8 CA        Treated  0.00101   0.00198       1.97     8   
+            0.222[] 
+ []
+
+
+Overfull \hbox (24.20213pt too wide) in paragraph at lines 34--34
+[]\T1/lmtt/m/n/8 ##  9 NY        Donor    0.00276   0.00537       1.95     9   
+            0.25[] 
+ []
+
+
+Overfull \hbox (28.45813pt too wide) in paragraph at lines 34--34
+[]\T1/lmtt/m/n/8 ## 10 TN        Donor    0.00370   0.00678       1.83    10   
+            0.278[] 
+ []
+
+) [49
+
+] [50
+
+] [51
+
+]
+\openout4 = `lab4_slides.vrb'.
+
+(./lab4_slides.vrb) [52
+
+]
+\openout4 = `lab4_slides.vrb'.
+
+(./lab4_slides.vrb) [53
+
+]
+\openout4 = `lab4_slides.vrb'.
+
+(./lab4_slides.vrb
+Overfull \hbox (41.20813pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ##             1          2          3          4          5  
+        6          7[] 
+ []
+
+
+Overfull \hbox (41.19214pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## AK -1.0081962 -0.7273728 -0.6289909 -0.8517815 -1.0251937 -
+0.7791227 -0.5543913[] 
+ []
+
+
+Overfull \hbox (41.19614pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## AL -1.2929312 -1.1793571 -1.2341935 -1.1227144 -1.5162633 -
+1.1726885 -1.0470488[] 
+ []
+
+
+Overfull \hbox (41.19614pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## AR -1.2133995 -0.8442482 -0.8000836 -0.9253152 -1.1333850 -
+0.9169848 -0.7501818[] 
+ []
+
+
+Overfull \hbox (41.18414pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## AZ -0.7793198 -0.7700494 -0.7511143 -0.7691967 -0.7937306 -
+0.8546383 -0.6650643[] 
+ []
+
+
+Overfull \hbox (41.18015pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## CO -0.7890146 -0.6328306 -0.5448869 -0.6935204 -0.6996565 -
+0.6924205 -0.4500247[] 
+ []
+
+
+Overfull \hbox (41.18614pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## DE -0.9774293 -0.9554051 -0.6265315 -0.9257820 -1.0924189 -
+0.8099136 -0.7344793[] 
+ []
+
+
+Overfull \hbox (41.18614pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## FL -0.9325055 -0.7751482 -0.7526732 -0.7959629 -0.8806242 -
+0.7706282 -0.6985199[] 
+ []
+
+
+Overfull \hbox (41.18214pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## GA -0.9042336 -0.8736010 -0.8313586 -0.9662616 -0.9063002 -
+0.8760937 -0.7834937[] 
+ []
+
+
+Overfull \hbox (41.18814pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## ID -0.8318124 -0.6036627 -0.5577134 -0.9228904 -0.9249200 -
+0.6972987 -0.5382160[] 
+ []
+
+
+Overfull \hbox (41.19214pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## IL -0.9280728 -0.8132880 -0.6388296 -0.8049551 -0.9504480 -
+0.8800036 -0.6849702[] 
+ []
+
+
+Overfull \hbox (41.19414pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## IN -1.0905274 -0.8336256 -0.7230820 -1.0261382 -1.0392510 -
+0.8329032 -0.6950037[] 
+ []
+
+
+Overfull \hbox (41.18614pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## KS -0.7351025 -0.4652166 -0.4691918 -0.6021589 -0.6123627 -
+0.5249327 -0.5028549[] 
+ []
+
+
+Overfull \hbox (41.18214pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## KY -1.0115417 -0.9701820 -0.6896040 -1.0420095 -1.1939360 -
+0.9768864 -0.7763667[] 
+ []
+
+
+Overfull \hbox (41.18814pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## LA -1.2002695 -1.1907511 -0.9627468 -1.3504183 -1.3305941 -
+1.0768800 -0.9164650[] 
+ []
+
+
+Overfull \hbox (41.18414pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## MD -1.0080420 -0.8069361 -0.6769087 -1.0286375 -1.0118630 -
+0.6932645 -0.5489519[] 
+ []
+
+
+Overfull \hbox (41.19214pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## MI -1.0204558 -0.8443355 -0.6869813 -0.8897343 -0.9271311 -
+0.8242867 -0.6970756[] 
+ []
+
+
+Overfull \hbox (41.18614pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## MO -0.9184572 -0.7318141 -0.7135642 -0.9549940 -0.8966334 -
+0.7298988 -0.7086089[] 
+ []
+
+
+Overfull \hbox (41.19214pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## MS -1.2973616 -1.3882500 -1.2456637 -1.2540113 -1.2639359 -
+1.4871428 -1.1188316[] 
+ []
+
+
+Overfull \hbox (41.19414pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## MT -0.9651900 -0.7342614 -0.6313175 -1.0207442 -0.8171003 -
+0.7155481 -0.4768639[] 
+ []
+
+
+Overfull \hbox (41.19414pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## NC -1.1094175 -1.0576797 -0.7344712 -0.9365505 -1.0890489 -
+0.8275381 -0.6854741[] 
+ []
+
+
+Overfull \hbox (41.19614pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## NE -0.9262183 -0.5314083 -0.4784673 -0.7409492 -0.8260553 -
+0.5443277 -0.4524943[] 
+ []
+
+
+Overfull \hbox (41.18814pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## NJ -0.9835300 -0.9113060 -0.7629962 -0.9354281 -1.0337297 -
+0.9244895 -0.7513114[] 
+ []
+
+
+Overfull \hbox (41.18814pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## NM -1.2606708 -1.1079309 -0.8600579 -1.1145171 -1.1144426 -
+1.0786670 -0.8568389[] 
+ []
+
+
+Overfull \hbox (41.18614pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## NV -0.7436792 -0.6752293 -0.7509621 -0.8756856 -0.8585039 -
+0.7558915 -0.7287866[] 
+ []
+
+
+Overfull \hbox (41.19614pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## NY -1.1414360 -1.1094055 -0.8935039 -1.2723078 -1.2415303 -
+1.1914370 -0.9053059[] 
+ []
+
+
+Overfull \hbox (41.19014pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## OH -0.9962231 -0.9301113 -0.7985943 -1.0098250 -1.1411489 -
+0.8527620 -0.7261847[] 
+ []
+
+
+Overfull \hbox (41.18614pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## OK -0.5672735 -0.5485256 -0.6692959 -0.7818442 -0.9477469 -
+0.8050453 -0.6147086[] 
+ []
+
+
+Overfull \hbox (41.19414pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## SC -1.1348881 -1.0928718 -0.9319368 -1.1238404 -1.3145713 -
+1.1793191 -0.8849726[] 
+ []
+
+
+Overfull \hbox (41.18814pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## SD -0.8251543 -0.5996897 -0.5088203 -0.6977103 -0.6596910 -
+0.5738208 -0.5198834[] 
+ []
+
+
+Overfull \hbox (41.19414pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## TN -1.2661722 -1.0824215 -1.0125178 -1.0249063 -1.1365451 -
+0.9878192 -1.0308924[] 
+ []
+
+
+Overfull \hbox (41.19014pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## TX -0.8869215 -0.7435916 -0.7317054 -0.8599753 -0.9614373 -
+0.8253814 -0.7189941[] 
+ []
+
+
+Overfull \hbox (41.18414pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## UT -0.6030445 -0.5769697 -0.5836268 -0.7231118 -0.8547658 -
+0.6147266 -0.4765937[] 
+ []
+
+
+Overfull \hbox (41.19614pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## VA -1.0821541 -0.9182553 -0.7368793 -0.9333313 -1.0423785 -
+0.8492388 -0.7484656[] 
+ []
+
+
+Overfull \hbox (41.19014pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## WV -1.3190145 -1.2669705 -1.0651587 -1.5145831 -1.6261579 -
+1.3941867 -1.3758878[] 
+ []
+
+
+Overfull \hbox (41.19614pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## WY -0.7135629 -0.6605578 -0.4787529 -0.7890841 -0.8881148 -
+0.5423887 -0.5279582[] 
+ []
+
+
+Overfull \hbox (41.18015pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## CA -0.9276406 -0.8629003 -0.7650419 -0.9046387 -1.0467383 -
+0.9094760 -0.7606772[] 
+ []
+
+
+Overfull \hbox (41.20813pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ##             8          9         10         11         12  
+       13         14[] 
+ []
+
+
+Overfull \hbox (41.19014pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## AK -1.1114676 -1.0866771 -0.9481440 -0.6117737 -0.7983885 -
+1.1314424 -0.9190706[] 
+ []
+
+
+Overfull \hbox (41.19614pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## AL -1.0292766 -1.2008632 -1.0655050 -1.0108188 -1.0780283 -
+0.9152432 -0.8579012[] 
+ []
+
+
+Overfull \hbox (41.19014pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## AR -1.0336998 -1.1334122 -0.8888698 -0.7424785 -1.1195749 -
+1.1787988 -0.9047952[] 
+ []
+
+
+Overfull \hbox (41.19014pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## AZ -0.7944487 -0.6680834 -0.5604398 -0.5032274 -0.6828453 -
+0.6876680 -0.7577046[] 
+ []
+
+
+Overfull \hbox (41.19014pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## CO -0.6043280 -0.6257696 -0.7196256 -0.5653838 -0.8102280 -
+0.6514388 -0.5704044[] 
+ []
+
+
+Overfull \hbox (41.17815pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## DE -0.9369194 -0.9886032 -0.5848336 -0.4947517 -0.6608368 -
+0.7383633 -0.6716997[] 
+ []
+
+
+Overfull \hbox (41.19214pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## FL -0.8228350 -0.7755645 -0.7670552 -0.6946779 -0.7815175 -
+0.8053653 -0.7094763[] 
+ []
+
+
+Overfull \hbox (41.19014pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## GA -0.9273297 -1.0529143 -0.8039897 -0.6377030 -0.8103739 -
+0.9212938 -0.9723128[] 
+ []
+
+
+Overfull \hbox (41.19014pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## ID -0.6921173 -0.9223260 -0.5037105 -0.5566753 -0.8092497 -
+0.7026552 -0.5952030[] 
+ []
+
+
+Overfull \hbox (41.19014pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## IL -0.9458720 -0.9393439 -0.7031796 -0.7572931 -0.9385548 -
+0.8848766 -0.8034555[] 
+ []
+
+
+Overfull \hbox (41.18614pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## IN -0.9773424 -0.9752700 -0.6685181 -0.6473871 -0.8167648 -
+0.9166079 -0.5247918[] 
+ []
+
+
+Overfull \hbox (41.19414pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## KS -0.7454959 -0.8654449 -0.4673524 -0.4891315 -0.7413085 -
+0.7220381 -0.5678065[] 
+ []
+
+
+Overfull \hbox (41.18814pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## KY -0.7862441 -0.9403791 -0.9511392 -0.9714885 -1.0686287 -
+0.9405181 -1.0303992[] 
+ []
+
+
+Overfull \hbox (41.18814pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## LA -1.1801525 -1.2776769 -0.8735309 -0.7984864 -1.0107694 -
+1.1449459 -1.1076348[] 
+ []
+
+
+Overfull \hbox (41.19014pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## MD -0.8119227 -0.9268408 -0.6851218 -0.6292710 -0.7584658 -
+0.8597982 -0.7779423[] 
+ []
+
+
+Overfull \hbox (41.18814pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## MI -0.8102480 -0.9687257 -0.7722480 -0.5999824 -0.7838311 -
+0.8590795 -0.7693694[] 
+ []
+
+
+Overfull \hbox (41.18614pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## MO -0.8607364 -0.8473106 -0.7441092 -0.6524119 -0.9254209 -
+0.8905661 -0.6245327[] 
+ []
+
+
+Overfull \hbox (41.19014pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## MS -1.2829607 -1.3557009 -1.1917776 -1.2225195 -1.2818562 -
+1.4394712 -1.0186861[] 
+ []
+
+
+Overfull \hbox (41.19214pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## MT -0.8692873 -1.0455038 -0.7848904 -0.5713867 -0.7431672 -
+0.9590818 -0.6822791[] 
+ []
+
+
+Overfull \hbox (41.19614pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## NC -1.0083206 -1.0016218 -0.7987587 -0.6146871 -0.8142776 -
+0.8883318 -0.7582406[] 
+ []
+
+
+Overfull \hbox (41.19014pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## NE -0.8305692 -0.8027377 -0.6534610 -0.4100595 -0.5381261 -
+0.6657356 -0.5080917[] 
+ []
+
+
+Overfull \hbox (41.18015pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## NJ -0.9332180 -0.9836737 -0.7803171 -0.6639464 -0.9479796 -
+0.9112346 -0.7619143[] 
+ []
+
+
+Overfull \hbox (41.19414pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## NM -1.1274870 -1.0921767 -0.9684510 -0.7772971 -0.8750132 -
+1.0944131 -1.0141665[] 
+ []
+
+
+Overfull \hbox (41.19014pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## NV -0.7397149 -0.7335277 -0.7572626 -0.6489604 -0.9045073 -
+0.7062830 -0.5937071[] 
+ []
+
+
+Overfull \hbox (41.19814pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## NY -1.2301177 -1.1857730 -1.1180047 -0.9197263 -1.0894504 -
+1.2790625 -1.1050553[] 
+ []
+
+
+Overfull \hbox (41.19014pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## OH -1.0633510 -1.0018044 -0.7662010 -0.7408069 -0.9007560 -
+0.8783206 -0.7599734[] 
+ []
+
+
+Overfull \hbox (41.19214pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## OK -0.8672525 -0.8168189 -0.8172013 -0.7589557 -1.0567983 -
+1.0908069 -1.0300350[] 
+ []
+
+
+Overfull \hbox (41.19014pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## SC -1.1070968 -1.0549215 -0.7853896 -0.9260232 -1.0868723 -
+0.8864522 -0.8867857[] 
+ []
+
+
+Overfull \hbox (41.19414pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## SD -0.7182349 -0.7452394 -0.5360973 -0.4004471 -0.6884762 -
+0.6558470 -0.4793228[] 
+ []
+
+
+Overfull \hbox (41.19414pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## TN -1.0934883 -1.0953647 -1.0058718 -0.6740100 -0.9386418 -
+1.1110809 -0.9043072[] 
+ []
+
+
+Overfull \hbox (41.19014pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## TX -0.8094218 -0.8791385 -0.7716235 -0.6785951 -0.8114656 -
+0.7798083 -0.7649855[] 
+ []
+
+
+Overfull \hbox (41.18214pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## UT -0.6782184 -0.7569056 -0.5159704 -0.4528597 -0.5579680 -
+0.6886619 -0.4993830[] 
+ []
+
+
+Overfull \hbox (41.18614pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## VA -0.8427559 -0.9709867 -0.7461120 -0.6108916 -0.8342726 -
+0.8730295 -0.6638807[] 
+ []
+
+
+Overfull \hbox (41.19014pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## WV -1.3852628 -1.5826298 -1.2298071 -1.2714226 -1.4480946 -
+1.4802581 -1.4949958[] 
+ []
+
+
+Overfull \hbox (41.18414pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## WY -0.7269766 -0.8982134 -0.6672929 -0.4944473 -1.0038434 -
+0.9321012 -0.6638054[] 
+ []
+
+
+Overfull \hbox (41.19614pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## CA -0.8074680 -0.9304103 -0.8652835 -0.7258780 -0.8556330 -
+0.9295024 -0.9352038[] 
+ []
+
+
+Overfull \hbox (41.20613pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ##            15         16         17         18         19  
+       20         21[] 
+ []
+
+
+Overfull \hbox (41.19214pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## AK -0.6408090 -0.9878829 -1.0941292 -0.8332145 -0.7387885 -
+0.9631331 -1.0793100[] 
+ []
+
+
+Overfull \hbox (41.19614pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## AL -0.8359215 -1.1383319 -1.0623307 -1.1415837 -1.1284516 -
+1.1353269 -1.0585655[] 
+ []
+
+
+Overfull \hbox (41.18614pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## AR -0.8952077 -1.0809355 -0.9881813 -0.9319367 -0.7629239 -
+0.8674450 -1.1462794[] 
+ []
+
+
+Overfull \hbox (41.18614pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## AZ -0.6333306 -0.7930573 -0.5775989 -0.5563470 -0.6642609 -
+0.6815792 -0.8200257[] 
+ []
+
+
+Overfull \hbox (41.18015pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## CO -0.6765290 -0.9087542 -0.8991233 -0.7518568 -0.5945667 -
+0.6859898 -0.7616440[] 
+ []
+
+
+Overfull \hbox (41.17815pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## DE -0.5074931 -0.6984097 -0.7659685 -0.6195973 -0.4766075 -
+0.5961177 -0.6272009[] 
+ []
+
+
+Overfull \hbox (41.18814pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## FL -0.6932310 -0.8002035 -0.8136660 -0.7763659 -0.6402945 -
+0.7483704 -0.8084930[] 
+ []
+
+
+Overfull \hbox (41.18814pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## GA -0.7607262 -0.9292705 -0.9674559 -0.7032324 -0.7437651 -
+0.9252758 -0.7729309[] 
+ []
+
+
+Overfull \hbox (41.18814pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## ID -0.4337058 -0.6114564 -0.6452060 -0.6495020 -0.5368429 -
+0.8101687 -0.9373097[] 
+ []
+
+
+Overfull \hbox (41.18814pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## IL -0.6923979 -0.8763038 -0.9741081 -0.7389518 -0.6408149 -
+0.8457524 -0.9771761[] 
+ []
+
+
+Overfull \hbox (41.19614pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## IN -0.5860067 -0.9203703 -0.9332674 -0.7237322 -0.5288148 -
+0.7101939 -0.8870442[] 
+ []
+
+
+Overfull \hbox (41.19014pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## KS -0.4330208 -0.7059475 -0.8623553 -0.5003654 -0.6295553 -
+0.7792985 -0.7964016[] 
+ []
+
+
+Overfull \hbox (41.19014pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## KY -0.8719781 -1.1953592 -1.2798200 -0.7044163 -0.7963485 -
+0.9609235 -1.2314801[] 
+ []
+
+
+Overfull \hbox (41.19014pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## LA -0.9547317 -1.2531590 -1.0132180 -0.9097430 -1.0461160 -
+1.2149029 -1.2429516[] 
+ []
+
+
+Overfull \hbox (41.19014pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## MD -0.6516755 -0.7893321 -0.7362647 -0.7314372 -0.6604346 -
+0.7227958 -0.8810904[] 
+ []
+
+
+Overfull \hbox (41.18414pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## MI -0.6098568 -0.7295278 -0.8195816 -0.7523039 -0.6272197 -
+0.7779924 -0.7395592[] 
+ []
+
+
+Overfull \hbox (41.19814pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## MO -0.5740794 -0.7997742 -0.7934833 -0.6375045 -0.5187473 -
+0.7402715 -0.6727201[] 
+ []
+
+
+Overfull \hbox (41.19014pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## MS -0.8986086 -1.3205886 -1.3887842 -1.1627037 -1.0478663 -
+1.4095095 -1.5159483[] 
+ []
+
+
+Overfull \hbox (41.18214pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## MT -0.6305476 -0.9601057 -0.8951436 -0.6923283 -0.4606463 -
+0.7871937 -0.9051984[] 
+ []
+
+
+Overfull \hbox (41.18814pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## NC -0.6168522 -0.7365938 -0.8611561 -0.8260922 -0.6490385 -
+0.8403624 -0.8770472[] 
+ []
+
+
+Overfull \hbox (41.19614pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## NE -0.4705504 -0.7256060 -0.7327618 -0.5824605 -0.4266504 -
+0.4755571 -0.8105359[] 
+ []
+
+
+Overfull \hbox (41.20013pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## NJ -0.6807128 -0.8505209 -0.8597443 -0.7730385 -0.6542794 -
+0.8373835 -0.8578802[] 
+ []
+
+
+Overfull \hbox (41.18814pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## NM -0.8674658 -0.7493603 -0.9362972 -1.0405729 -0.7649444 -
+0.8355041 -1.1393814[] 
+ []
+
+
+Overfull \hbox (41.17815pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## NV -0.6249367 -0.9282631 -0.8164766 -0.5538886 -0.5444952 -
+0.7829431 -0.8669799[] 
+ []
+
+
+Overfull \hbox (41.19214pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## NY -0.8791599 -1.1331065 -1.2120477 -1.0756536 -0.8718522 -
+1.0894326 -1.0645328[] 
+ []
+
+
+Overfull \hbox (41.18614pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## OH -0.6761795 -0.7942938 -0.8684672 -0.7252208 -0.6459165 -
+0.7944521 -0.8905335[] 
+ []
+
+
+Overfull \hbox (41.18015pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## OK -0.7445116 -0.8628798 -0.8406094 -0.9297498 -0.7995191 -
+1.0015246 -0.9136625[] 
+ []
+
+
+Overfull \hbox (41.19414pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## SC -0.8628828 -1.2047629 -1.1940231 -0.7832726 -0.7742607 -
+1.0382195 -1.0877898[] 
+ []
+
+
+Overfull \hbox (41.19614pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## SD -0.3485561 -0.7006940 -0.6704150 -0.4369595 -0.3442387 -
+0.7177223 -0.8007733[] 
+ []
+
+
+Overfull \hbox (41.18614pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## TN -0.7791778 -0.9609861 -1.1141272 -0.8162348 -0.7862482 -
+0.9942419 -1.0989554[] 
+ []
+
+
+Overfull \hbox (41.19814pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## TX -0.7485081 -0.9053259 -1.0211152 -0.8302246 -0.7443239 -
+1.0485670 -1.0593403[] 
+ []
+
+
+Overfull \hbox (41.18614pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## UT -0.4110803 -0.4572673 -0.6304678 -0.4565964 -0.4079608 -
+0.5269461 -0.7082657[] 
+ []
+
+
+Overfull \hbox (41.19014pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## VA -0.7123763 -0.8887127 -0.8661610 -0.7454999 -0.6723970 -
+0.9750331 -1.0384705[] 
+ []
+
+
+Overfull \hbox (41.19414pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## WV -1.1263165 -1.3890471 -1.4665024 -1.1459048 -0.9824158 -
+1.4000050 -1.4790307[] 
+ []
+
+
+Overfull \hbox (41.18614pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## WY -0.5537279 -1.0260040 -0.9994208 -0.9147295 -0.6754628 -
+0.8254279 -1.1914529[] 
+ []
+
+
+Overfull \hbox (41.18814pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## CA -0.7853289 -0.9003587 -0.9182618 -0.9304842 -0.7846675 -
+0.9016350 -0.9422346[] 
+ []
+
+
+Overfull \hbox (41.20813pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ##            22         23         24         25         26  
+       27         28[] 
+ []
+
+
+Overfull \hbox (41.19814pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## AK -0.8278161 -0.6437461 -0.8050118 -1.1050448 -0.7512759 -
+0.6085871 -0.8819007[] 
+ []
+
+
+Overfull \hbox (41.19214pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## AL -1.0439199 -1.0359853 -1.0785524 -1.1780151 -0.9405258 -
+0.8915526 -0.8965725[] 
+ []
+
+
+Overfull \hbox (41.17215pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## AR -0.9315869 -0.7595245 -0.8999260 -0.9697636 -0.7688630 -
+0.6458200 -0.7978995[] 
+ []
+
+
+Overfull \hbox (41.18814pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## AZ -0.7619027 -0.6948305 -0.8416768 -1.0958230 -0.7361855 -
+0.6215643 -0.7030090[] 
+ []
+
+
+Overfull \hbox (41.19414pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## CO -0.7248170 -0.5807269 -0.7265223 -0.7679317 -0.6076122 -
+0.5582568 -0.7524051[] 
+ []
+
+
+Overfull \hbox (41.19014pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## DE -0.6769864 -0.4675050 -0.6257784 -0.7094635 -0.5815303 -
+0.3622282 -0.6152582[] 
+ []
+
+
+Overfull \hbox (41.18814pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## FL -0.7436116 -0.6684525 -0.7401368 -0.7664926 -0.7238704 -
+0.6163511 -0.7742558[] 
+ []
+
+
+Overfull \hbox (41.19414pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## GA -0.7020103 -0.6940173 -0.8613224 -1.0832726 -0.7637370 -
+0.6805810 -0.9290340[] 
+ []
+
+
+Overfull \hbox (41.19414pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## ID -0.5744919 -0.5967385 -0.8705303 -0.9343548 -0.4945817 -
+0.4458151 -0.7632671[] 
+ []
+
+
+Overfull \hbox (41.19214pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## IL -0.7642540 -0.6435729 -0.8027276 -0.8786246 -0.8273501 -
+0.5983226 -0.8042601[] 
+ []
+
+
+Overfull \hbox (41.19214pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## IN -0.6344150 -0.4689310 -0.7838674 -0.7670418 -0.4953444 -
+0.5157569 -0.5727749[] 
+ []
+
+
+Overfull \hbox (41.19214pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## KS -0.5438854 -0.5293494 -0.5531254 -0.6609092 -0.6847310 -
+0.5617414 -0.6882152[] 
+ []
+
+
+Overfull \hbox (41.18814pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## KY -0.9306847 -0.8526184 -0.9887179 -1.1512687 -0.8211599 -
+0.7612123 -0.9326321[] 
+ []
+
+
+Overfull \hbox (41.19814pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## LA -1.0617822 -1.0244839 -1.4539380 -1.1770131 -1.0592133 -
+1.1146838 -1.0775206[] 
+ []
+
+
+Overfull \hbox (41.19414pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## MD -0.7142889 -0.5267662 -0.7325138 -0.8713541 -0.6934658 -
+0.5905828 -0.8412554[] 
+ []
+
+
+Overfull \hbox (41.18414pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## MI -0.7361600 -0.5590258 -0.7595130 -0.7804365 -0.6366118 -
+0.4994767 -0.7153660[] 
+ []
+
+
+Overfull \hbox (41.18814pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## MO -0.6704052 -0.5223837 -0.7424467 -0.8293382 -0.6364664 -
+0.6259122 -0.7820566[] 
+ []
+
+
+Overfull \hbox (41.18414pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## MS -1.4299009 -1.1859347 -1.1681573 -1.3519940 -1.2263050 -
+1.1061987 -1.2945697[] 
+ []
+
+
+Overfull \hbox (41.18814pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## MT -0.6407221 -0.4139214 -0.8253998 -0.9940749 -0.7521614 -
+0.4773565 -0.6591314[] 
+ []
+
+
+Overfull \hbox (41.19214pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## NC -0.7554500 -0.5993277 -0.7884889 -0.9271002 -0.7269401 -
+0.5644672 -0.8083641[] 
+ []
+
+
+Overfull \hbox (41.19014pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## NE -0.5862746 -0.4634535 -0.6489393 -0.8768451 -0.5032345 -
+0.4824568 -0.6570129[] 
+ []
+
+
+Overfull \hbox (41.20613pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## NJ -0.7101512 -0.5812720 -0.7520086 -0.8341524 -0.8581704 -
+0.5782822 -0.8072675[] 
+ []
+
+
+Overfull \hbox (41.17815pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## NM -0.9606569 -0.7547652 -0.7699727 -1.1330722 -0.8799314 -
+0.8766511 -1.0386296[] 
+ []
+
+
+Overfull \hbox (41.19614pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## NV -0.6728250 -0.5854449 -0.8513702 -1.0651404 -0.6221094 -
+0.5739715 -0.7749885[] 
+ []
+
+
+Overfull \hbox (41.19014pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## NY -0.9722041 -0.7358191 -0.9473653 -0.9835589 -1.0189103 -
+0.7371569 -1.0471268[] 
+ []
+
+
+Overfull \hbox (41.18414pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## OH -0.6938276 -0.6205185 -0.7935795 -0.8929548 -0.6494749 -
+0.5661572 -0.7313300[] 
+ []
+
+
+Overfull \hbox (41.19014pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## OK -0.9638395 -0.9478234 -1.1143007 -0.9647800 -0.6779427 -
+0.6756357 -0.8330101[] 
+ []
+
+
+Overfull \hbox (41.19214pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## SC -0.8782426 -0.7408995 -0.9337421 -1.0154647 -0.8572745 -
+0.7293590 -0.7806633[] 
+ []
+
+
+Overfull \hbox (41.19214pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## SD -0.5511785 -0.3727575 -0.6813216 -0.7760089 -0.5095939 -
+0.4802416 -0.7260821[] 
+ []
+
+
+Overfull \hbox (41.18015pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## TN -1.0751998 -0.6729879 -0.7147895 -0.9643689 -0.9578685 -
+0.7849985 -0.7322640[] 
+ []
+
+
+Overfull \hbox (41.18814pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## TX -0.8406431 -0.8145967 -0.9992136 -1.0556864 -0.8528347 -
+0.7509355 -0.8525579[] 
+ []
+
+
+Overfull \hbox (41.18214pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## UT -0.5996828 -0.3703397 -0.5093096 -0.6439167 -0.5737454 -
+0.3972377 -0.5009992[] 
+ []
+
+
+Overfull \hbox (41.19014pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## VA -0.8897638 -0.6584985 -0.8565136 -0.8306088 -0.7326149 -
+0.5752035 -0.9013140[] 
+ []
+
+
+Overfull \hbox (41.19814pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## WV -1.3847386 -1.0644547 -1.3418355 -1.7061285 -1.2828943 -
+1.0141174 -1.3156951[] 
+ []
+
+
+Overfull \hbox (41.19014pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## WY -0.8596136 -0.4623974 -0.8221061 -0.7759504 -0.5825905 -
+0.4995204 -0.7478437[] 
+ []
+
+
+Overfull \hbox (41.18814pt too wide) in paragraph at lines 202--202
+[]\T1/lmtt/m/n/8 ## CA -0.8458353 -0.7387629 -0.8266060 -0.7852098 -0.8189870 -
+0.6337679 -0.7719304[] 
+ []
+
+)
+Overfull \vbox (1582.38185pt too high) detected at line 1637
+ []
+
+[54
+
+]
+\openout4 = `lab4_slides.vrb'.
+
+(./lab4_slides.vrb) [55
+
+]
+\openout4 = `lab4_slides.vrb'.
+
+(./lab4_slides.vrb
+Overfull \hbox (113.45613pt too wide) in paragraph at lines 16--16
+[]\T1/lmtt/m/n/8 ## synthdid: 0.065 +- NA. Effective N0/N0 = 27.4/35~0.8. Effec
+tive T0/T0 = 5.4/26~0.2. N1,T1 = 1,7.[] 
+ []
+
+) [56
+
+]
+\openout4 = `lab4_slides.vrb'.
+
+(./lab4_slides.vrb) [57
+
+]
+\openout4 = `lab4_slides.vrb'.
+
+(./lab4_slides.vrb)
+Overfull \vbox (245.68242pt too high) detected at line 1785
+ []
+
+[58
+
+]
+\openout4 = `lab4_slides.vrb'.
+
+(./lab4_slides.vrb)
+Overfull \vbox (138.3824pt too high) detected at line 1838
+ []
+
+[59
+
+]
+\openout4 = `lab4_slides.vrb'.
+
+(./lab4_slides.vrb) [60
+
+]
+\openout4 = `lab4_slides.vrb'.
+
+(./lab4_slides.vrb) [61
+
+]
+\tf@nav=\write6
+\openout6 = `lab4_slides.nav'.
+
+\tf@toc=\write7
+\openout7 = `lab4_slides.toc'.
+
+\tf@snm=\write8
+\openout8 = `lab4_slides.snm'.
+
+(./lab4_slides.aux) ) 
+Here is how much of TeX's memory you used:
+ 25237 strings out of 478268
+ 486772 string characters out of 5846348
+ 865223 words of memory out of 5000000
+ 42537 multiletter control sequences out of 15000+600000
+ 524279 words of font info for 114 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 128i,11n,122p,1008b,656s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-
+rm.enc}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/l
+ocal/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}</usr/local/texlive/
+2022/texmf-dist/fonts/type1/public/lm/lmss10.pfb></usr/local/texlive/2022/texmf
+-dist/fonts/type1/public/lm/lmss12.pfb></usr/local/texlive/2022/texmf-dist/font
+s/type1/public/lm/lmss8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/pub
+lic/lm/lmssbx10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/l
+msso10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmsso8.pfb
+></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></usr/loc
+al/texlive/2022/texmf-dist/fonts/type1/public/lm/lmtko10.pfb></usr/local/texliv
+e/2022/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2022/tex
+mf-dist/fonts/type1/public/lm/lmtt8.pfb></usr/local/texlive/2022/texmf-dist/fon
+ts/type1/public/lm/lmtti10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/
+public/amsfonts/symbols/msam10.pfb>
+Output written on lab4_slides.pdf (61 pages, 458617 bytes).
+PDF statistics:
+ 572 PDF objects out of 1000 (max. 8388607)
+ 453 compressed objects within 5 object streams
+ 183 named destinations out of 1000 (max. 500000)
+ 30809 words of extra memory for PDF output out of 35830 (max. 10000000)
+

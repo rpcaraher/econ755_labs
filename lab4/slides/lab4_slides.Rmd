@@ -1,0 +1,1046 @@
+---
+title: "Lab 4"
+author: "Ray Caraher"
+date: "2025-04-14"
+output: beamer_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+## Load packages
+
+library(haven)
+library(stargazer)
+library(fixest)
+library(lpdid)
+library(did)
+library(tidyverse)
+## Set options
+
+options(scipen = 999)
+
+## Clear environment
+
+rm(list = ls())
+
+## Set directories
+
+base_directory <- '/Users/rcaraher/Library/CloudStorage/OneDrive-UniversityofMassachusetts/Academic/Teaching/ECON 755/Problem Sets'
+data_directory <- file.path(base_directory, 'Data')
+results_directory <- file.path(base_directory, 'Results')
+
+
+```
+
+# Setup
+
+## Setting up our script
+
+Before we get into any real coding, let's make sure that the preamble for our code looks good.
+Here is how I set it up:
+
+A bunch of text detailing how the loading of the packages should print when this is run.
+
+\tiny
+```{r setup2, echo=T, eval=F}
+
+## Load packages
+
+library(haven)
+library(stargazer)
+library(fixest)
+library(tidyverse)
+## Set options
+
+options(scipen = 999)
+
+## Clear environment
+
+rm(list = ls())
+
+## Set directories
+
+base_directory <- '/Users/rcaraher/Library/CloudStorage/OneDrive-UniversityofMassachusetts/Academic/Teaching/ECON 755/Problem Sets'
+data_directory <- file.path(base_directory, 'Data')
+results_directory <- file.path(base_directory, 'Results')
+
+
+```
+
+# Synthetic Controls
+
+## Synthetic Controls, Matching, and DiD
+
+Today we are going to take a closer look at the difference between a DiD and synthetic control model.
+
+We are going to use California's 1988 minimum wage increase as an example.
+
+
+
+## Getting data
+
+Let's read in the data and take a look.
+
+\scriptsize
+```{r, echo=T}
+
+empwage <- read_dta(file.path(data_directory, "emp_wage_data.dta"))
+glimpse(empwage)
+
+
+```
+
+## Data
+
+We can see that this data contains information at the state-quarter level on:
+
+- demographic population shares (by age group, race, and ethnicity)
+- overall and teen wages and employment
+- the state-level minimum wage
+
+
+## CA's minimum wage
+
+Let's take a look at how California's minimum wage changed overtime:
+
+We can use the `count` command to do so.
+
+\scriptsize
+```{r, echo=T}
+
+empwage |>
+  filter(stateabb == "CA") |>
+  count(year, MW) |>
+  filter(n < 4)
+  
+
+```
+
+
+## CA's minimum wage
+
+We can see that CA increased it's minimum wage several times starting in 1988.
+
+In this exercise, we will focus on this initial increase between 1988 and 1992,
+when there was a federal minimum wage imposed.
+
+\scriptsize
+```{r, echo=T}
+
+empwage <- empwage %>%
+  mutate(yr_qtr =  year + (qtr / 10))
+
+empwage <- empwage %>%
+  filter(yr_qtr >= 1982.1 & yr_qtr <= 1990.1)
+
+empwage <- empwage %>%
+  mutate(overall_logemp = log(overall_emp),
+         teen_logemp = log(teen_emp))
+
+```
+
+## Synthetic control design
+
+Synthetic control research design excels as an alternative to DiD when there is *one* treated unit,
+*many* control units,
+and a reasonably long time span.
+
+The synthetic control method constructs a single *counter-factual* control unit comprised on a weighted average of all other control units.
+
+The identifying assumption is that this weighted-average-of-controls counter-factual is a good representation of what would have happened in the treated unit *had the intervention not occurred*.
+
+## Synthetic control design and CA's minimum wage
+
+Let's now create a good setup to use the synthetic control method to estimate the effect of the minimum wage on wage and employment outcomes.
+
+In other words, let's drop all other units that recieve a "treatment" (i.e., an increase in the MW) between 1982q1 and 1992q1.
+
+\scriptsize
+```{r, echo=T}
+
+empwage <- empwage %>%
+  group_by(stateabb) %>%
+  arrange(yr_qtr) %>%
+  mutate(mw_change = MW - lag(MW))
+
+empwage <- empwage %>%
+  group_by(stateabb) %>%
+  arrange(yr_qtr) %>%
+  mutate(control = case_when(sum(mw_change, na.rm = T) == 0 ~ 1,
+                             TRUE ~ 0)) %>%
+  ungroup()
+
+empwage_ca <- empwage %>%
+  filter(control == 1 | stateabb == "CA")
+
+```
+
+## Synthetic control design and CA's minimum wage
+
+There appear to be about 35 states which did not increase the MW during this period.
+This will be our pool of control units ("donors").
+
+\scriptsize
+```{r, echo=T}
+
+count(empwage_ca, stateabb, control) |>
+  arrange(control)
+
+```
+
+## TWFE estimate
+
+Let's first estimate the basic TWFE DiD estimates so we can later compare to the synthetic controls.
+
+\scriptsize
+```{r, echo=T}
+
+empwage_ca <- empwage_ca %>%
+  mutate(post = case_when(yr_qtr >= 1988.3 ~ 1,
+                          TRUE ~ 0),
+         treated = case_when(stateabb == "CA" ~ 1,
+                             TRUE ~ 0),
+         treat = treated * post)
+
+did1_lteenemp <- feols(teen_logemp ~ treat |
+                         stateabb + yr_qtr,
+                       cluster = "stateabb",
+                       data = empwage_ca)
+
+did1_lteenwage <- feols(teen_logwage ~ treat |
+                         stateabb + yr_qtr,
+                       cluster = "stateabb",
+                       data = empwage_ca)
+
+
+```
+
+## TWFE estimate
+
+Let's first estimate the basic TWFE DiD estimates so we can later compare to the synthetic controls.
+
+\scriptsize
+```{r, echo=T}
+
+did1_ltotemp <- feols(overall_logemp ~ treat |
+                         stateabb + yr_qtr,
+                       cluster = "stateabb",
+                       data = empwage_ca)
+
+did1_ltotwage <- feols(overall_logwage ~ treat |
+                        stateabb + yr_qtr,
+                      cluster = "stateabb",
+                      data = empwage_ca)
+
+
+```
+
+## TWFE estimate
+
+Let's first estimate the basic TWFE DiD estimates so we can later compare to the synthetic controls.
+
+\scriptsize
+```{r, echo=T}
+
+did_tab <- bind_rows(as_tibble(did1_lteenemp$coeftable), 
+                     as_tibble(did1_lteenwage$coeftable), 
+                     as_tibble(did1_ltotemp$coeftable), 
+                     as_tibble(did1_ltotwage$coeftable))
+
+did_tab <- did_tab |>
+  mutate(Outcome = c("Teen emp.", "Teen wage", "Overall emp.", "Overall wage"))
+
+did_tab <- did_tab |>
+  select(Outcome, everything())
+
+```
+
+## TWFE estimate
+
+Let's first estimate the basic TWFE DiD estimates so we can later compare to the synthetic controls.
+
+\scriptsize
+```{r, echo=T}
+
+did_tab
+
+```
+
+## Synthetic Control Estimates in R
+
+Now, let's estimate a synthetic control in R.
+
+We will use a combination of averaged pre-treatment outcomes as well as covariates for this estimate.
+
+The best implementation of synthetic controls in R (so far) is from the `tidysynth` package.
+
+Let's install it take a look at how it works:
+
+\scriptsize
+```{r, echo=T}
+#install.packages("tidysynth")
+
+library(tidysynth)
+
+```
+
+## The tidysynth package
+
+The `tidysynth` package works by iteratively, in that we first "initialize" our synthetic control object,
+then use its functions to add control variables,
+before ultimately using it to calculate the weights for the synthetic control.
+
+Let's go ahead and create the initial object:
+
+\scriptsize
+```{r, echo = T}
+
+time_vars <- distinct(empwage_ca, yr_qtr) |>
+  mutate(time_var = 1:n())
+
+empwage_ca <- empwage_ca |>
+  left_join(time_vars)
+
+synth <- empwage_ca |>
+  synthetic_control(outcome = teen_logwage, # outcome
+                    unit = stateabb, # unit index in the panel data
+                    time = time_var, # time index in the panel data
+                    i_unit = "CA", # unit where the intervention occurred
+                    i_time = 27, # time period when the intervention occurred
+                    generate_placebos = F
+                    )
+
+```
+
+## The tidysynth package
+
+The `tidysynth` package stores the data as a complex set of nested lists.
+Let's look at what this is like:
+
+\scriptsize
+```{r, echo = T}
+
+synth$.outcome[[1]]
+
+```
+
+## The tidysynth package
+
+The `tidysynth` package stores the data as a complex set of nested lists.
+Let's look at what this is like:
+
+\scriptsize
+```{r, echo = T}
+
+synth$.outcome[[2]]
+
+```
+
+## Adding control variables
+
+Using tidysynth, we add control variables using the `generate_predictor()` function in a pipe,
+building off the initial object.
+
+We specify the time window, the type of aggregation we want to,
+and the variables we want to do it to.
+
+Let's first do the pre-treatment mean of the outcome variable:
+
+
+\scriptsize
+```{r, echo = T}
+
+synth <- synth |>
+  generate_predictor(time_window = 1:26,
+                     mean_teen_logwage = mean(teen_logwage, na.rm = T)
+                     )
+  
+
+```
+
+## Adding control variables
+
+Let's next do the pre-treatment means of the industry shares and demographic shares variables.
+
+Let's first do this for all the age-share variables.
+
+\scriptsize
+```{r, echo = T}
+
+synth <- synth |>
+  generate_predictor(time_window = 1:26,
+                     mean_age_group_sh1 = mean(age_group_sh1, na.rm = T),
+                     mean_age_group_sh2 = mean(age_group_sh2, na.rm = T),
+                     mean_age_group_sh3 = mean(age_group_sh3, na.rm = T),
+                     mean_age_group_sh4 = mean(age_group_sh4, na.rm = T),
+                     mean_age_group_sh5 = mean(age_group_sh5, na.rm = T),
+                     mean_age_group_sh6 = mean(age_group_sh6, na.rm = T)
+                     )
+
+```
+
+
+## Adding control variables
+
+Now, the race, ethnicity, gender, and high-school degree shares:
+
+\scriptsize
+```{r, echo = T}
+
+synth <- synth |>
+  generate_predictor(time_window = 1:26,
+                     mean_race_share1 = mean(race_share1, na.rm = T),
+                     mean_race_share2 = mean(race_share2, na.rm = T),
+                     mean_race_share3 = mean(race_share3, na.rm = T),
+                     mean_hispanic_share = mean(hispanic_share, na.rm = T),
+                     mean_gender_share = mean(gender_share, na.rm = T),
+                     mean_hsl_share = mean(hsl_share, na.rm = T)
+                     )
+
+```
+
+
+## Adding control variables
+
+Now, the industry shares:
+
+\scriptsize
+```{r, echo = T}
+
+synth <- synth |>
+  generate_predictor(time_window = 1:26,
+                     mean_emp_sh_ind1 = mean(emp_sh_ind1, na.rm = T),
+                     mean_emp_sh_ind2 = mean(emp_sh_ind2, na.rm = T),
+                     mean_emp_sh_ind3 = mean(emp_sh_ind3, na.rm = T),
+                     mean_emp_sh_ind4 = mean(emp_sh_ind4, na.rm = T),
+                     mean_emp_sh_ind5 = mean(emp_sh_ind5, na.rm = T),
+                     mean_emp_sh_ind6 = mean(emp_sh_ind6, na.rm = T),
+                     mean_emp_sh_ind7 = mean(emp_sh_ind7, na.rm = T),
+                     mean_emp_sh_ind8 = mean(emp_sh_ind8, na.rm = T),
+                     mean_emp_sh_ind9 = mean(emp_sh_ind9, na.rm = T)
+                     )
+
+```
+
+
+## Adding control variables
+
+Let's take a look at how `tidysynth` stores these predictor variables:
+
+
+\scriptsize
+```{r, echo = T}
+
+synth$.predictors[[1]]
+
+```
+## Adding control variables
+
+Let's take a look at how `tidysynth` stores these predictor variables:
+
+\scriptsize
+```{r, echo = T}
+
+synth$.predictors[[2]]
+
+```
+
+## Adding control variables
+
+Let's double check that `tidysynth` is correctly returning the right mean values:
+
+\scriptsize
+```{r, echo = T}
+
+empwage_ca |>
+  filter(time_var <= 26) |>
+  filter(stateabb == "AL") |>
+  summarise(mean(teen_logwage, na.rm = T))
+
+empwage_ca |>
+  filter(time_var <= 26) |>
+  filter(stateabb == "AZ") |>
+  summarise(mean(age_group_sh1, na.rm = T))
+
+```
+
+## Estimate the synthetic control
+
+To actually calculate the weights and synthetic control, we use the `generate_weights()` function followed by the `generate_control()` function.
+We first need to specify the optimization window.
+
+For now, we will use the whole pre-treatment period,
+but if you want to leave out some periods before treatment as a validation exercise,
+you can have an optimization window that ends early.
+
+\scriptsize
+```{r, echo = T}
+
+
+teenwage_out <- synth |>
+  generate_weights(optimization_window = 1:26) |>
+  generate_control()
+
+
+```
+
+## Plotting the synthetic control
+
+The `tidysynth` has a bunch of nice, built-in packages to plot and work with the synthetic control results.
+
+You can look up the documentation for these.
+
+But for now, we will do it manually so we know what we are looking at.
+
+Let's first grab the synthetic control and treated outcomes:
+
+
+\scriptsize
+```{r, echo = T}
+
+teenwage_synth <- as_tibble(teenwage_out$.synthetic_control[[1]])
+
+teenwage_synth <- teenwage_synth |>
+  left_join(time_vars, by = c("time_unit" = "time_var"))
+
+teenwage_synth
+
+
+```
+## Plotting the synthetic control
+
+Now, let's plot it!
+
+\scriptsize
+```{r, echo = T}
+
+teenwage_synth_l <- teenwage_synth |>
+  pivot_longer(cols = c("real_y", "synth_y"),
+               names_to = "type", values_to = "teen_logwage")
+
+p1 <- ggplot(teenwage_synth_l) +
+  geom_line(aes(x = yr_qtr, y = teen_logwage, color = type))
+
+```
+
+## Plotting the synthetic control
+
+\scriptsize
+```{r, echo = T}
+
+print(p1)
+
+```
+
+## Synthetic control vs. unweighted controls
+
+Overall, not a bad fit!
+
+Let's compare the synthetic control fit to the simple, unweighted outcome for the control states
+
+\scriptsize
+```{r, echo = T}
+
+control_teenwage <- empwage_ca |>
+  filter(control == 1) |>
+  group_by(yr_qtr) |>
+  summarise(unwght_y = mean(teen_logwage, na.rm = T)) |>
+  ungroup()
+
+teenwage_synth <- teenwage_synth |>
+  left_join(control_teenwage)
+
+teenwage_synth_l <- teenwage_synth |>
+  pivot_longer(cols = c("real_y", "synth_y", "unwght_y"),
+               names_to = "type", values_to = "teen_logwage")
+
+p1 <- ggplot(teenwage_synth_l) +
+  geom_line(aes(x = yr_qtr, y = teen_logwage, color = type))
+
+```
+## Synthetic control vs. unweighted controls
+
+
+\scriptsize
+```{r, echo = T}
+
+print(p1)
+
+```
+
+## Comparing to the DiD
+
+How do we actually compare the synthetic control estimates to the DiD estimates?
+
+One way is to find the average *post-treatment difference* between the treated state and the synthetic control.
+
+\scriptsize
+```{r, echo = T}
+
+teenwage_synth <- teenwage_synth |>
+  mutate(diff = real_y - synth_y)
+
+teenwage_synth |>
+  filter(yr_qtr >= 1988.3) |>
+  summarise(treat_effect = mean(diff))
+
+```
+## Comparing to the DiD
+
+Compared to our TWFE estimate of `0.09`,
+the synthetic control estimate is a much more modest increase of about `0.04`.
+
+## Who gets the most weight?
+
+It is easy to get the weights from the synthetic control model:
+
+\scriptsize
+```{r, echo = T}
+
+state_weights <- teenwage_out$.unit_weights[[1]]
+
+state_weights <- state_weights |>
+  rename(state = unit)
+
+state_weights
+
+```
+
+## Mapping the weights
+
+In R, there are many ways to generate a map.
+
+The easiest way to map the US is with the `usmap` function.
+
+Look at the documentation to make a prettier looking map for the write-up.
+
+
+\scriptsize
+```{r, echo = T}
+#install.packages(usmap)
+library(usmap)
+
+m1 <- plot_usmap(data = state_weights, values = "weight")
+
+```
+
+## Mapping the weights
+
+\scriptsize
+```{r, echo = T}
+
+print(m1)
+
+```
+
+## Constructing Placebos
+
+How do we conduct inference in the case of synthetic controls?
+
+One common way is to leverage *placebo treatments*.
+
+In this exercise, we run the synthetic control **as if** each control state in our sample is the one being treated.
+
+If the magnitude of our treatment in our actually treated state is much larger than our placebo treatments (usually trimming the placebos to get rid of really bad fits),
+then we can consider our effect to be not due to random variation,
+and therefore statistically significant.
+
+## Constructing Placebos
+
+We can do this using our code above, but making sure to loop over a list of all states!
+
+For now, let's do this with CA and just a few other states.
+
+## Constructing Placebos
+
+\scriptsize
+```{r, echo = T}
+
+state_list <- distinct(empwage_ca, stateabb) |>
+  pull(stateabb)
+
+state_list <- state_list[1:5]
+
+placebo_synth_tab <- tibble()
+
+
+```
+
+## Constructing Placebos
+
+\tiny
+```{r, echo = T}
+
+for (i in seq_along(state_list)) {
+  
+  state <- state_list[i]
+  
+  synth <- empwage_ca |>
+  synthetic_control(outcome = teen_logwage, # outcome
+                    unit = stateabb, # unit index in the panel data
+                    time = time_var, # time index in the panel data
+                    i_unit = state, # unit where the intervention occurred
+                    i_time = 27, # time period when the intervention occurred
+                    generate_placebos = F
+                    ) |>
+      generate_predictor(time_window = 1:26,
+                     mean_teen_logwage = mean(teen_logwage, na.rm = T),
+                     mean_age_group_sh1 = mean(age_group_sh1, na.rm = T),
+                     mean_age_group_sh2 = mean(age_group_sh2, na.rm = T),
+                     mean_age_group_sh3 = mean(age_group_sh3, na.rm = T),
+                     mean_age_group_sh4 = mean(age_group_sh4, na.rm = T),
+                     mean_age_group_sh5 = mean(age_group_sh5, na.rm = T),
+                     mean_age_group_sh6 = mean(age_group_sh6, na.rm = T),
+                     mean_race_share1 = mean(race_share1, na.rm = T),
+                     mean_race_share2 = mean(race_share2, na.rm = T),
+                     mean_race_share3 = mean(race_share3, na.rm = T),
+                     mean_hispanic_share = mean(hispanic_share, na.rm = T),
+                     mean_gender_share = mean(gender_share, na.rm = T),
+                     mean_hsl_share = mean(hsl_share, na.rm = T),
+                    mean_emp_sh_ind1 = mean(emp_sh_ind1, na.rm = T),
+                     mean_emp_sh_ind2 = mean(emp_sh_ind2, na.rm = T),
+                     mean_emp_sh_ind3 = mean(emp_sh_ind3, na.rm = T),
+                     mean_emp_sh_ind4 = mean(emp_sh_ind4, na.rm = T),
+                     mean_emp_sh_ind5 = mean(emp_sh_ind5, na.rm = T),
+                     mean_emp_sh_ind6 = mean(emp_sh_ind6, na.rm = T),
+                     mean_emp_sh_ind7 = mean(emp_sh_ind7, na.rm = T),
+                     mean_emp_sh_ind8 = mean(emp_sh_ind8, na.rm = T),
+                     mean_emp_sh_ind9 = mean(emp_sh_ind9, na.rm = T)
+                     ) |>
+    generate_weights(optimization_window = 1:26) |>
+    generate_control()
+    
+  synth_tab <- as_tibble(synth$.synthetic_control[[1]]) |>
+    mutate(unit = state)
+  
+  placebo_synth_tab <- bind_rows(placebo_synth_tab, synth_tab) 
+  
+}
+
+```
+
+
+## Constructing Placebos
+
+\scriptsize
+```{r, echo = T}
+
+placebo_synth_tab <- placebo_synth_tab |>
+  mutate(diff = real_y - synth_y,
+         actual_treated = case_when(unit == "CA" ~ "treated",
+                                    TRUE ~ "placebo"))
+
+p1 <- placebo_synth_tab |>
+  ggplot() +
+  geom_line(aes(x = time_unit, y = diff, 
+                group = unit, alpha = actual_treated))
+
+```
+
+## Constructing Placebos
+
+\scriptsize
+```{r, echo = T}
+
+print(p1)
+
+```
+## Constructing Placebos
+
+Rather than doing this by hand for all possibile control states, 
+the `tidysynth` package can do it for us!
+
+
+\scriptsize
+```{r, echo = T}
+
+synth <- empwage_ca |>
+  synthetic_control(outcome = teen_logwage, # outcome
+                    unit = stateabb, # unit index in the panel data
+                    time = time_var, # time index in the panel data
+                    i_unit = "CA", # unit where the intervention occurred
+                    i_time = 27, # time period when the intervention occurred
+                    generate_placebos = T
+                    )
+
+```
+
+## Constructing Placebos
+
+Rather than doing this by hand for all possible control states, 
+the `tidysynth` package can do it for us!
+
+\tiny
+```{r, echo = T}
+
+synth <- synth |>
+        generate_predictor(time_window = 1:26,
+                     mean_teen_logwage = mean(teen_logwage, na.rm = T),
+                     mean_age_group_sh1 = mean(age_group_sh1, na.rm = T),
+                     mean_age_group_sh2 = mean(age_group_sh2, na.rm = T),
+                     mean_age_group_sh3 = mean(age_group_sh3, na.rm = T),
+                     mean_age_group_sh4 = mean(age_group_sh4, na.rm = T),
+                     mean_age_group_sh5 = mean(age_group_sh5, na.rm = T),
+                     mean_age_group_sh6 = mean(age_group_sh6, na.rm = T),
+                     mean_race_share1 = mean(race_share1, na.rm = T),
+                     mean_race_share2 = mean(race_share2, na.rm = T),
+                     mean_race_share3 = mean(race_share3, na.rm = T),
+                     mean_hispanic_share = mean(hispanic_share, na.rm = T),
+                     mean_gender_share = mean(gender_share, na.rm = T),
+                     mean_hsl_share = mean(hsl_share, na.rm = T),
+                    mean_emp_sh_ind1 = mean(emp_sh_ind1, na.rm = T),
+                     mean_emp_sh_ind2 = mean(emp_sh_ind2, na.rm = T),
+                     mean_emp_sh_ind3 = mean(emp_sh_ind3, na.rm = T),
+                     mean_emp_sh_ind4 = mean(emp_sh_ind4, na.rm = T),
+                     mean_emp_sh_ind5 = mean(emp_sh_ind5, na.rm = T),
+                     mean_emp_sh_ind6 = mean(emp_sh_ind6, na.rm = T),
+                     mean_emp_sh_ind7 = mean(emp_sh_ind7, na.rm = T),
+                     mean_emp_sh_ind8 = mean(emp_sh_ind8, na.rm = T),
+                     mean_emp_sh_ind9 = mean(emp_sh_ind9, na.rm = T)
+                     ) 
+
+```
+
+## Constructing Placebos
+
+\tiny
+```{r, echo = T}
+
+synth_out <- synth |>
+      generate_weights(optimization_window = 1:26) |>
+    generate_control()
+
+synth_out |> plot_placebos()
+
+```
+## Calculating P-Values
+
+Now that we have the placebo estimates, how do we calculate a p-value?
+
+We do this based on the RMSE ratio:
+
+$$RMSE Ratio = \frac{RMSE_{post}}{RMSE_{pre}}$$
+
+This ratio captures the difference between pre-intervention fit of the synthetic control for each placebo and the post-intervention divergence between each placebo and its synthetic control.
+
+If it is large, it implies that the post-intervention divergence (the difference between the unit's actual value and its synthetic control) is substantial relative to how well the synthetic control *fits* in the pre-period.
+
+## Calculating P-Values
+
+After we calculate the RMSE ratio for the actually treated unit and the placebo tests,
+we *rank* them by size to get a *pseudo p-value*.
+
+If the actually treated unit's RMSE ratio is in the top percentile of the distribution of all RMSE ratios (say the top 10%),
+then we can say this estimate statistically significant.
+
+## Calculating P-Values
+
+The `tidysynth` package will return the RMSE ratios in a figure as well using the `plot_mspe_ratio()` function.
+
+\tiny
+```{r, echo = T}
+
+synth_out |> plot_mspe_ratio()
+
+```
+
+## Calculating P-Values
+
+We can also use the `grab_significance()` function to see the rankings and associated p-value for the actually treated unit.
+
+This RMSE ratio method of inference implies that the estimated effect of CA's minimum wage increase **did not** have a statistically significant effect on teen employment.
+
+\scriptsize
+```{r, echo = T}
+
+synth_out |> grab_significance()
+
+```
+
+## Combining Synthetic Controls and DiD
+
+We see now that the synthetic control method offers a lot of utility,
+especially when we have only one treated unit.
+
+But is there a way to combine the benefits of the synthetic control method with the standard DiD method?
+
+## Synthetic DiD
+
+The synthetic DiD method estimates the standard DiD estimate **but using the weights from the synthetic control**.
+
+The synthetic DiD method uses the *unit weights* from the synthetic control method above as well as **time weights** to give more weight to the pre-treatment periods that best fit.
+
+## Synthetic DiD in R
+
+We can use the `synthdid` package in R to implement this method.
+
+Since this is an in-development package, we need to install it from github. Install the `devtools` package if you have not yet done so.
+
+\scriptsize
+```{r, echo = T}
+#install.packages("devtools")
+#devtools::install_github("synth-inference/synthdid")
+library(synthdid)
+
+```
+
+## Synthetic DiD in R
+
+We use the `panel_matrices()` function from `synthdid` to get the data in the correct form.
+
+(Hint: make sure the class of object is a `data.frame` and not a `tibble`).
+
+The method the `synthdid` package uses is to estimate the synthetic control using *pre-treatment outcome values*.
+
+
+\scriptsize
+```{r, echo = T}
+
+empwage_ca <- empwage_ca |>
+  mutate(teen_logemp = as.numeric(teen_logemp),
+         treat = as.logical(treat))
+
+empwage_ca <- as.data.frame(empwage_ca)
+
+setup <- panel.matrices(panel = as.data.frame(empwage_ca),
+                       unit = "stateabb", time = "time_var",
+                       outcome = "teen_logemp",
+                       treatment = "treat")
+
+
+```
+## Synthetic DiD in R
+
+The `setup` object now contains all objects needed to run the `synthdid_estimat()` function.
+
+Let's take a look at one of them:
+
+\scriptsize
+```{r, echo = T}
+
+setup$Y
+
+```
+## Synthetic DiD in R
+
+The `setup` object now contains all objects needed to run the `synthdid_estimat()` function.
+
+Let's take a look at one of them:
+
+\scriptsize
+```{r, echo = T}
+
+setup$N0
+setup$T0
+
+```
+
+## Synthetic DiD in R
+
+Now we can run the actual synthetic DiD estimate:
+
+\scriptsize
+```{r, echo = T}
+
+synthdid_est <- synthdid_estimate(setup$Y, setup$N0, setup$T0)
+synthdid_est
+```
+
+## Synthetic DiD in R
+
+To get the standard error, the `synthdid` package uses a similar placebo method to the standard synthetic control.
+
+We can compute this standard error using the `vcov(..., method = "placebo")` function (it may take a while).
+
+The 95\% confidence interval suggests the point estimate is not statistically significant.
+
+\scriptsize
+```{r, echo = T}
+
+synthdid_est_se <- sqrt(vcov(synthdid_est, method='placebo'))
+synthdid_est_se
+
+ci_95 <- c(synthdid_est + 1.96 * synthdid_est_se, synthdid_est - 1.96 * synthdid_est_se)
+ci_95
+```
+
+## Getting the unit weights
+
+We can also look at the weights the synthetic control unit receives using the `synthdid_controls()` function.
+
+The `weight.type = "omega"` argument tells the function to return the unit weights,
+and giving the `mass` argument a really big value tells it to return the weights for units that recieved even near-zero weights (not always useful with a large number of donors).
+
+\scriptsize
+```{r, echo = T}
+
+unit_weights <- data.frame(synthdid_controls(
+  synthdid_est, weight.type = "omega", mass = 10e12)) |>
+  rownames_to_column("stateabb") |>
+  rename(unit_wght = estimate.1)
+unit_weights
+
+```
+
+## Getting the time weights
+
+We can also do the same to get the time weights setting the `weight.type` argument to "lambda".
+
+Note the weights are only calculated for the *pre-treatment* periods.
+
+\scriptsize
+```{r, echo = T}
+
+time_weights <- data.frame(synthdid_controls(synthdid_est, 
+                                             weight.type = "lambda", 
+                                             mass = 1000000)) %>%
+  rownames_to_column("time_var") %>%
+  rename(time_wght = estimate.1) %>%
+  mutate(time_var = as.numeric(time_var))
+time_weights
+
+```
+
+## Replicating the synthdid estimate
+
+Let's see if we can use the weights to double-check the `synthdid` estimate:
+
+First, let's merge in our weights and make sure to give post-treatment periods a time weight of 1 and treated units (i.e., CA) a unit weight of 1.
+
+
+\scriptsize
+```{r, echo = T}
+
+empwage_ca <- empwage_ca |>
+  left_join(unit_weights, by = "stateabb") |>
+  left_join(time_weights, by = "time_var")
+
+ empwage_ca <-  empwage_ca  %>%
+  mutate(unit_wght = case_when(treated == 1 ~ 1,
+                               TRUE ~ unit_wght))
+
+ empwage_ca <- empwage_ca %>%
+  mutate(time_wght = case_when(post == 1 ~ 1,
+                               TRUE ~ time_wght))
+
+
+```
+
+## Replicating the synthdid estimate
+
+Now, we combine the unit and time weights for each observation before entering them into a TWFE model.
+
+\tiny
+```{r, echo = T}
+
+empwage_ca <- empwage_ca |>
+   mutate(comb_wght = unit_wght * time_wght)
+
+synthdid_est_2 <- feols(teen_logemp ~ treat | stateabb + time_var,
+              weights = ~comb_wght,
+             data = empwage_ca)
+
+summary(synthdid_est_2)
+
+```
