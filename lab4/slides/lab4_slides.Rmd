@@ -634,6 +634,8 @@ print(m1)
 
 ```
 
+# Inference with Synthetic Controls
+
 ## Constructing Placebos
 
 How do we conduct inference in the case of synthetic controls?
@@ -858,6 +860,8 @@ synth_out |> grab_significance()
 
 ```
 
+# Synthetic Difference-in-Differences
+
 ## Combining Synthetic Controls and DiD
 
 We see now that the synthetic control method offers a lot of utility,
@@ -1027,7 +1031,7 @@ empwage_ca <- empwage_ca |>
 
 ```
 
-## Replicating the synthdid estimate
+## Replicating the `synthdid` estimate
 
 Now, we combine the unit and time weights for each observation before entering them into a TWFE model.
 
@@ -1044,3 +1048,5 @@ synthdid_est_2 <- feols(teen_logemp ~ treat | stateabb + time_var,
 summary(synthdid_est_2)
 
 ```
+
+

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.3.8)  15 APR 2025 09:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.3.8)  15 APR 2025 10:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1661,30 +1661,32 @@ Package pdftex.def Info: lab4_slides_files/figure-beamer/unnamed-chunk-30-1.pdf
 
 ] [40
 
+] [41
+
 ]
 \openout4 = `lab4_slides.vrb'.
 
-(./lab4_slides.vrb) [41
+(./lab4_slides.vrb) [42
 
 ]
 \openout4 = `lab4_slides.vrb'.
 
 (./lab4_slides.vrb)
-Overfull \vbox (66.53516pt too high) detected at line 1177
+Overfull \vbox (66.53516pt too high) detected at line 1180
  []
 
-[42
+[43
 
 ]
 \openout4 = `lab4_slides.vrb'.
 
-(./lab4_slides.vrb) [43
+(./lab4_slides.vrb) [44
 
 ]
 \openout4 = `lab4_slides.vrb'.
 
 (./lab4_slides.vrb
-<lab4_slides_files/figure-beamer/unnamed-chunk-34-1.pdf, id=318, 706.64pt x 494
+<lab4_slides_files/figure-beamer/unnamed-chunk-34-1.pdf, id=325, 706.64pt x 494
 .84875pt>
 File: lab4_slides_files/figure-beamer/unnamed-chunk-34-1.pdf Graphic file (type
  pdf)
@@ -1693,21 +1695,21 @@ Package pdftex.def Info: lab4_slides_files/figure-beamer/unnamed-chunk-34-1.pdf
   used on input line 15.
 (pdftex.def)             Requested size: 706.63828pt x 494.84755pt.
 )
-Overfull \vbox (122.19353pt too high) detected at line 1232
+Overfull \vbox (122.19353pt too high) detected at line 1235
  []
 
-[44
+[45
 
  <./lab4_slides_files/figure-beamer/unnamed-chunk-34-1.pdf>]
 \openout4 = `lab4_slides.vrb'.
 
-(./lab4_slides.vrb) [45
+(./lab4_slides.vrb) [46
 
 ]
 \openout4 = `lab4_slides.vrb'.
 
 (./lab4_slides.vrb
-<lab4_slides_files/figure-beamer/unnamed-chunk-37-1.pdf, id=342, 712.6625pt x 4
+<lab4_slides_files/figure-beamer/unnamed-chunk-37-1.pdf, id=349, 712.6625pt x 4
 95.8525pt>
 File: lab4_slides_files/figure-beamer/unnamed-chunk-37-1.pdf Graphic file (type
  pdf)
@@ -1720,18 +1722,18 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <5> not available
 (Font)              Font shape `T1/lmss/m/sl' tried instead on input line 22.
 )
-Overfull \vbox (132.534pt too high) detected at line 1303
+Overfull \vbox (132.534pt too high) detected at line 1306
  []
 
-[46
+[47
 
- <./lab4_slides_files/figure-beamer/unnamed-chunk-37-1.pdf>] [47
+ <./lab4_slides_files/figure-beamer/unnamed-chunk-37-1.pdf>] [48
 
 ]
 \openout4 = `lab4_slides.vrb'.
 
 (./lab4_slides.vrb
-<lab4_slides_files/figure-beamer/unnamed-chunk-38-1.pdf, id=367, 699.61375pt x 
+<lab4_slides_files/figure-beamer/unnamed-chunk-38-1.pdf, id=374, 699.61375pt x 
 489.83pt>
 File: lab4_slides_files/figure-beamer/unnamed-chunk-38-1.pdf Graphic file (type
  pdf)
@@ -1740,10 +1742,10 @@ Package pdftex.def Info: lab4_slides_files/figure-beamer/unnamed-chunk-38-1.pdf
   used on input line 14.
 (pdftex.def)             Requested size: 699.61205pt x 489.8288pt.
 )
-Overfull \vbox (18.754pt too high) detected at line 1330
+Overfull \vbox (18.754pt too high) detected at line 1333
  []
 
-[48
+[49
 
  <./lab4_slides_files/figure-beamer/unnamed-chunk-38-1.pdf>]
 \openout4 = `lab4_slides.vrb'.
@@ -1820,21 +1822,23 @@ Overfull \hbox (28.45813pt too wide) in paragraph at lines 34--34
             0.278[] 
  []
 
-) [49
-
-] [50
+) [50
 
 ] [51
 
+] [52
+
+] [53
+
 ]
 \openout4 = `lab4_slides.vrb'.
 
-(./lab4_slides.vrb) [52
+(./lab4_slides.vrb) [54
 
 ]
 \openout4 = `lab4_slides.vrb'.
 
-(./lab4_slides.vrb) [53
+(./lab4_slides.vrb) [55
 
 ]
 \openout4 = `lab4_slides.vrb'.
@@ -2728,15 +2732,15 @@ Overfull \hbox (41.18814pt too wide) in paragraph at lines 202--202
  []
 
 )
-Overfull \vbox (1582.38185pt too high) detected at line 1637
+Overfull \vbox (1582.38185pt too high) detected at line 1643
  []
 
-[54
+[56
 
 ]
 \openout4 = `lab4_slides.vrb'.
 
-(./lab4_slides.vrb) [55
+(./lab4_slides.vrb) [57
 
 ]
 \openout4 = `lab4_slides.vrb'.
@@ -2747,40 +2751,40 @@ Overfull \hbox (113.45613pt too wide) in paragraph at lines 16--16
 tive T0/T0 = 5.4/26~0.2. N1,T1 = 1,7.[] 
  []
 
-) [56
+) [58
 
 ]
 \openout4 = `lab4_slides.vrb'.
 
-(./lab4_slides.vrb) [57
-
-]
-\openout4 = `lab4_slides.vrb'.
-
-(./lab4_slides.vrb)
-Overfull \vbox (245.68242pt too high) detected at line 1785
- []
-
-[58
+(./lab4_slides.vrb) [59
 
 ]
 \openout4 = `lab4_slides.vrb'.
 
 (./lab4_slides.vrb)
-Overfull \vbox (138.3824pt too high) detected at line 1838
+Overfull \vbox (245.68242pt too high) detected at line 1791
  []
 
-[59
+[60
 
 ]
 \openout4 = `lab4_slides.vrb'.
 
-(./lab4_slides.vrb) [60
+(./lab4_slides.vrb)
+Overfull \vbox (138.3824pt too high) detected at line 1844
+ []
+
+[61
 
 ]
 \openout4 = `lab4_slides.vrb'.
 
-(./lab4_slides.vrb) [61
+(./lab4_slides.vrb) [62
+
+]
+\openout4 = `lab4_slides.vrb'.
+
+(./lab4_slides.vrb) [63
 
 ]
 \tf@nav=\write6
@@ -2794,15 +2798,15 @@ Overfull \vbox (138.3824pt too high) detected at line 1838
 
 (./lab4_slides.aux) ) 
 Here is how much of TeX's memory you used:
- 25237 strings out of 478268
- 486772 string characters out of 5846348
- 865223 words of memory out of 5000000
- 42537 multiletter control sequences out of 15000+600000
- 524279 words of font info for 114 fonts, out of 8000000 for 9000
+ 25258 strings out of 478268
+ 486980 string characters out of 5846348
+ 866103 words of memory out of 5000000
+ 42551 multiletter control sequences out of 15000+600000
+ 524597 words of font info for 115 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,11n,122p,1008b,656s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-
-rm.enc}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/l
+ec.enc}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/l
 ocal/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}</usr/local/texlive/
 2022/texmf-dist/fonts/type1/public/lm/lmss10.pfb></usr/local/texlive/2022/texmf
 -dist/fonts/type1/public/lm/lmss12.pfb></usr/local/texlive/2022/texmf-dist/font
@@ -2812,13 +2816,14 @@ msso10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmsso8.pfb
 ></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></usr/loc
 al/texlive/2022/texmf-dist/fonts/type1/public/lm/lmtko10.pfb></usr/local/texliv
 e/2022/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2022/tex
-mf-dist/fonts/type1/public/lm/lmtt8.pfb></usr/local/texlive/2022/texmf-dist/fon
-ts/type1/public/lm/lmtti10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/
-public/amsfonts/symbols/msam10.pfb>
-Output written on lab4_slides.pdf (61 pages, 458617 bytes).
+mf-dist/fonts/type1/public/lm/lmtt12.pfb></usr/local/texlive/2022/texmf-dist/fo
+nts/type1/public/lm/lmtt8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/p
+ublic/lm/lmtti10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/ams
+fonts/symbols/msam10.pfb>
+Output written on lab4_slides.pdf (63 pages, 479465 bytes).
 PDF statistics:
- 572 PDF objects out of 1000 (max. 8388607)
- 453 compressed objects within 5 object streams
- 183 named destinations out of 1000 (max. 500000)
- 30809 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 598 PDF objects out of 1000 (max. 8388607)
+ 475 compressed objects within 5 object streams
+ 189 named destinations out of 1000 (max. 500000)
+ 30825 words of extra memory for PDF output out of 35830 (max. 10000000)
 
