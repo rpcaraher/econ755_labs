@@ -1,0 +1,955 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\documentclass[
+  ignorenonframetext,
+]{beamer}
+\newif\ifbibliography
+\usepackage{pgfpages}
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{caption label separator}{: }
+\setbeamercolor{caption name}{fg=normal text.fg}
+\beamertemplatenavigationsymbolsempty
+% remove section numbering
+\setbeamertemplate{part page}{
+  \centering
+  \begin{beamercolorbox}[sep=16pt,center]{part title}
+    \usebeamerfont{part title}\insertpart\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{section page}{
+  \centering
+  \begin{beamercolorbox}[sep=12pt,center]{section title}
+    \usebeamerfont{section title}\insertsection\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{subsection page}{
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center]{subsection title}
+    \usebeamerfont{subsection title}\insertsubsection\par
+  \end{beamercolorbox}
+}
+% Prevent slide breaks in the middle of a paragraph
+\widowpenalties 1 10000
+\raggedbottom
+\AtBeginPart{
+  \frame{\partpage}
+}
+\AtBeginSection{
+  \ifbibliography
+  \else
+    \frame{\sectionpage}
+  \fi
+}
+\AtBeginSubsection{
+  \frame{\subsectionpage}
+}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Lab 6},
+  pdfauthor={Ray Caraher},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Lab 6}
+\author{Ray Caraher}
+\date{2025-05-06}
+
+\begin{document}
+\frame{\titlepage}
+
+\section{Setup}\label{setup}
+
+\begin{frame}[fragile]{Setting up our script}
+\phantomsection\label{setting-up-our-script}
+Before we get into any real coding, let's make sure that the preamble
+for our code looks good. Here is how I set it up:
+
+\tiny
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\# Load packages}
+\FunctionTok{library}\NormalTok{(haven)}
+\FunctionTok{library}\NormalTok{(fixest)}
+\FunctionTok{library}\NormalTok{(tidyverse)}
+\DocumentationTok{\#\# Set options}
+
+\FunctionTok{options}\NormalTok{(}\AttributeTok{scipen =} \DecValTok{999}\NormalTok{)}
+
+\DocumentationTok{\#\# Clear environment}
+
+\FunctionTok{rm}\NormalTok{(}\AttributeTok{list =} \FunctionTok{ls}\NormalTok{())}
+
+\DocumentationTok{\#\# Set directories}
+
+\NormalTok{base\_directory }\OtherTok{\textless{}{-}} \StringTok{\textquotesingle{}/Users/rcaraher/Library/CloudStorage/OneDrive{-}UniversityofMassachusetts/Academic/Teaching/ECON 755/Problem Sets\textquotesingle{}}
+\NormalTok{data\_directory }\OtherTok{\textless{}{-}} \FunctionTok{file.path}\NormalTok{(base\_directory, }\StringTok{\textquotesingle{}Data\textquotesingle{}}\NormalTok{)}
+\NormalTok{results\_directory }\OtherTok{\textless{}{-}} \FunctionTok{file.path}\NormalTok{(base\_directory, }\StringTok{\textquotesingle{}Results\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+\end{frame}
+
+\section{Instrumental Variable Estimate in
+T}\label{instrumental-variable-estimate-in-t}
+
+\begin{frame}{Overview of IVs}
+\phantomsection\label{overview-of-ivs}
+Instrumental variables is another route to ``causal'' inference
+
+\begin{itemize}
+\tightlist
+\item
+  In DiD approach, only looking at changes in treatment status that are
+  exogenous (caused by policy changes, lottery, natural experiment,
+  etc.)
+\item
+  In IV approach, only looking at variation in outcome that is
+  correlated with variation in an exogenous variable (the instrument)
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Identifying IVs}
+\phantomsection\label{identifying-ivs}
+We want to estimate the following regression:
+
+\[ Y = \beta_{0} + \beta_{1}X + \epsilon \]
+
+However, we have reason to believe that \(X\) is not exogenous.
+
+Examples:
+
+\begin{enumerate}
+\tightlist
+\item
+  Effect of schooling (\(X\)) on wages (\(Y\)): Some unobservable
+  omitted variable (e.g., ability) is correlated with both \(X\) and
+  \(Y\)
+\item
+  Effect of insurance (\(X\)) on health (\(Y\)): Selection in that
+  healthier individuals (\(Y\)) may be more likely to get insurance
+  (\(X\))
+\item
+  Effect of policing (\(X\)) on crime (\(Y\)): Reverse causality as
+  police (\(X\)) are often deployed to areas with high crime rates
+  (\(Y\))
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Identifying IVs}
+\phantomsection\label{identifying-ivs-1}
+In these cases, \(X\) will not have a valid causal interpretation.
+
+What can we do?
+
+One solution is to identify an \textbf{instrument \(Z\)} which is
+correlated with \(X\) and correlated with \(Y\) \emph{only through its
+correlation with \(X\)}
+
+In other words, the instrument was be \textbf{relevant and excusable}
+\end{frame}
+
+\begin{frame}{Conditions for a Valid Instrument}
+\phantomsection\label{conditions-for-a-valid-instrument}
+If the model is \[Y = \beta_0 + \beta_1 X + \epsilon\],
+
+then a valid instrument \(Z\) must be:
+
+\begin{enumerate}
+\tightlist
+\item
+  Relevant: \(Cov(Z,X) \neq 0\) \(\rightarrow\) \(Z\) must be correlated
+  with \(X\)
+\item
+  Excludable: \(Cov(Z,\epsilon) = 0\) \(\rightarrow\) \(Z\) must
+  \emph{not} be correlated with the error term
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Estimation via 2SLS: Stage 1}
+\phantomsection\label{estimation-via-2sls-stage-1}
+To estimate \(Y = \beta X + \epsilon\) with instrument \(Z\), use 2SLS:
+
+Stage 1: Regress \(X\) on \(Z\) (get predicted \(\hat{X}\)):
+
+\[ X = \pi_0 + \pi_{1}Z + \eta \] This is called the \textbf{first
+stage}
+\end{frame}
+
+\begin{frame}{Notes about the First Stage - Weak Instruments}
+\phantomsection\label{notes-about-the-first-stage---weak-instruments}
+If \(\pi_1\) is close to zero, \(Z\) is a weak instrument:
+
+\begin{itemize}
+\tightlist
+\item
+  \(\hat{X}\) contains little exogenous variation
+\item
+  Stop here: 2SLS estimates become biased and unreliable (can be worse
+  than OLS)
+\end{itemize}
+
+Can use statistical tests to look for weak instruments, most common
+being the \textbf{F-statistic}
+\end{frame}
+
+\begin{frame}{Estimation via 2SLS: Stage 2}
+\phantomsection\label{estimation-via-2sls-stage-2}
+Stage 2: Regress \(Y\) on \(\hat{X}\):
+
+\[ Y = \beta_0 + \beta_1 \hat{X} + \mu \]
+\end{frame}
+
+\begin{frame}{Why use 2SLS?}
+\phantomsection\label{why-use-2sls}
+\begin{itemize}
+\tightlist
+\item
+  OLS is biased when \(X\) is endogenous
+\item
+  IV isolates exogenous variation in \(X\)
+\item
+  2SLS is consistent (though often less efficient than OLS)
+\end{itemize}
+\end{frame}
+
+\section{2SLS in R}\label{sls-in-r}
+
+\begin{frame}{Estimating IVs in R}
+\phantomsection\label{estimating-ivs-in-r}
+\begin{itemize}
+\tightlist
+\item
+  Estimating 2SLS in R is a simple extension from our normal regression
+  tools
+\end{itemize}
+\end{frame}
+
+\begin{frame}{The setting}
+\phantomsection\label{the-setting}
+What is the effect of fertility on labor supply?
+
+Important empirical question for many reasons:
+
+\begin{itemize}
+\tightlist
+\item
+  Having children could push women out of the labor force for some time,
+  having career implications
+\item
+  Having children may lead to increased premiums for fathers in the
+  labor market
+\item
+  More educated/higher class families may be differentially affected by
+  fertility
+\end{itemize}
+\end{frame}
+
+\begin{frame}{The setting}
+\phantomsection\label{the-setting-1}
+Want to estimate the following:
+
+\[ Y = \beta_0 + \beta_1 X + \epsilon \] where \(Y\) is a labor market
+outcome (hours worked, employment status, wages, etc.) and \(X\) is
+fertility (number of children, having any children, etc.)
+
+However, naive estimates of \(X\) on \(Y\) may not be credible if we aim
+to estimate a causal effect for many reasons:
+
+\begin{enumerate}
+\tightlist
+\item
+  Families may time when to have children based on labor market factors
+  (reverse causality)
+\item
+  Families may have children when they expect their labor market
+  outcomes to improve (OVB)
+\item
+  Families that are less resource/time constrained may have more
+  children (selection)
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{The setting}
+\phantomsection\label{the-setting-2}
+Angrist and Evans (1998) propose an instrumental variable to overcome
+these biases: \textbf{sex composition of current children}
+
+Intuition:
+
+Relevance:
+
+\begin{itemize}
+\tightlist
+\item
+  Families have a strong desire to have mixed-sex children and will
+  increase fertility to do so
+
+  \begin{itemize}
+  \tightlist
+  \item
+    If you have two girls, will likely have a third child in an attempt
+    to have a son
+  \item
+    But if you have one boy and one girl already, less likely to have a
+    third child
+  \end{itemize}
+\end{itemize}
+
+Exculdable:
+
+\begin{itemize}
+\tightlist
+\item
+  Initial sex of children is \emph{randomly assigned}
+\end{itemize}
+
+Therefore, having two same-sex children is (arguably) a valid
+\textbf{instrument for fertility}
+\end{frame}
+
+\begin{frame}[fragile]{Getting data}
+\phantomsection\label{getting-data}
+Let's read in the data and take a look.
+
+\scriptsize
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ae\_pums }\OtherTok{\textless{}{-}} \FunctionTok{read\_dta}\NormalTok{(}\FunctionTok{file.path}\NormalTok{(data\_directory, }\StringTok{"angrist\_evans\_data.dta"}\NormalTok{))}
+
+\FunctionTok{glimpse}\NormalTok{(ae\_pums)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Rows: 402,014
+## Columns: 11
+## $ twins_1          <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,~
+## $ mom_weeks_worked <dbl> 0, 52, 30, 0, 0, 0, 22, 26, 40, 0, 52, 0, 52, 0, 52, ~
+## $ kidcount         <dbl> 2, 2, 2, 2, 2, 3, 2, 3, 2, 2, 2, 2, 2, 2, 4, 3, 2, 2,~
+## $ mom_worked       <dbl> 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1,~
+## $ twins_2          <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,~
+## $ moreths          <dbl> 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0,~
+## $ whitem           <dbl> 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,~
+## $ blackm           <dbl> 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,~
+## $ morekids         <dbl> 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0,~
+## $ hispm            <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,~
+## $ samesex          <dbl> 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1,~
+\end{verbatim}
+\end{frame}
+
+\begin{frame}[fragile]{Looking at data}
+\phantomsection\label{looking-at-data}
+Let's read in the data and take a look at some descriptives:
+
+\scriptsize
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{desc\_tab }\OtherTok{\textless{}{-}}\NormalTok{ ae\_pums }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{summarise}\NormalTok{(}\AttributeTok{mean\_kids =} \FunctionTok{mean}\NormalTok{(kidcount, }\AttributeTok{na.rm =}\NormalTok{ T),}
+            \AttributeTok{samesex =} \FunctionTok{mean}\NormalTok{(samesex, }\AttributeTok{na.rm =}\NormalTok{ T))}
+\NormalTok{desc\_tab}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 1 x 2
+##   mean_kids samesex
+##       <dbl>   <dbl>
+## 1      2.56   0.505
+\end{verbatim}
+\end{frame}
+
+\begin{frame}[fragile]{Looking at data}
+\phantomsection\label{looking-at-data-1}
+Let's read in the data and take a look at some descriptives
+
+\scriptsize
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ae\_pums }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{count}\NormalTok{(kidcount)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 11 x 2
+##    kidcount      n
+##       <dbl>  <int>
+##  1        2 239150
+##  2        3 117203
+##  3        4  33577
+##  4        5   9046
+##  5        6   2160
+##  6        7    607
+##  7        8    205
+##  8        9     39
+##  9       10     18
+## 10       11      7
+## 11       12      2
+\end{verbatim}
+\end{frame}
+
+\begin{frame}[fragile]{Looking at data}
+\phantomsection\label{looking-at-data-2}
+Let's read in the data and take a look at some descriptives
+
+\scriptsize
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ae\_pums }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{group\_by}\NormalTok{(samesex) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{summarise}\NormalTok{(}\AttributeTok{morekids =} \FunctionTok{mean}\NormalTok{(morekids, }\AttributeTok{na.rm =}\NormalTok{ T))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 2 x 2
+##   samesex morekids
+##     <dbl>    <dbl>
+## 1       0    0.375
+## 2       1    0.435
+\end{verbatim}
+\end{frame}
+
+\begin{frame}[fragile]{Estimating OLS}
+\phantomsection\label{estimating-ols}
+Let's first estimate using OLS the effect of having at least three kids
+on the likelihood mom worked:
+
+\tiny
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ae\_pums }\OtherTok{\textless{}{-}}\NormalTok{ ae\_pums }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{mt2kids =} \FunctionTok{case\_when}\NormalTok{(kidcount }\SpecialCharTok{\textgreater{}} \DecValTok{2} \SpecialCharTok{\textasciitilde{}} \DecValTok{1}\NormalTok{,}
+                             \FunctionTok{is.na}\NormalTok{(kidcount) }\SpecialCharTok{\textasciitilde{}} \ConstantTok{NA\_real\_}\NormalTok{,}
+                             \ConstantTok{TRUE} \SpecialCharTok{\textasciitilde{}} \DecValTok{0}\NormalTok{))}
+
+\NormalTok{mworked\_ols }\OtherTok{\textless{}{-}} \FunctionTok{feols}\NormalTok{(mom\_worked }\SpecialCharTok{\textasciitilde{}}\NormalTok{ mt2kids }\SpecialCharTok{+}\NormalTok{ whitem }\SpecialCharTok{+}\NormalTok{ blackm }\SpecialCharTok{+}\NormalTok{ hispm }\SpecialCharTok{+}\NormalTok{ moreths, }
+                     \AttributeTok{data =}\NormalTok{ ae\_pums)}
+\FunctionTok{summary}\NormalTok{(mworked\_ols)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## OLS estimation, Dep. Var.: mom_worked
+## Observations: 402,014
+## Standard-errors: IID 
+##              Estimate Std. Error   t value              Pr(>|t|)    
+## (Intercept)  0.599837   0.004663 128.63257             < 2.2e-16 ***
+## mt2kids     -0.121478   0.001587 -76.52607             < 2.2e-16 ***
+## whitem      -0.017575   0.004642  -3.78571 0.0001532915018691329 ***
+## blackm       0.107326   0.005067  21.17960             < 2.2e-16 ***
+## hispm       -0.049719   0.006368  -7.80765 0.0000000000000058403 ***
+## moreths      0.059676   0.001712  34.86374             < 2.2e-16 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## RMSE: 0.48968   Adj. R2: 0.024116
+\end{verbatim}
+
+This is pretty close to the estimated effect in AE (1998) of
+\texttt{-0.176} (see table 5, row 1 in the NBER working paper draft)
+\end{frame}
+
+\begin{frame}[fragile]{Estimating OLS}
+\phantomsection\label{estimating-ols-1}
+Let's now estimate using OLS the effect of having at least three kids on
+the number of weeks mom worked:
+
+\tiny
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{mweeks\_ols }\OtherTok{\textless{}{-}} \FunctionTok{feols}\NormalTok{(mom\_weeks\_worked }\SpecialCharTok{\textasciitilde{}}\NormalTok{ mt2kids }\SpecialCharTok{+}\NormalTok{ whitem }\SpecialCharTok{+}\NormalTok{ blackm }\SpecialCharTok{+}\NormalTok{ hispm }\SpecialCharTok{+}\NormalTok{ moreths, }
+                     \AttributeTok{data =}\NormalTok{ ae\_pums)}
+\FunctionTok{summary}\NormalTok{(mweeks\_ols)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## OLS estimation, Dep. Var.: mom_weeks_worked
+## Observations: 402,014
+## Standard-errors: IID 
+##             Estimate Std. Error   t value               Pr(>|t|)    
+## (Intercept) 23.44623   0.208961 112.20389              < 2.2e-16 ***
+## mt2kids     -6.11931   0.071133 -86.02610              < 2.2e-16 ***
+## whitem      -1.70262   0.208033  -8.18435 0.00000000000000027457 ***
+## blackm       5.26005   0.227075  23.16443              < 2.2e-16 ***
+## hispm       -3.01258   0.285356 -10.55726              < 2.2e-16 ***
+## moreths      2.35799   0.076702  30.74229              < 2.2e-16 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## RMSE: 21.9   Adj. R2: 0.030178
+\end{verbatim}
+\end{frame}
+
+\begin{frame}[fragile]{Estimating 2SLS}
+\phantomsection\label{estimating-2sls}
+We have already discussed why a naive regression of fertility on labor
+market outcomes may be endogenous. Now, let's instrument using \(Z\) as
+an indicator for if the family had 2 kids of the same sex at birth.
+
+We will first implement it by-hand, then using \texttt{feols()}
+\end{frame}
+
+\begin{frame}[fragile]{Estimating the First Stage}
+\phantomsection\label{estimating-the-first-stage}
+Let's estimate the first stage.
+
+When we use covariates, its important to include them on the RHS of the
+first-stage regression as well!
+
+\tiny
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{fs }\OtherTok{\textless{}{-}} \FunctionTok{feols}\NormalTok{(mt2kids }\SpecialCharTok{\textasciitilde{}}\NormalTok{ samesex }\SpecialCharTok{+}\NormalTok{ whitem }\SpecialCharTok{+}\NormalTok{ blackm }\SpecialCharTok{+}\NormalTok{ hispm }\SpecialCharTok{+}\NormalTok{ moreths,}
+            \AttributeTok{data =}\NormalTok{ ae\_pums)}
+\FunctionTok{summary}\NormalTok{(fs)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## OLS estimation, Dep. Var.: mt2kids
+## Observations: 402,014
+## Standard-errors: IID 
+##              Estimate Std. Error  t value  Pr(>|t|)    
+## (Intercept)  0.435078   0.004630  93.9641 < 2.2e-16 ***
+## samesex      0.059407   0.001532  38.7794 < 2.2e-16 ***
+## whitem      -0.052779   0.004603 -11.4656 < 2.2e-16 ***
+## blackm       0.067258   0.005024  13.3866 < 2.2e-16 ***
+## hispm        0.096116   0.006313  15.2241 < 2.2e-16 ***
+## moreths     -0.096315   0.001691 -56.9677 < 2.2e-16 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## RMSE: 0.485619   Adj. R2: 0.021451
+\end{verbatim}
+\end{frame}
+
+\begin{frame}[fragile]{Estimating the First Stage}
+\phantomsection\label{estimating-the-first-stage-1}
+The regression is significant and positive, suggesting that having 2
+kids of the same sex significant increases your probability of having a
+third.
+
+Now let's generate the predicted value of \(X\) using the variation in
+\texttt{samesex}
+
+\scriptsize
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ae\_pums }\OtherTok{\textless{}{-}}\NormalTok{ ae\_pums }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{X\_hat =} \FunctionTok{predict}\NormalTok{(fs, }\AttributeTok{type =} \StringTok{"response"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+\end{frame}
+
+\begin{frame}[fragile]{Estimating the second stage}
+\phantomsection\label{estimating-the-second-stage}
+Now, we use the predicted values from the first stage to estimate the
+effect of the \textbf{exogenous} part of fertility on labor market
+outcomes:
+
+\tiny
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{mworked\_s2 }\OtherTok{\textless{}{-}} \FunctionTok{feols}\NormalTok{(mom\_worked }\SpecialCharTok{\textasciitilde{}}\NormalTok{ X\_hat }\SpecialCharTok{+}\NormalTok{ whitem }\SpecialCharTok{+}\NormalTok{ blackm }\SpecialCharTok{+}\NormalTok{ hispm }\SpecialCharTok{+}\NormalTok{ moreths, }
+                     \AttributeTok{data =}\NormalTok{ ae\_pums)}
+\FunctionTok{summary}\NormalTok{(mworked\_s2)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## OLS estimation, Dep. Var.: mom_worked
+## Observations: 402,014
+## Standard-errors: IID 
+##              Estimate Std. Error  t value           Pr(>|t|)    
+## (Intercept)  0.603134   0.013028 46.29646          < 2.2e-16 ***
+## X_hat       -0.128571   0.026190 -4.90908 0.0000009154029933 ***
+## whitem      -0.017947   0.004873 -3.68286 0.0002306660443972 ***
+## blackm       0.107805   0.005401 19.95974          < 2.2e-16 ***
+## hispm       -0.049035   0.006892 -7.11519 0.0000000000011195 ***
+## moreths      0.058992   0.003052 19.32714          < 2.2e-16 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## RMSE: 0.493219   Adj. R2: 0.00996
+\end{verbatim}
+
+\tiny
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{mweeks\_s2 }\OtherTok{\textless{}{-}} \FunctionTok{feols}\NormalTok{(mom\_weeks\_worked }\SpecialCharTok{\textasciitilde{}}\NormalTok{ X\_hat }\SpecialCharTok{+}\NormalTok{ whitem }\SpecialCharTok{+}\NormalTok{ blackm }\SpecialCharTok{+}\NormalTok{ hispm }\SpecialCharTok{+}\NormalTok{ moreths, }
+                     \AttributeTok{data =}\NormalTok{ ae\_pums)}
+\FunctionTok{summary}\NormalTok{(mweeks\_s2)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## OLS estimation, Dep. Var.: mom_weeks_worked
+## Observations: 402,014
+## Standard-errors: IID 
+##             Estimate Std. Error  t value              Pr(>|t|)    
+## (Intercept) 23.45461   0.584881 40.10148             < 2.2e-16 ***
+## X_hat       -6.13733   1.175832 -5.21956 0.0000001794336473852 ***
+## whitem      -1.70356   0.218786 -7.78644 0.0000000000000069086 ***
+## blackm       5.26127   0.242485 21.69727             < 2.2e-16 ***
+## hispm       -3.01084   0.309403 -9.73114             < 2.2e-16 ***
+## moreths      2.35626   0.137034 17.19464             < 2.2e-16 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## RMSE: 22.1   Adj. R2: 0.012392
+\end{verbatim}
+
+These results are also close to the AE (1998) results in table 5 of
+\texttt{-0.121} for any employment and \texttt{-5.68} for weeks worked.
+\end{frame}
+
+\begin{frame}[fragile]{Estimating 2SLS using a built-in routine}
+\phantomsection\label{estimating-2sls-using-a-built-in-routine}
+The \texttt{feols()} function we have been working with has built-in
+ability to estimate 2SLS.
+
+Simply add another \texttt{\textbar{}} after the fixed-effects using
+\texttt{X\ \textasciitilde{}\ Z} formula syntax.
+
+The control variables on the immediate RHS of the formula will
+automatically be included.
+
+Since we have no fixed-effects here, we can just use a \texttt{0}.
+
+Our results perfectly match those computations we did by-hand.
+\end{frame}
+
+\begin{frame}[fragile]{Estimating 2SLS using a built-in routine}
+\phantomsection\label{estimating-2sls-using-a-built-in-routine-1}
+\tiny
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{mworked\_tsls }\OtherTok{\textless{}{-}} \FunctionTok{feols}\NormalTok{(mom\_worked }\SpecialCharTok{\textasciitilde{}}\NormalTok{ whitem }\SpecialCharTok{+}\NormalTok{ blackm }\SpecialCharTok{+}\NormalTok{ hispm }\SpecialCharTok{+}\NormalTok{ moreths }\SpecialCharTok{|} 
+                \DecValTok{0} \SpecialCharTok{|} 
+\NormalTok{                mt2kids }\SpecialCharTok{\textasciitilde{}}\NormalTok{ samesex,}
+              \AttributeTok{data =}\NormalTok{ ae\_pums)}
+\FunctionTok{summary}\NormalTok{(mworked\_tsls)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## TSLS estimation - Dep. Var.: mom_worked
+##                   Endo.    : mt2kids
+##                   Instr.   : samesex
+## Second stage: Dep. Var.: mom_worked
+## Observations: 402,014
+## Standard-errors: IID 
+##              Estimate Std. Error  t value            Pr(>|t|)    
+## (Intercept)  0.603134   0.012934 46.62990           < 2.2e-16 ***
+## fit_mt2kids -0.128571   0.026003 -4.94444 0.00000076395140220 ***
+## whitem      -0.017947   0.004838 -3.70938 0.00020779515550137 ***
+## blackm       0.107805   0.005362 20.10349           < 2.2e-16 ***
+## hispm       -0.049035   0.006842 -7.16643 0.00000000000077108 ***
+## moreths      0.058992   0.003030 19.46634           < 2.2e-16 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## RMSE: 0.489692   Adj. R2: 0.024068
+## F-test (1st stage), mt2kids: stat = 1,503.8     , p < 2.2e-16 , on 1 and 402,008 DoF.
+##                  Wu-Hausman: stat =     0.074685, p = 0.784633, on 1 and 402,007 DoF.
+\end{verbatim}
+\end{frame}
+
+\begin{frame}[fragile]{Estimating 2SLS using a built-in routine}
+\phantomsection\label{estimating-2sls-using-a-built-in-routine-2}
+\tiny
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{mweeks\_tsls }\OtherTok{\textless{}{-}} \FunctionTok{feols}\NormalTok{(mom\_weeks\_worked }\SpecialCharTok{\textasciitilde{}}\NormalTok{ whitem }\SpecialCharTok{+}\NormalTok{ blackm }\SpecialCharTok{+}\NormalTok{ hispm }\SpecialCharTok{+}\NormalTok{ moreths }\SpecialCharTok{|} 
+                \DecValTok{0} \SpecialCharTok{|} 
+\NormalTok{                mt2kids }\SpecialCharTok{\textasciitilde{}}\NormalTok{ samesex,}
+              \AttributeTok{data =}\NormalTok{ ae\_pums)}
+\FunctionTok{summary}\NormalTok{(mweeks\_tsls)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## TSLS estimation - Dep. Var.: mom_weeks_worked
+##                   Endo.    : mt2kids
+##                   Instr.   : samesex
+## Second stage: Dep. Var.: mom_weeks_worked
+## Observations: 402,014
+## Standard-errors: IID 
+##             Estimate Std. Error  t value              Pr(>|t|)    
+## (Intercept) 23.45461   0.579591 40.46754             < 2.2e-16 ***
+## fit_mt2kids -6.13733   1.165196 -5.26721 0.0000001385845302174 ***
+## whitem      -1.70356   0.216807 -7.85752 0.0000000000000039279 ***
+## blackm       5.26127   0.240292 21.89533             < 2.2e-16 ***
+## hispm       -3.01084   0.306604 -9.81997             < 2.2e-16 ***
+## moreths      2.35626   0.135795 17.35160             < 2.2e-16 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## RMSE: 21.9   Adj. R2: 0.030178
+## F-test (1st stage), mt2kids: stat = 1,503.8     , p < 2.2e-16 , on 1 and 402,008 DoF.
+##                  Wu-Hausman: stat =     2.401e-4, p = 0.987636, on 1 and 402,007 DoF.
+\end{verbatim}
+\end{frame}
+
+\begin{frame}{2SLS Diagnostics}
+\phantomsection\label{sls-diagnostics}
+One benefit of using the built-in 2SLS models is that they automatically
+compute test-statistics such as the F-statistic.
+
+Recall the intuition of the F-statistic: \emph{Do the explanatory
+variables in this regression explain a meaningful amount of variation in
+the outcome?}
+
+\begin{enumerate}
+\tightlist
+\item
+  Estimate a ``restricted model'' without the instrument \(Z\) and an
+  ``unrestricted model'' with the instrument \(Z\)
+\item
+  Compare the residual sum of squares (RSS)
+\item
+  If the RSS drops substantially, the F-stat is large.
+\end{enumerate}
+
+If the F-stat is large, this implies that it explains a lot of the
+variation in \(Y\).
+
+In other words, it is not a \textbf{weak instrument}
+
+A ballpark F-stat of 10 is usually considered the rule-of-thumb
+\end{frame}
+
+\begin{frame}[fragile]{2SLS Diagnostics: Problems with the F-stat}
+\phantomsection\label{sls-diagnostics-problems-with-the-f-stat}
+However, the F-stat rule-of-thumb is really only valid with certain
+assumptions.
+
+In the presence of clustered, heteroskedastic, or a number of other
+error cases we likely need a much larger F-stat than 10.
+
+The \texttt{ivDiag} package has some useful methods for more thorough
+2SLS diagnostics
+\end{frame}
+
+\begin{frame}[fragile]{Advanced 2SLS Diagnostics}
+\phantomsection\label{advanced-2sls-diagnostics}
+Let's load in the package (don't forget to install if the first time
+using it)
+
+\scriptsize
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#install.packages("ivDiag")}
+\FunctionTok{library}\NormalTok{(ivDiag)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## ## Tutorial: https://yiqingxu.org/packages/ivDiag/
+\end{verbatim}
+\end{frame}
+
+\begin{frame}[fragile]{Advanced 2SLS Diagnostics}
+\phantomsection\label{advanced-2sls-diagnostics-1}
+The \texttt{ivDiag()} function requires us to supply its arguments as
+strings.
+
+Let's first use it to look at some F-stats.
+
+\scriptsize
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{mworked\_ivDiag }\OtherTok{\textless{}{-}} \FunctionTok{ivDiag}\NormalTok{(}\AttributeTok{data =}\NormalTok{ ae\_pums,}
+                         \AttributeTok{Y =} \StringTok{"mom\_worked"}\NormalTok{,}
+                         \AttributeTok{D =} \StringTok{"mt2kids"}\NormalTok{,}
+                         \AttributeTok{Z =} \StringTok{"samesex"}\NormalTok{,}
+                         \AttributeTok{controls =} \FunctionTok{c}\NormalTok{(}\StringTok{"whitem"}\NormalTok{, }\StringTok{"blackm"}\NormalTok{, }\StringTok{"hispm"}\NormalTok{, }\StringTok{"moreths"}\NormalTok{),}
+                         \AttributeTok{bootstrap =} \ConstantTok{FALSE}\NormalTok{,}
+                         \AttributeTok{run.AR =} \ConstantTok{FALSE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+\end{frame}
+
+\begin{frame}[fragile]{Advanced 2SLS Diagnostics}
+\phantomsection\label{advanced-2sls-diagnostics-2}
+In addition to returning the OLS, 2SLS, first stage, and reduced form
+estimates, the \texttt{ivDiag()} function will return a range of F-stat
+tests.
+
+\scriptsize
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{mworked\_ivDiag}\SpecialCharTok{$}\NormalTok{est\_ols}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##             Coef     SE        t CI 2.5% CI 97.5% p.value
+## Analytic -0.1215 0.0016 -76.1443 -0.1246  -0.1184       0
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{mworked\_ivDiag}\SpecialCharTok{$}\NormalTok{est\_2sls}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##             Coef    SE       t CI 2.5% CI 97.5% p.value
+## Analytic -0.1286 0.026 -4.9445 -0.1795  -0.0776       0
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{mworked\_ivDiag}\SpecialCharTok{$}\NormalTok{F\_stat}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  F.standard    F.robust   F.cluster F.effective 
+##    1503.843    1504.630          NA    1504.630
+\end{verbatim}
+\end{frame}
+
+\begin{frame}[fragile]{The Anderson-Rubin test}
+\phantomsection\label{the-anderson-rubin-test}
+If we are estimating an IV with a weak instrument, the standard error on
+the 2SLS estimate will not be valid.
+
+Anderson-Rubin (1949) suggest a test statistic which is robust the weak
+instrument concern.
+
+The Anderson-Rubin test statistic works backwards:
+
+For a set of possible \(\beta_{0}\) values, it computes if
+\(Y - \beta_{0}X\) regressed on \(Z\) is statistically significant.
+Then, the set of \(\beta_{0}\) such that \(Z\) is not significant is the
+AR Confidence interval.
+
+We can implement this by setting the \texttt{run.AR} argument in
+\texttt{ivDiag()} to \texttt{TRUE}
+\end{frame}
+
+\begin{frame}[fragile]{The Anderson-Rubin test}
+\phantomsection\label{the-anderson-rubin-test-1}
+\scriptsize
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{mworked\_ivDiag\_v2 }\OtherTok{\textless{}{-}} \FunctionTok{ivDiag}\NormalTok{(}\AttributeTok{data =}\NormalTok{ ae\_pums,}
+                         \AttributeTok{Y =} \StringTok{"mom\_worked"}\NormalTok{,}
+                         \AttributeTok{D =} \StringTok{"mt2kids"}\NormalTok{,}
+                         \AttributeTok{Z =} \StringTok{"samesex"}\NormalTok{,}
+                         \AttributeTok{controls =} \FunctionTok{c}\NormalTok{(}\StringTok{"whitem"}\NormalTok{, }\StringTok{"blackm"}\NormalTok{, }\StringTok{"hispm"}\NormalTok{, }\StringTok{"moreths"}\NormalTok{),}
+                         \AttributeTok{bootstrap =} \ConstantTok{FALSE}\NormalTok{,}
+                         \AttributeTok{run.AR =} \ConstantTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## AR Test Inversion...
+\end{verbatim}
+
+\begin{verbatim}
+## Parallelising on 11 cores
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{mworked\_ivDiag\_v2}\SpecialCharTok{$}\NormalTok{AR}\SpecialCharTok{$}\NormalTok{ci.print}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "[-0.1795, -0.0776]"
+\end{verbatim}
+\end{frame}
+
+\end{document}

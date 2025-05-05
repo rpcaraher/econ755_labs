@@ -1,0 +1,477 @@
+---
+title: "Lab 6"
+author: "Ray Caraher"
+date: "2025-05-06"
+output:
+  beamer_presentation:
+    keep_tex: true
+
+---
+
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+## Load packages
+library(haven)
+library(fixest)
+library(tidyverse)
+## Set options
+
+options(scipen = 999)
+
+## Clear environment
+
+rm(list = ls())
+
+## Set directories
+
+base_directory <- '/Users/rcaraher/Library/CloudStorage/OneDrive-UniversityofMassachusetts/Academic/Teaching/ECON 755/Problem Sets'
+data_directory <- file.path(base_directory, 'Data')
+results_directory <- file.path(base_directory, 'Results')
+
+
+```
+
+# Setup
+
+## Setting up our script
+
+Before we get into any real coding, let's make sure that the preamble for our code looks good.
+Here is how I set it up:
+
+
+\tiny
+```{r setup2, echo=T, eval=F}
+
+## Load packages
+library(haven)
+library(fixest)
+library(tidyverse)
+## Set options
+
+options(scipen = 999)
+
+## Clear environment
+
+rm(list = ls())
+
+## Set directories
+
+base_directory <- '/Users/rcaraher/Library/CloudStorage/OneDrive-UniversityofMassachusetts/Academic/Teaching/ECON 755/Problem Sets'
+data_directory <- file.path(base_directory, 'Data')
+results_directory <- file.path(base_directory, 'Results')
+
+```
+
+# Instrumental Variable Estimate in T
+
+## Overview of IVs
+
+Instrumental variables is another route to "causal" inference
+
+- In DiD approach, only looking at changes in treatment status that are exogenous (caused by policy changes, lottery, natural experiment, etc.)
+- In IV approach, only looking at variation in outcome that is correlated with variation in an exogenous variable (the instrument)
+
+## Identifying IVs
+
+We want to estimate the following regression:
+
+$$ Y = \beta_{0} + \beta_{1}X + \epsilon $$
+
+However, we have reason to believe that $X$ is not exogenous.
+
+Examples:
+
+1. Effect of schooling ($X$) on wages ($Y$): Some unobservable omitted variable (e.g., ability) is correlated with both $X$ and $Y$
+2. Effect of insurance ($X$) on health ($Y$): Selection in that healthier individuals ($Y$) may be more likely to get insurance ($X$)
+3. Effect of policing ($X$) on crime ($Y$): Reverse causality as police ($X$) are often deployed to areas with high crime rates ($Y$)
+
+## Identifying IVs
+
+In these cases, $X$ will not have a valid causal interpretation.
+
+What can we do?
+
+One solution is to identify an **instrument $Z$** which is correlated with $X$ and correlated with $Y$ *only through its correlation with $X$*
+
+In other words,
+the instrument was be **relevant and excusable**
+
+## Conditions for a Valid Instrument
+
+If the model is $$Y = \beta_0 + \beta_1 X + \epsilon$$,
+
+then a valid instrument $Z$ must be:
+
+1. Relevant: $Cov(Z,X) \neq 0$ $\rightarrow$ $Z$ must be correlated with $X$
+2. Excludable: $Cov(Z,\epsilon) = 0$ $\rightarrow$ $Z$ must *not* be correlated with the error term
+
+## Estimation via 2SLS: Stage 1
+
+To estimate $Y = \beta X + \epsilon$ with instrument $Z$, use 2SLS:
+
+Stage 1: Regress $X$ on $Z$ (get predicted $\hat{X}$):
+
+$$ X = \pi_0 + \pi_{1}Z + \eta $$
+This is called the **first stage**
+
+
+## Notes about the First Stage - Weak Instruments
+
+If $\pi_1$ is close to zero, $Z$ is a weak instrument:
+
+- $\hat{X}$ contains little exogenous variation
+- Stop here: 2SLS estimates become biased and unreliable (can be worse than OLS)
+
+Can use statistical tests to look for weak instruments, most common being the **F-statistic**
+
+## Estimation via 2SLS: Stage 2
+
+Stage 2: Regress $Y$ on $\hat{X}$:
+
+$$ Y = \beta_0 + \beta_1 \hat{X} + \mu $$
+
+## Why use 2SLS?
+
+- OLS is biased when $X$ is endogenous
+- IV isolates exogenous variation in $X$
+- 2SLS is consistent (though often less efficient than OLS)
+
+# 2SLS in R
+
+## Estimating IVs in R
+
+- Estimating 2SLS in R is a simple extension from our normal regression tools
+
+## The setting
+
+What is the effect of fertility on labor supply?
+
+Important empirical question for many reasons:
+
+- Having children could push women out of the labor force for some time, having career implications
+- Having children may lead to increased premiums for fathers in the labor market
+- More educated/higher class families may be differentially affected by fertility
+
+## The setting
+
+Want to estimate the following:
+
+$$ Y = \beta_0 + \beta_1 X + \epsilon $$
+where $Y$ is a labor market outcome (hours worked, employment status, wages, etc.)
+and $X$ is fertility (number of children, having any children, etc.)
+
+However, naive estimates of $X$ on $Y$ may not be credible if we aim to estimate a causal effect for many reasons:
+
+1. Families may time when to have children based on labor market factors (reverse causality)
+2. Families may have children when they expect their labor market outcomes to improve (OVB)
+3. Families that are less resource/time constrained may have more children (selection)
+
+## The setting
+
+Angrist and Evans (1998) propose an instrumental variable to overcome these biases: **sex composition of current children**
+
+Intuition:
+
+Relevance:
+
+- Families have a strong desire to have mixed-sex children and will increase fertility to do so
+  - If you have two girls, will likely have a third child in an attempt to have a son
+  - But if you have one boy and one girl already, less likely to have a third child
+  
+Exculdable:
+
+- Initial sex of children is *randomly assigned*
+
+Therefore, having two same-sex children is (arguably) a valid **instrument for fertility**
+
+## Getting data
+
+Let's read in the data and take a look.
+
+\scriptsize
+```{r, echo=T}
+
+ae_pums <- read_dta(file.path(data_directory, "angrist_evans_data.dta"))
+
+glimpse(ae_pums)
+
+
+```
+
+## Looking at data
+
+Let's read in the data and take a look at some descriptives:
+
+\scriptsize
+```{r, echo=T}
+
+desc_tab <- ae_pums %>%
+  summarise(mean_kids = mean(kidcount, na.rm = T),
+            samesex = mean(samesex, na.rm = T))
+desc_tab
+
+```
+
+## Looking at data
+
+Let's read in the data and take a look at some descriptives
+
+\scriptsize
+```{r, echo=T}
+
+ae_pums %>%
+  count(kidcount)
+
+```
+
+## Looking at data
+
+Let's read in the data and take a look at some descriptives
+
+\scriptsize
+```{r, echo=T}
+
+ae_pums %>%
+  group_by(samesex) %>%
+  summarise(morekids = mean(morekids, na.rm = T))
+
+```
+
+## Estimating OLS
+
+Let's first estimate using OLS the effect of having at least three kids on the likelihood mom worked:
+
+
+\tiny
+```{r, echo=T}
+
+ae_pums <- ae_pums %>%
+  mutate(mt2kids = case_when(kidcount > 2 ~ 1,
+                             is.na(kidcount) ~ NA_real_,
+                             TRUE ~ 0))
+
+mworked_ols <- feols(mom_worked ~ mt2kids + whitem + blackm + hispm + moreths, 
+                     data = ae_pums)
+summary(mworked_ols)
+
+```
+
+This is pretty close to the estimated effect in AE (1998) of `-0.176` (see table 5, row 1 in the NBER working paper draft)
+
+## Estimating OLS
+
+Let's now estimate using OLS the effect of having at least three kids on the number of weeks mom worked:
+
+\tiny
+```{r, echo=T}
+
+mweeks_ols <- feols(mom_weeks_worked ~ mt2kids + whitem + blackm + hispm + moreths, 
+                     data = ae_pums)
+summary(mweeks_ols)
+
+```
+## Estimating 2SLS
+
+We have already discussed why a naive regression of fertility on labor market outcomes may be endogenous.
+Now, let's instrument using $Z$ as an indicator for if the family had 2 kids of the same sex at birth.
+
+We will first implement it by-hand, then using `feols()`
+
+## Estimating the First Stage
+
+Let's estimate the first stage.
+
+When we use covariates, its important to include them on the RHS of the first-stage regression as well!
+
+\tiny
+```{r, echo=T}
+
+fs <- feols(mt2kids ~ samesex + whitem + blackm + hispm + moreths,
+            data = ae_pums)
+summary(fs)
+
+```
+## Estimating the First Stage
+
+The regression is significant and positive, suggesting that having 2 kids of the same sex significant increases your probability of having a third.
+
+Now let's generate the predicted value of $X$ using the variation in `samesex`
+
+\scriptsize
+```{r, echo=T}
+
+ae_pums <- ae_pums %>%
+  mutate(X_hat = predict(fs, type = "response"))
+
+```
+
+## Estimating the second stage
+
+Now, we use the predicted values from the first stage to estimate the effect of the **exogenous** part of fertility on labor market outcomes:
+
+\tiny
+```{r, echo=T}
+
+mworked_s2 <- feols(mom_worked ~ X_hat + whitem + blackm + hispm + moreths, 
+                     data = ae_pums)
+summary(mworked_s2)
+
+```
+\tiny
+```{r, echo=T}
+
+mweeks_s2 <- feols(mom_weeks_worked ~ X_hat + whitem + blackm + hispm + moreths, 
+                     data = ae_pums)
+summary(mweeks_s2)
+
+```
+
+These results are also close to the AE (1998) results in table 5 of `-0.121` for any employment and `-5.68` for weeks worked.
+
+## Estimating 2SLS using a built-in routine
+
+The `feols()` function we have been working with has built-in ability to estimate 2SLS.
+
+Simply add another `|` after the fixed-effects using `X ~ Z` formula syntax.
+
+The control variables on the immediate RHS of the formula will automatically be included.
+
+Since we have no fixed-effects here, we can just use a `0`.
+
+Our results perfectly match those computations we did by-hand.
+
+## Estimating 2SLS using a built-in routine
+
+\tiny
+```{r, echo=T}
+
+mworked_tsls <- feols(mom_worked ~ whitem + blackm + hispm + moreths | 
+                0 | 
+                mt2kids ~ samesex,
+              data = ae_pums)
+summary(mworked_tsls)
+
+```
+
+## Estimating 2SLS using a built-in routine
+
+\tiny
+```{r, echo=T}
+
+mweeks_tsls <- feols(mom_weeks_worked ~ whitem + blackm + hispm + moreths | 
+                0 | 
+                mt2kids ~ samesex,
+              data = ae_pums)
+summary(mweeks_tsls)
+
+```
+
+## 2SLS Diagnostics
+
+One benefit of using the built-in 2SLS models is that they automatically compute test-statistics such as the F-statistic.
+
+Recall the intuition of the F-statistic: *Do the explanatory variables in this regression explain a meaningful amount of variation in the outcome?*
+
+1. Estimate a "restricted model" without the instrument $Z$ and an "unrestricted model" with the instrument $Z$
+2. Compare the residual sum of squares (RSS)
+3. If the RSS drops substantially, the F-stat is large.
+
+If the F-stat is large, 
+this implies that it explains a lot of the variation in $Y$.
+
+In other words, it is not a **weak instrument**
+
+A ballpark F-stat of 10 is usually considered the rule-of-thumb
+
+
+## 2SLS Diagnostics: Problems with the F-stat
+
+However, the F-stat rule-of-thumb is really only valid with certain assumptions.
+
+In the presence of clustered, heteroskedastic, or a number of other error cases we likely need a much larger F-stat than 10.
+
+The `ivDiag` package has some useful methods for more thorough 2SLS diagnostics
+
+
+## Advanced 2SLS Diagnostics
+
+Let's load in the package (don't forget to install if the first time using it)
+
+\scriptsize
+```{r, echo=T}
+
+#install.packages("ivDiag")
+library(ivDiag)
+
+```
+
+## Advanced 2SLS Diagnostics
+
+
+The `ivDiag()` function requires us to supply its arguments as strings.
+
+Let's first use it to look at some F-stats.
+
+\scriptsize
+```{r, echo=T}
+
+mworked_ivDiag <- ivDiag(data = ae_pums,
+                         Y = "mom_worked",
+                         D = "mt2kids",
+                         Z = "samesex",
+                         controls = c("whitem", "blackm", "hispm", "moreths"),
+                         bootstrap = FALSE,
+                         run.AR = FALSE)
+
+```
+
+## Advanced 2SLS Diagnostics
+
+In addition to returning the OLS, 2SLS, first stage, and reduced form estimates,
+the `ivDiag()` function will return a range of F-stat tests.
+
+\scriptsize
+```{r, echo=T}
+
+mworked_ivDiag$est_ols
+mworked_ivDiag$est_2sls
+mworked_ivDiag$F_stat
+
+```
+
+## The Anderson-Rubin test
+
+If we are estimating an IV with a weak instrument, the standard error on the 2SLS estimate will not be valid.
+
+Anderson-Rubin (1949) suggest a test statistic which is robust the weak instrument concern.
+
+The Anderson-Rubin test statistic works backwards:
+
+For a set of possible $\beta_{0}$ values,
+it computes if $Y - \beta_{0}X$ regressed on $Z$ is statistically significant.
+Then,
+the set of $\beta_{0}$ such that $Z$ is not significant is the AR Confidence interval.
+
+We can implement this by setting the `run.AR` argument in `ivDiag()` to `TRUE`
+
+
+
+## The Anderson-Rubin test
+
+\scriptsize
+```{r, echo=T}
+
+mworked_ivDiag_v2 <- ivDiag(data = ae_pums,
+                         Y = "mom_worked",
+                         D = "mt2kids",
+                         Z = "samesex",
+                         controls = c("whitem", "blackm", "hispm", "moreths"),
+                         bootstrap = FALSE,
+                         run.AR = TRUE)
+mworked_ivDiag_v2$AR$ci.print
+
+```
