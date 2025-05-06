@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.3.8)  6 MAY 2025 08:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.3.8)  6 MAY 2025 10:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1044,17 +1044,17 @@ LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <6> not available
 
 ]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 383.
+(Font)              <10> on input line 381.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 383.
+(Font)              <7> on input line 381.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 383.
+(Font)              <5> on input line 381.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 383.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 381.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <7> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 383.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 381.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <5> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 383.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 381.
 [17
 
 ]
@@ -1175,7 +1175,7 @@ Overfull \hbox (41.21013pt too wide) in paragraph at lines 29--29
 \openout4 = `lab6_slides.vrb'.
 
 (./lab6_slides.vrb)
-Overfull \vbox (66.80452pt too high) detected at line 687
+Overfull \vbox (66.80452pt too high) detected at line 685
  []
 
 [27
@@ -1245,7 +1245,7 @@ Here is how much of TeX's memory you used:
  42502 multiletter control sequences out of 15000+600000
  543331 words of font info for 134 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,11n,122p,1008b,489s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 128i,11n,122p,1008b,485s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-
 ec.enc}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/u
 sr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/t
@@ -1263,7 +1263,7 @@ public/lm/lmtt10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/
 lmtt8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmtti10.pfb
 ></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10
 .pfb>
-Output written on lab6_slides.pdf (37 pages, 304093 bytes).
+Output written on lab6_slides.pdf (37 pages, 304033 bytes).
 PDF statistics:
  362 PDF objects out of 1000 (max. 8388607)
  286 compressed objects within 3 object streams
