@@ -66,7 +66,7 @@ results_directory <- file.path(base_directory, 'Results')
 
 ```
 
-# Instrumental Variable Estimate in T
+# Instrumental Variables in R
 
 ## Overview of IVs
 
@@ -98,11 +98,11 @@ What can we do?
 One solution is to identify an **instrument $Z$** which is correlated with $X$ and correlated with $Y$ *only through its correlation with $X$*
 
 In other words,
-the instrument was be **relevant and excusable**
+the instrument has be **relevant and excusable**
 
 ## Conditions for a Valid Instrument
 
-If the model is $$Y = \beta_0 + \beta_1 X + \epsilon$$,
+If the model is $$Y = \beta_0 + \beta_1 X + \epsilon$$
 
 then a valid instrument $Z$ must be:
 
@@ -174,7 +174,6 @@ However, naive estimates of $X$ on $Y$ may not be credible if we aim to estimate
 
 Angrist and Evans (1998) propose an instrumental variable to overcome these biases: **sex composition of current children**
 
-Intuition:
 
 Relevance:
 
